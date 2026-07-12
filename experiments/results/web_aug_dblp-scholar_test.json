@@ -1,0 +1,20 @@
+{
+  "run": "web_aug",
+  "dataset": "dblp-scholar",
+  "split": "test",
+  "model": "/content/experiments/models/web_aug_dblp-scholar/best",
+  "metrics": {
+    "precision": 0.947906976744186,
+    "recall": 0.9523364485981308,
+    "f1": 0.9501165501165502
+  },
+  "confusion_matrix": {
+    "tp": 1019,
+    "fp": 56,
+    "fn": 51,
+    "tn": 4616
+  },
+  "n_pairs": 5742,
+  "n_matches": 1070,
+  "n_non_matches": 4672
+}

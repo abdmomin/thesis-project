@@ -1,0 +1,16 @@
+{
+  "dataset": "dblp-scholar",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "top_k": 20,
+  "left_entities": 2616,
+  "right_entities": 64263,
+  "max_possible_pairs": 168112008,
+  "raw_candidates": 52320,
+  "known_pairs_excluded": 10925,
+  "nontrain_pairs_excluded": 22554,
+  "heldout_entities_remaining": 0,
+  "final_pool_size": 18841,
+  "pool_sim_mean": 0.749,
+  "pool_sim_min": 0.4922,
+  "pool_sim_max": 0.9317
+}

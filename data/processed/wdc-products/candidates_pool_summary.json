@@ -1,0 +1,15 @@
+{
+  "dataset": "wdc-products",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "top_k": 20,
+  "left_entities": 2896,
+  "right_entities": 2891,
+  "max_possible_pairs": 8372336,
+  "raw_candidates": 57920,
+  "known_pairs_excluded": 3171,
+  "valid_test_entities_excluded": 47236,
+  "final_pool_size": 4722,
+  "pool_sim_mean": 0.8253,
+  "pool_sim_min": 0.3907,
+  "pool_sim_max": 0.9996
+}

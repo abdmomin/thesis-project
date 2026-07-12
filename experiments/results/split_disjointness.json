@@ -1,0 +1,78 @@
+{
+  "wdc-products": {
+    "split_overlap": {
+      "shared_id_space": true,
+      "test_left_entities": 996,
+      "test_left_seen_in_train": 0,
+      "pct_test_left_seen_in_train": 0.0,
+      "test_right_entities": 994,
+      "test_right_seen_in_train": 0,
+      "pct_test_right_seen_in_train": 0.0,
+      "valid_left_seen_in_train": 0,
+      "valid_right_seen_in_train": 0,
+      "shared_pairs_train_test": 0,
+      "shared_pairs_train_valid": 0,
+      "shared_pairs_test_valid": 0
+    },
+    "augmented_leakage": {
+      "llm_aug": {
+        "added_pairs": 2100,
+        "touch_heldout": 0,
+        "touch_valid_or_test": 0,
+        "touch_test": 0
+      },
+      "web_aug": {
+        "added_pairs": 803,
+        "touch_heldout": 0,
+        "touch_valid_or_test": 0,
+        "touch_test": 0
+      },
+      "train_base": {
+        "pairs": 2500,
+        "unmapped": 0,
+        "touch_heldout": 0,
+        "touch_valid_or_test": 0,
+        "touch_test": 0,
+        "note": "string_aug only duplicates these entities; it adds none beyond train.txt"
+      }
+    }
+  },
+  "dblp-scholar": {
+    "split_overlap": {
+      "shared_id_space": false,
+      "test_left_entities": 1708,
+      "test_left_seen_in_train": 1588,
+      "pct_test_left_seen_in_train": 93.0,
+      "test_right_entities": 3938,
+      "test_right_seen_in_train": 2502,
+      "pct_test_right_seen_in_train": 63.5,
+      "valid_left_seen_in_train": 1606,
+      "valid_right_seen_in_train": 2512,
+      "shared_pairs_train_test": 0,
+      "shared_pairs_train_valid": 0,
+      "shared_pairs_test_valid": 0
+    },
+    "augmented_leakage": {
+      "llm_aug": {
+        "added_pairs": 2085,
+        "touch_heldout": 0,
+        "touch_valid_or_test": 1937,
+        "touch_test": 1690
+      },
+      "web_aug": {
+        "added_pairs": 742,
+        "touch_heldout": 0,
+        "touch_valid_or_test": 469,
+        "touch_test": 357
+      },
+      "train_base": {
+        "pairs": 17223,
+        "unmapped": 0,
+        "touch_heldout": 0,
+        "touch_valid_or_test": 16561,
+        "touch_test": 15624,
+        "note": "string_aug only duplicates these entities; it adds none beyond train.txt"
+      }
+    }
+  }
+}

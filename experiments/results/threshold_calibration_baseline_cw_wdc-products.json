@@ -1,0 +1,38 @@
+{
+  "dataset": "wdc-products",
+  "run": "baseline_cw",
+  "prior_valid": 0.2,
+  "prior_test": 0.1111,
+  "operating_points": {
+    "default": {
+      "threshold": 0.5,
+      "precision": 0.5587,
+      "recall": 0.752,
+      "f1": 0.6411
+    },
+    "valid_max_f1": {
+      "chosen_on": "valid",
+      "thr": 0.4435,
+      "threshold": 0.4435,
+      "precision": 0.5431,
+      "recall": 0.756,
+      "f1": 0.6321
+    },
+    "prior_matched": {
+      "chosen_on": "valid@\u03c0_test",
+      "thr": 0.9859,
+      "threshold": 0.9859,
+      "precision": 0.7492,
+      "recall": 0.454,
+      "f1": 0.5654
+    },
+    "test_max_f1_oracle": {
+      "chosen_on": "test (oracle)",
+      "thr": 0.8426,
+      "threshold": 0.8426,
+      "precision": 0.6357,
+      "recall": 0.684,
+      "f1": 0.659
+    }
+  }
+}

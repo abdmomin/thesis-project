@@ -1,0 +1,1026 @@
+{
+  "baseline_cw_wdc-products": {
+    "run": "baseline_cw",
+    "dataset": "wdc-products",
+    "n_total": 4500,
+    "n_errors": 421,
+    "error_rate": 0.0936,
+    "class_counts": {
+      "ambiguous_variant": 299,
+      "low_sim_match": 103,
+      "high_sim_non_match": 16,
+      "noisy_incomplete": 3
+    },
+    "class_pct": {
+      "ambiguous_variant": 71.0,
+      "low_sim_match": 24.5,
+      "high_sim_non_match": 3.8,
+      "noisy_incomplete": 0.7
+    },
+    "representative_examples": {
+      "ambiguous_variant": [
+        {
+          "left": "COL brand VAL Park Tool COL title VAL Park Tool PH-1.2 P-Handle Hex Wrench Set COL description VAL Engineered for fit, function, and leverage, these L-shaped shop quality hex wrenches are a must have for every workshopDurable wall/pegboard mount tool holder allows easy access and organizationComfortable, ergonomically designed nylon handles fit perfectly in your handStraight hex shaft on the short side, ball end on the long sideIncludes 2, 2.5, 3, 4, 5, 6, 8, and 10mmHigh-torque, industrial steel wrenches COL price VAL $76.95 COL priceCurrency VAL USD",
+          "right": "COL brand VAL  COL title VAL Park Tool Handle Hex Wrench Set PH-12 COL description VAL Engineered for fit, function, and leverage, these L-shaped shop quality hex wrenches are a must have for every workshop.Features :High-torque, industrial steel wrenchesStraight hex shaft on the short side, ball end on the long sideIncludes 2, 2.5, 3, 4, 5, 6, 8, and 10mmComfortable, ergonomically designed nylon handles fit perfectly in your handDurable wall/pegboard mount tool holder allows easy access and organizationAvailable 3-Way storage (tools not included) COL price VAL 84.99 COL priceCurrency VAL EUR",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.003192,
+          "sim": 0.6974,
+          "llm_explanation": "The model likely predicted non-match due to the differing prices ($76.95 USD vs. 84.99 EUR) and missing brand on the right, causing it to overlook that the titles, detailed descriptions, and product specifications (including the exact same set of hex sizes and features) are nearly identical, strongly indicating the same product."
+        },
+        {
+          "left": "COL brand VAL  COL title VAL Audemars Piguet Royal Oak Offshore Chronograph 42mm COL description VAL Audemars Piguet Royal Oak Offshore Chronograph 42mm COL price VAL 34800 COL priceCurrency VAL USD",
+          "right": "COL brand VAL  COL title VAL AAA Replica Audemars Piguet Royal Oak Offshore Chronograph Watch 26470OR.OO.A125CR.01 COL description VAL AAA Replica Audemars Piguet Royal Oak Offshore Chronograph Watch 26470OR.OO.A125CR.01 for sale from China with good prices. COL price VAL  COL priceCurrency VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.003298,
+          "sim": 0.3,
+          "llm_explanation": "The model likely focused on the word \"Replica\" and the absence of price/currency on the right side, misinterpreting these as indicators of a different product, when in fact both records refer to the same Audemars Piguet Royal Oak Offshore Chronograph 42mm watch (the right record is simply a replica listing of the same model)."
+        },
+        {
+          "left": "COL brand VAL Blaze COL title VAL Blaze Grill Cart for Blaze 3 Burner Pro SKU BLZ-3PRO-CART COL description VAL Blaze Cart for Blaze 3 Burner Pro grill SKU BLZ-3PRO-CARTBlaze 3 Burner Pro Cart Only SKU BLZ-3PRO-CART Features:Folding side shelves for easier storage / mobilityStainless steel construction is durable in outdoor conditionsTwo drawers add practical storage for your BBQ accessories2 folding side shelves provide a convenient work area while grillingStainless Steel exterior for easy cleaning4 heavy duty casters allow you to re-position the grill for maximum mobilityBlaze 3 Burner Pro Cart Only SKU BLZ-3PRO-CART Description:Blaze 3 Burner Pro Cart Only SKU BLZ-3PRO-CART. BLZ-3PRO-CART.This Blaze stainless steel grill cart is specifically designed to house the Blaze Professional 3 burner gas grill. The two stainless steel side shelves keep your BBQ tools at hand and provide a convenient work area while you cook. The Blaze grill cart also features one front door with a rounded handle to access the cabinet below the grill where you can store your propane tank. It also features two drawers with rounded handles to store your grill cover and BBQ accessories. The cart is warranted for lifetime to the original owner against defects in manufacturing and workmanship. This warranty extends to the original purchaser against manufacture defects for products purchased for ordinary single-family home use. COL price VAL 1099.99 COL priceCurrency VAL USD",
+          "right": "COL brand VAL  COL title VAL Blaze Professional 34-Inch Grill Cart COL description VAL Blaze 34-Inch Burner Professional Grill CartThis Blaze stainless steel grill cart is specifically designed to house the Blaze Professional 3 burner gas grill. The two stainless steel side shelves keep your BBQ tools at hand and provide a convenient work area while you cook.The Blaze grill cart also features one front door with a rounded handle to access the cabinet below the grill where you can store your propane tank. It also features two drawers with rounded handles to store your grill cover and BBQ accessories.The cart is warranted for a lifetime to the original owner against defects in manufacturing and workmanship. This warranty extends to the original purchaser against manufacture defects for products purchased for ordinary single-family home use.GRILL OVERVIEWStainless steel construction is durable in outdoor conditionsTwo drawers add practical storage for your BBQ accessories2 folding side shelves provide a convenient work area while grilling4 heavy duty casters allow you to reposition the grill as neededSpecifications:WEIGHT: 119CONFIGURATION: On CartEXTERIOR MATERIAL: Stainless SteelMADE IN USA: YesWORK AREA: YesNUMBER OF SHELVES: 2ON WHEELS: YESDIMENSIONS: 34 3/4\\\" H x 65 1/2\\\" W x 26 3/4\\\" DWarranty: LifetimeAdditional Dimensions:Cart without Shelves - 35 1/4\\\" H x 33 3/4\\\" W x 23 7/8\\\" DSingle Shelf Dimensions - 15 3/4\\\" W x 23 7/8\\\" DDrawer Internal Dimensions - 5 7/8\\\" H x 12 7/8\\\" W x 19\\\" DPhysical Door Opening - 19 \\\" H x 14 1/8\\\" WBlaze 34-Inch Burner Professional Grill Cart Installation Manual COL price VAL 1099.99 COL priceCurrency VAL USD",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.003548,
+          "sim": 0.5176,
+          "llm_explanation": "The model likely predicted non-match because the RIGHT entity's title says \"Professional 34-Inch Grill Cart\" while the LEFT says \"3 Burner Pro Cart,\" and the RIGHT entity is missing a brand value, obscuring the shared key identifying features (Blaze brand, 3-burner professional cart with stainless steel construction, two drawers, and folding side shelves) that clearly indicate these are the same product."
+        }
+      ],
+      "low_sim_match": [
+        {
+          "left": "COL brand VAL WTB COL title VAL WTB WTB Byway Tire - 650b x 47, TCS Tubeless, Folding, Black COL description VAL The Byway Road Plus tire allows riders to find comfort on remote gravel roads without being slowed down on the pavement required to reach them. COL price VAL 64.99 COL priceCurrency VAL USD",
+          "right": "COL brand VAL  COL title VAL Maxxis Tire High Roller II EXO/TR Foldable 29x2.30 COL description VAL An open and aggressive tread design gives the High Roller II excellent soil penetration and mud-clearing ability. A square profile provides a solid, consistent feel across the knobs. Modified knobs on the shoulder and center improve braking performance and traction on hard surfaces. An excellent choice for technical, loose terrain. The High Roller II is available in trail, enduro, and downhill specs. COL price VAL  COL priceCurrency VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.002238,
+          "sim": 0.0361,
+          "llm_explanation": "The model likely predicted non-match because the two product listings have almost entirely different attribute values (different brand names, titles, descriptions, sizes, and tread designs), with very low token overlap (0.036 Jaccard), making it very difficult to recognize that both are bicycle tires \u2014 but the true label of \"match\" seems highly suspect given these are clearly two different products (WTB Byway 650b gravel tire vs. Maxxis High Roller II 29\" MTB tire), suggesting the true label itself may be incorrect rather than the"
+        },
+        {
+          "left": "COL brand VAL  COL title VAL Blaze 40-Inch Grill Cart For Traditional/LTE Gas Grills COL description VAL Blaze Grill Cart For 40-Inch Traditional/LTE Gas GrillsThis Blaze stainless steel grill cart is specifically designed to house the Blaze 40-Inch 5 burner gas grill. The two stainless steel side shelves keep your BBQ tools at hand and provide a convenient work area while you cook.The Blaze grill cart also features two front doors with rounded handles to access the cabinet below the grill where you can store your propane tank, grill cover, and BBQ accessories.GRILL OVERVIEWStainless steel construction is durable in outdoor conditionsAdds practical storage for your BBQ accessories2 side shelves provide a convenient work area while grilling4 heavy duty casters allow you to reposition the grill as neededHolds BLZ-5-NG/LP and BLZ-5LTE2-NG/LP grill modelsSpecifications: Configuration: On Cart Size: 40 Inches Exterior Material: Stainless Steel Work Area: Yes Number of Side Shelves: 2 On Wheels: Yes Dimensions: 35 1/2\u2033 H x 63 3/8\u2033 W x 22 1/8\u2033 D Warranty: LifetimeAdditional Dimensions:Cart without Shelves - 35 5/8\\\" H x 41 3/8\\\" W x 22\\\" DSingle Shelf Dimensions - 11\\\" W x 22\\\" DPhysical Door Opening - 18 1/2 \\\" H x 36 1/8\\\" WBlaze Grill Cart For 40-Inch Traditional/LTE Gas Grills Installation ManualLifetime warranty to the original owner against defects in manufacturing and workmanship. This warranty extends to the original purchaser against manufacture defects for products purchased for ordinary single-family home use. COL price VAL 514.99 COL priceCurrency VAL USD",
+          "right": "COL brand VAL  COL title VAL Blaze 5 Burner Basic Cart Only COL description VAL Blaze 5 Burner Basic Cart Only COL price VAL 5.1499E2 COL priceCurrency VAL USD",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.002535,
+          "sim": 0.0342,
+          "llm_explanation": "The model likely failed to recognize that both entries refer to the same Blaze grill cart designed for a 40-inch 5-burner gas grill, because the right-side record uses an abbreviated title (\"Basic Cart Only\") that lacks the specific dimensional and product details present in the left-side description, making the surface-level textual overlap extremely low despite referring to the same product."
+        },
+        {
+          "left": "COL brand VAL  COL title VAL UVC-G3-FLEX-3Ubiquiti UniFi Video Camera, G3, Flex 3 pack COL description VAL  COL price VAL 26.27 COL priceCurrency VAL KES",
+          "right": "COL brand VAL Ubiquiti COL title VAL Ubiquiti UniFi 2MP 1080p Wide-angle Full HD Camera - 3 Pack COL description VAL Adjustable lens and swivel base for vertical and horizontal viewing angle adjustments COL price VAL 225.99 COL priceCurrency VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.002708,
+          "sim": 0.1,
+          "llm_explanation": "The model likely predicted non-match because the extreme price discrepancy (26.27 KES vs. 225.99, likely USD) and the missing brand/description on the LEFT combined with the very low token overlap (0.100) obscured that both records describe the same Ubiquiti UniFi G3 Flex 3-pack camera, with the LEFT's garbled title \"UVC-G3-FLEX-3Ubiquiti UniFi Video Camera, G3, Flex 3 pack\" containing the key identifying"
+        }
+      ],
+      "high_sim_non_match": [
+        {
+          "left": "COL brand VAL Hikvision COL title VAL Hikvision DS-7208HUHI-K2/P 5MP 8 Channel TVI POC DVR & NVR Tribrid CCTV Recorder with Network and Mobile phone remote viewing COL description VAL  COL price VAL  COL priceCurrency VAL ",
+          "right": "COL brand VAL Hikvision COL title VAL Hikvision DS-7208HQHI-K2/P 8 Channel TVI POC DVR & NVR Tribrid CCTV Recorder with Network and Mobile phone remote viewing COL description VAL  COL price VAL  COL priceCurrency VAL ",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.989256,
+          "sim": 0.8571,
+          "llm_explanation": "The model likely failed to distinguish between the subtle difference in model numbers **DS-7208HUHI-K2/P** (5MP, HUHI) versus **DS-7208HQHI-K2/P** (HQHI), which represent different product specifications, as the overwhelming similarity of all other tokens (brand, series, and feature descriptions) dominated the matching signal."
+        },
+        {
+          "left": "COL brand VAL  COL title VAL RAM\u00ae Double Socket Arm C Ball B Length COL description VAL C Size 1.5\" Rubber BallCapacity: up to 1.8 kgPowder Coated Marine Grade Aluminum COL price VAL 28 COL priceCurrency VAL EUR",
+          "right": "COL brand VAL  COL title VAL RAM\u00ae Double Socket Arm C Size COL description VAL C Size 1.5\" Rubber BallCapacity: up to 1.8 kgPowder Coated Marine Grade Aluminum COL price VAL 43 COL priceCurrency VAL EUR",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.986879,
+          "sim": 0.7826,
+          "llm_explanation": "The model likely overlooked the differing product specifications in the titles (\"Ball B Length\" vs \"C Size\") and the significant price difference (28 vs 43 EUR), which together indicate these are distinct variants of the RAM\u00ae Double Socket Arm rather than the same product."
+        },
+        {
+          "left": "COL brand VAL Maxxis COL title VAL Maxxis High Roller II 27.5x2.3 DC/EXO/TR Tire COL description VAL An open and aggressive tread design gives the High Roller II excellent soil penetration and mud-clearing ability. A square profile provides a solid, consistent feel across the knobs. Modified knobs on the shoulder and center improve braking performance and traction on hard surfaces. An excellent choice for technical, loose terrain. The High Roller II is available in trail, enduro, and downhill specs. COL price VAL $52.00 COL priceCurrency VAL USD",
+          "right": "COL brand VAL Maxxis COL title VAL Maxxis High Roller II 27.5x2.5WT TERRA/EXO/TR Tire COL description VAL An open and aggressive tread design gives the High Roller II excellent soil penetration and mud-clearing ability. A square profile provides a solid, consistent feel across the knobs. Modified knobs on the shoulder and center improve braking performance and traction on hard surfaces. An excellent choice for technical, loose terrain. The High Roller II is available in trail, enduro, and downhill specs. COL price VAL $68.00 COL priceCurrency VAL USD",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.98607,
+          "sim": 0.8947,
+          "llm_explanation": "The model likely failed to distinguish the critical differences in the tire specifications\u2014**27.5x2.3 DC/EXO/TR** vs. **27.5x2.5WT TERRA/EXO/TR** (different width and casing type) and the price difference ($52 vs. $68)\u2014because the descriptions are identical and the high overall token overlap (0.895) dominated the matching signal."
+        }
+      ],
+      "noisy_incomplete": [
+        {
+          "left": "COL brand VAL  COL title VAL Seamaster Planet Ocean 600m Automatic Chronometer Chronograph Men's Watch COL description VAL  COL price VAL 7140 COL priceCurrency VAL GBP",
+          "right": "COL brand VAL  COL title VAL Omega Seamaster 215.30.46.51.03.001 COL description VAL  COL price VAL  COL priceCurrency VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.003715,
+          "sim": 0.0769,
+          "llm_explanation": "The model likely failed to recognize that these are the same product because the right record uses only the Omega model number (215.30.46.51.03.001) rather than the descriptive title, and the left record omits the brand name \"Omega,\" leaving insufficient overlapping tokens for the model to identify the match despite both referring to the same Omega Seamaster Planet Ocean watch."
+        },
+        {
+          "left": "COL brand VAL  COL title VAL Audio-Technica Consumer ATH-PRO7X Professional On-Ear DJ Monitor Headphones COL description VAL High-Fidelity Audio Reproduction for DJs45mm Large-Aperture DriversSleek, Minimalist, On-Ear DesignSoft, Comfortable Earpads COL price VAL 799 COL priceCurrency VAL AED",
+          "right": "COL brand VAL  COL title VAL Slu\u0161alke Audio-Technica ATH-PRO7x COL description VAL  COL price VAL 208.95 COL priceCurrency VAL EUR",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.029337,
+          "sim": 0.0833,
+          "llm_explanation": "The model likely predicted non-match because the drastically different prices (799 AED \u2248 218 EUR vs. 208.95 EUR, which are actually close in value) combined with the sparse RIGHT record (missing brand, description) and different title languages gave insufficient overlapping signal, causing the model to underweight the shared product identifier \"ATH-PRO7X/ATH-PRO7x\" that uniquely identifies these as the same product."
+        },
+        {
+          "left": "COL brand VAL Audio Technica COL title VAL Audio Technica ATH-M40 XAuricular COL description VAL  COL price VAL  COL priceCurrency VAL ",
+          "right": "COL brand VAL  COL title VAL Audio Technica ATH-M40X Flat Response Studio Headphones COL description VAL Audio Technica ATH-M40X Flat Response Studio HeadphonesThis is the most critically acclaimed model in the Audio Technica M-Series line, praised by top audio engineers and pro audio reviewers year after year. The ATH-M50x features the same coveted sonic signature, now with refined earpads and detachable cables. From large-aperture drivers to sound isolating earcups and robust construction, the M50x provides an unmatched experience for the most critical audio professionals.Critically acclaimed sonic performance praised by top audio engineers and pro audio reviewersProprietary 45 mm large-aperture drivers with rare earth magnets and copper-clad aluminum wire voice coilsExceptional clarity throughout an extended frequency range, with deep, accurate bass responseCircumaural design contours around the ears for excellent sound isolation in loud environments90\u00b0 swiveling earcups for easy, one-ear monitoringProfessional-grade earpad and headband material delivers more durability and comfortDetachable cable (3 cables included) COL price VAL  COL priceCurrency VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.27433,
+          "sim": 0.0196,
+          "llm_explanation": "The model likely predicted non-match because the LEFT title contains a typo/formatting error (\"ATH-M40 XAuricular\" with a space and Spanish word) that obscures its equivalence to \"ATH-M40X\" in the RIGHT title, and the LEFT record has empty description and price fields, reducing the textual overlap needed for the model to recognize these as the same product."
+        }
+      ]
+    }
+  },
+  "string_aug_cw_wdc-products": {
+    "run": "string_aug_cw",
+    "dataset": "wdc-products",
+    "n_total": 4500,
+    "n_errors": 337,
+    "error_rate": 0.0749,
+    "class_counts": {
+      "ambiguous_variant": 208,
+      "low_sim_match": 122,
+      "high_sim_non_match": 5,
+      "noisy_incomplete": 2
+    },
+    "class_pct": {
+      "ambiguous_variant": 61.7,
+      "low_sim_match": 36.2,
+      "high_sim_non_match": 1.5,
+      "noisy_incomplete": 0.6
+    },
+    "representative_examples": {
+      "ambiguous_variant": [
+        {
+          "left": "COL brand VAL  COL title VAL 3M - Privacy filter framed lightweight 20\\\"\\\" to 23\\\"\\\" widescreen COL description VAL 3M Privacy filter framed lightweight 20\\\"\\\" to 23\\\"\\\" widescreen (7000059523) - Type: Skjermbeskyttelse COL price VAL 1506.25 COL priceCurrency VAL NOK",
+          "right": "COL brand VAL  COL title VAL 3M - DESKTOP LCD LW FRAMED FILTER F-FEEDS COL description VAL 3M DESKTOP LCD LW FRAMED FILTER F-FEEDS (PF220W1F) - Type: Annet Tilbeh\u00f8r COL price VAL 3499.00 COL priceCurrency VAL NOK",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 6.7e-05,
+          "sim": 0.2609,
+          "llm_explanation": "The model likely predicted non-match because the RIGHT product uses an abbreviated, cryptic title (\"DESKTOP LCD LW FRAMED FILTER F-FEEDS\") that obscures its identity as the same 3M framed lightweight privacy filter for 20\"-23\" widescreen screens, while the large price discrepancy (1506 vs 3499 NOK) and differing product type labels further masked the semantic equivalence of the two listings."
+        },
+        {
+          "left": "COL brand VAL Park Tool COL title VAL Park Tool PH-1.2 P-Handle Hex Wrench Set COL description VAL Engineered for fit, function, and leverage, these L-shaped shop quality hex wrenches are a must have for every workshopDurable wall/pegboard mount tool holder allows easy access and organizationComfortable, ergonomically designed nylon handles fit perfectly in your handStraight hex shaft on the short side, ball end on the long sideIncludes 2, 2.5, 3, 4, 5, 6, 8, and 10mmHigh-torque, industrial steel wrenches COL price VAL $76.95 COL priceCurrency VAL USD",
+          "right": "COL brand VAL  COL title VAL Park Tool Handle Hex Wrench Set PH-12 COL description VAL Engineered for fit, function, and leverage, these L-shaped shop quality hex wrenches are a must have for every workshop.Features :High-torque, industrial steel wrenchesStraight hex shaft on the short side, ball end on the long sideIncludes 2, 2.5, 3, 4, 5, 6, 8, and 10mmComfortable, ergonomically designed nylon handles fit perfectly in your handDurable wall/pegboard mount tool holder allows easy access and organizationAvailable 3-Way storage (tools not included) COL price VAL 84.99 COL priceCurrency VAL EUR",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 6.8e-05,
+          "sim": 0.6974,
+          "llm_explanation": "The model likely predicted non-match due to the differing prices ($76.95 USD vs. 84.99 EUR) and missing brand on the right, causing it to overlook that the titles, descriptions, and product specifications (same hex sizes, same features) are virtually identical, clearly identifying these as the same Park Tool PH-1.2 wrench set."
+        },
+        {
+          "left": "COL brand VAL Blaze COL title VAL Blaze Grill Cart for Blaze 3 Burner Pro SKU BLZ-3PRO-CART COL description VAL Blaze Cart for Blaze 3 Burner Pro grill SKU BLZ-3PRO-CARTBlaze 3 Burner Pro Cart Only SKU BLZ-3PRO-CART Features:Folding side shelves for easier storage / mobilityStainless steel construction is durable in outdoor conditionsTwo drawers add practical storage for your BBQ accessories2 folding side shelves provide a convenient work area while grillingStainless Steel exterior for easy cleaning4 heavy duty casters allow you to re-position the grill for maximum mobilityBlaze 3 Burner Pro Cart Only SKU BLZ-3PRO-CART Description:Blaze 3 Burner Pro Cart Only SKU BLZ-3PRO-CART. BLZ-3PRO-CART.This Blaze stainless steel grill cart is specifically designed to house the Blaze Professional 3 burner gas grill. The two stainless steel side shelves keep your BBQ tools at hand and provide a convenient work area while you cook. The Blaze grill cart also features one front door with a rounded handle to access the cabinet below the grill where you can store your propane tank. It also features two drawers with rounded handles to store your grill cover and BBQ accessories. The cart is warranted for lifetime to the original owner against defects in manufacturing and workmanship. This warranty extends to the original purchaser against manufacture defects for products purchased for ordinary single-family home use. COL price VAL 1099.99 COL priceCurrency VAL USD",
+          "right": "COL brand VAL  COL title VAL Blaze Professional 34-Inch Grill Cart COL description VAL Blaze 34-Inch Burner Professional Grill CartThis Blaze stainless steel grill cart is specifically designed to house the Blaze Professional 3 burner gas grill. The two stainless steel side shelves keep your BBQ tools at hand and provide a convenient work area while you cook.The Blaze grill cart also features one front door with a rounded handle to access the cabinet below the grill where you can store your propane tank. It also features two drawers with rounded handles to store your grill cover and BBQ accessories.The cart is warranted for a lifetime to the original owner against defects in manufacturing and workmanship. This warranty extends to the original purchaser against manufacture defects for products purchased for ordinary single-family home use.GRILL OVERVIEWStainless steel construction is durable in outdoor conditionsTwo drawers add practical storage for your BBQ accessories2 folding side shelves provide a convenient work area while grilling4 heavy duty casters allow you to reposition the grill as neededSpecifications:WEIGHT: 119CONFIGURATION: On CartEXTERIOR MATERIAL: Stainless SteelMADE IN USA: YesWORK AREA: YesNUMBER OF SHELVES: 2ON WHEELS: YESDIMENSIONS: 34 3/4\\\" H x 65 1/2\\\" W x 26 3/4\\\" DWarranty: LifetimeAdditional Dimensions:Cart without Shelves - 35 1/4\\\" H x 33 3/4\\\" W x 23 7/8\\\" DSingle Shelf Dimensions - 15 3/4\\\" W x 23 7/8\\\" DDrawer Internal Dimensions - 5 7/8\\\" H x 12 7/8\\\" W x 19\\\" DPhysical Door Opening - 19 \\\" H x 14 1/8\\\" WBlaze 34-Inch Burner Professional Grill Cart Installation Manual COL price VAL 1099.99 COL priceCurrency VAL USD",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 6.8e-05,
+          "sim": 0.5176,
+          "llm_explanation": "The model likely predicted non-match because the RIGHT entity's title says \"Professional 34-Inch Grill Cart\" while the LEFT specifies \"3 Burner Pro,\" and the RIGHT entity has a missing brand value, obscuring the strong evidence that both describe the same Blaze stainless steel cart designed for the Blaze 3-burner Professional grill with matching features (two drawers, folding/stainless side shelves, casters)."
+        }
+      ],
+      "low_sim_match": [
+        {
+          "left": "COL brand VAL  COL title VAL Fujifilm 23mm f2 R WR XF Lens - Black COL description VAL The Fuji 23mm f2 R WR XF Lens in Black is a compact, weather-resistant lens ideal for travel, street and portrait photography. Features a fast f/2 aperture making it perfect for low-light conditions and with its 9 diaphragm blades, delivers a pleasing out of focus quality when working with a shallow depth of field. COL price VAL 429.00 COL priceCurrency VAL GBP",
+          "right": "COL brand VAL  COL title VAL FUJIFILM Fujinon XF 27mm f/2.8 Aspherical Lens - Black COL description VAL The FUJIFILM Fujinon XF 27mm f/2.8 Aspherical Lens - Black is a versatile 41mm-equivalent prime that is ideal for travel and everyday shooting. Its f/2.8 maximum aperture helps to realize its slim stature, and also suits working in difficult lighting conditions and offers control over depth of field for working with selective focus techniques. One aspherical element has been incorporated in the optical design, and helps to reduce distortion and spherical aberrations, and a Super EBC coating has also been applied to control flare and ghosting. Additionally, benefitting both photo and video applications, a high-torque DC coreless motor is used to realize quick, accurate, and near-silent autofocus performance. Key Features Short normal-length prime is designed for APS-C-format FUJIFILM X-mount mirrorless cameras and provides a 41mm equivalent focal length. Modestly bright f/2.8 maximum aperture benefits working in low-light, affords control over depth of field, and helps to keep the overall physical design compact and lightweight. Pancake form factor measures less than 1\\\" thick for an ultra-portable, versatile design. One aspherical element limits distortion and spherical aberration in order to realize greater sharpness and accurate rendering. Super EBC coating has been applied to individual elements to reduce lens flare and ghosting for improved contrast and color fidelity when working in strong lighting conditions. High-torque DC coreless motor provides especially quick, precise, and responsive autofocus performance. Rounded seven-blade diaphragm contributes to a pleasing bokeh quality. COL price VAL 449.95 COL priceCurrency VAL USD",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 6.6e-05,
+          "sim": 0.1395,
+          "llm_explanation": "The model likely predicted non-match because the two lenses have different focal lengths (23mm vs 27mm) and different apertures (f/2 vs f/2.8), which are key distinguishing numerical attributes, but these are actually the same product listing being matched across retailers \u2014 however, given the true label is \"match,\" this appears to be a case where the differing specifications (23mm f/2 vs 27mm f/2.8) actually indicate these are **different** Fujifilm XF lenses, suggesting the true label of"
+        },
+        {
+          "left": "COL brand VAL  COL title VAL Extreme Sdxc 128Gb 150Mb/S C10 U3 COL description VAL SanDisk 128GB 150MB/s Extreme SDXC UHS-I CardThe SanDisk Extreme SD UHS-I memory card delivers performance that lets you take control of your creativity. With shot speeds of up to 70MB/s and UHS speed Class 3 (U3) recording you\u00e2\u0080\u0099re ready to capture stunning high-resolution stutter-free 4K UHD video1. Its 150MB/s transfer speeds mean you can quickly move your photos where you want them. Plus it\u00e2\u0080\u0099s built to withstand weather water shocks and other less-than-ideal conditions so you can rest assured that it\u00e2\u0080\u0099s good to go wherever you go.SpecificationCapacity128 GBRead Speedup to 150 MB/sWrite Speedup to 70 MB/sVideo SpeedC10 U3 V30Form FactorSDXC COL price VAL 8.499E1 COL priceCurrency VAL NZD",
+          "right": "COL brand VAL  COL title VAL SANDISK 128GB SDXV5 EXTREME SDXC MEMORY CARD (SDSDXV5-128G-GNCIN)-WRTY LTD LIFET W/DISTRIBUTOR COL description VAL Warranty : LTD LifeTime with Local Distributor - Convergent COL price VAL 48.00 COL priceCurrency VAL SGD",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 6.7e-05,
+          "sim": 0.0729,
+          "llm_explanation": "The model likely failed because the RIGHT product's title is heavily obstructed by distributor/warranty information and uses an abbreviated model number (SDSDXV5-128G-GNCIN) rather than descriptive text, making it difficult to recognize that both products share the same key attributes (SanDisk, 128GB, Extreme SDXC, 150MB/s) that clearly identify them as the same item."
+        },
+        {
+          "left": "COL brand VAL  COL title VAL DLINK - DGS-1210-28P - 28 Port Gigabit Smart Managed POE Switch COL description VAL Cost-efficient and \ufb02exible solution for expanding any business network.24 x 10/100/1000BASE-T PoE ports4 x Gigabit RJ45/SFP Combo portsAdvanced L2 switching and security featuresL2+ Static RoutingOptional \u201cstandard mode\u201d or \u201csurveillance mode\u201d management user interface193 W PoE budget COL price VAL 40425 COL priceCurrency VAL INR",
+          "right": "COL brand VAL  COL title VAL D-LINK/NET/24X1GB POE SWITCH /+ 4 SFP/L2/RM COL description VAL D-link 24 PoE 10/100/1000 ports + 4 Gigabit SFP ports Web Smart Switch/ 48 Gbps Switching Capacity/ Fanless/ Reset Button x 1/ 13-inch/ 1U Desktop COL price VAL 7689.19 COL priceCurrency VAL ZAR",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 6.7e-05,
+          "sim": 0.0909,
+          "llm_explanation": "The model likely predicted non-match because the drastically different price values (40425 INR vs 7689.19 ZAR, which are actually approximately equivalent) and the highly abbreviated, dissimilar title formats obscured the fact that both products describe the same D-Link DGS-1210-28P 28-port Gigabit Smart Managed PoE switch with identical port configurations (24x PoE + 4x SFP combo)."
+        }
+      ],
+      "high_sim_non_match": [
+        {
+          "left": "COL brand VAL  COL title VAL HIGH ROLLER II 27.5 X 2.30 EXO TR FOLD 60TPI COL description VAL The second generation of the legendary High RollerOpen tread designEasily clears debrisSingle-ply, DoubleDown, and DH casings available3C MaxxTerra, 3C MaxxGrip, and Super Tacky available on select modelsWide trail (WT) casing specs are optimized for 30-35mm inner width rimsAn open and aggressive tread design gives the High Roller II excellent soil penetration and mud-clearing ability. A square profile provides a solid, consistent feel across the knobs. Modified knobs on the shoulder and center improve braking performance and traction on hard surfaces. An excellent choice for technical, loose terrain. The High Roller II is available in trail, enduro, and downhill specs. COL price VAL 7.299E1 COL priceCurrency VAL AUD",
+          "right": "COL brand VAL Maxxis COL title VAL Maxxis High Roller II 27.5x2.5WT TERRA/EXO/TR Tire COL description VAL An open and aggressive tread design gives the High Roller II excellent soil penetration and mud-clearing ability. A square profile provides a solid, consistent feel across the knobs. Modified knobs on the shoulder and center improve braking performance and traction on hard surfaces. An excellent choice for technical, loose terrain. The High Roller II is available in trail, enduro, and downhill specs. COL price VAL $68.00 COL priceCurrency VAL USD",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.999726,
+          "sim": 0.5217,
+          "llm_explanation": "The model likely focused on the shared brand name, description text, and \"High Roller II\" title while overlooking the critical size difference between the LEFT record (27.5 x **2.30**) and the RIGHT record (27.5 x **2.5WT**), which indicate different tire variants."
+        },
+        {
+          "left": "COL brand VAL  COL title VAL 8ch, PoC, Hikvision DVR, up to 8MP(8fps) TVI cameras supported COL description VAL 8ch DVR, up to 8MP HD-TVI, 5MP HD-AHD & 4MP HD-CVI cameras supported Power over Coax (PoC) model, allows the cameras to be powered by the DVR along the coax, no power pair required. Can be used with CAT5/6 UTP cable when used with our PoC video Baluns (product code BAL01P-POC) Auto-detects whether the camera is PoC or not 8MP@8fps, 5MP@12fps, 4MP@15fps & 2MP@25fps (frames/second). H.265 Pro+/H.265 Pro/H.265 video compression Up to 16 x cameras supported, 8 x HD-analogue + 8 x IP or up to 16 x IP only. Up to 10 TB capacity per HDD, 2 x HDD supported. 4 x Audio input supported. Support multiple VCA (Video Content Analytics) events for both analog and smart IP cameras. Dimensions (W \u00d7 D \u00d7 H), 380 \u00d7 320 \u00d7 48 mm COL price VAL 153.00 COL priceCurrency VAL GBP",
+          "right": "COL brand VAL  COL title VAL 8ch, PoC, Hikvision DVR, up to 4MP TVI camera supported COL description VAL 8ch DVR, up to 4MP cameras supported(TVI/AHD, 2MP max for CVI) Power over Coax (PoC) model, allows the cameras to be powered by the DVR along the coax, no power pair required. Can be used with CAT5/6 UTP cable when used with our PoC video Baluns (product code - BAL01P-POC) Auto-detects whether the camera is PoC or not. Support HDTVI/AHD/CVI/CVBS/IP video input 1080p and 4MP Lite resolution recording Supported @12fps H.265 Pro+/H.265 Pro/H.265 video compression Up to 12 x cameras supported, 8 x HD-analogue + 4 x IP or up to 12 x IP Up to 10 TB capacity per HDD, 2 x HDD supported 1 x Audio input supported 4ch Line crossing supported Dimensions (W \u00d7 D \u00d7 H), 380 \u00d7 320 \u00d7 48 mm COL price VAL 114.00 COL priceCurrency VAL GBP",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.99971,
+          "sim": 0.6371,
+          "llm_explanation": "The model likely focused on the many shared textual features (PoC, Hikvision, H.265, 8ch, coax cabling details) while failing to distinguish the critical differing camera resolution specifications \u2014 the left product supports up to 8MP at 8fps with up to 16 cameras total, whereas the right product only supports up to 4MP at 12fps with up to 12 cameras total \u2014 indicating these are distinct product models."
+        },
+        {
+          "left": "COL brand VAL  COL title VAL 27.5x2.40 3C/EXO/TR/MAXX TERRA COL description VAL The second generation of the legendary High Roller Open tread design Easily clears debris Single-ply, DoubleDown, and DH casings available 3C MaxxTerra, 3C MaxxGrip, and Super Tacky available on select models Wide trail (WT) casing specs are optimized for 30-35mm inner width rims An open and aggressive tread design gives the High Roller II excellent soil penetration and mud-clearing ability. A square profile provides a solid, consistent feel across the knobs. Modified knobs on the shoulder and center improve braking performance and traction on hard surfaces. An excellent choice for technical, loose terrain. The High Roller II is available in trail, enduro, and downhill specs. COL price VAL 109.99 COL priceCurrency VAL NZD",
+          "right": "COL brand VAL Maxxis COL title VAL Maxxis High Roller II 27.5x2.5WT TERRA/EXO/TR Tire COL description VAL An open and aggressive tread design gives the High Roller II excellent soil penetration and mud-clearing ability. A square profile provides a solid, consistent feel across the knobs. Modified knobs on the shoulder and center improve braking performance and traction on hard surfaces. An excellent choice for technical, loose terrain. The High Roller II is available in trail, enduro, and downhill specs. COL price VAL $68.00 COL priceCurrency VAL USD",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.999556,
+          "sim": 0.5455,
+          "llm_explanation": "The model likely focused on the shared description text and overlapping attributes (EXO/TR/TERRA, High Roller II, 27.5) while failing to distinguish the critical size difference: the LEFT product is a **2.40** width tire whereas the RIGHT product is a **2.5WT** (wide trail) tire, making them distinct products."
+        }
+      ],
+      "noisy_incomplete": [
+        {
+          "left": "COL brand VAL  COL title VAL Seamaster Planet Ocean 600m Automatic Chronometer Chronograph Men's Watch COL description VAL  COL price VAL 7140 COL priceCurrency VAL GBP",
+          "right": "COL brand VAL  COL title VAL Omega Seamaster 215.30.46.51.03.001 COL description VAL  COL price VAL  COL priceCurrency VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 6.8e-05,
+          "sim": 0.0769,
+          "llm_explanation": "The model likely failed to recognize that these are the same product because the right record presents the watch using Omega's formal model number (215.30.46.51.03.001) rather than the descriptive title used in the left record, and lacks price and currency information, making the surface-level textual overlap extremely low despite referring to the same watch."
+        },
+        {
+          "left": "COL brand VAL  COL title VAL SAMYANG24mm/1.4 ED AS UMC Nikon COL description VAL  COL price VAL  COL priceCurrency VAL ",
+          "right": "COL brand VAL Samyang COL title VAL Samyang 24mm F1.4 Nikon AE COL description VAL Samyang 24mm F1.4 Nikon AEKorean company Samyang has just introduced a new full frame, wide angle and manual lens Samyang 24 mm f/1.4 ED AS UMC. The lens will be available on Canon, Nikon, Sony Alpha, Pentax, Samsung NX and Four Thirds mounts.Optics of the lens has been constructed based on the system of 13 lenses arranged in 12 groups. It should be noted that 4 lenses has been made of the low-dispersion glass (ED), while two another are aspheric lenses. We have also employed multi-layered and anti-reflexive coatings of UMC type adding to the perfect light transmission. Samyang 24 mm F1.4 ED AS UMC has been designed to work with most popular reflex cameras produced by renown manufacturers and equipped with small-image sensors or smaller. The lens will be available with a mount for the following systems: Canon, Four Thirds, Nikon AE, Pentax, Samsung NX and Sony Alpha.A 24 mm focal length is tailor-made for most of the sensors available on the market today. In the case of full-frame cameras, it constitutes a high-quality wide-angle lens perfect for street, landscape and architecture shooting. Whereas photographers using DX sensors will get just perfect lens for the purposes of calmer journalist and landscape photography. The lens attached to Four Thirds cameras will create a universal and bright construction corresponding to the 50 mm focal length.GeneralSKUSAMY2414NAENameSamyang 24mm F1.4 Nikon AEEAN8809298885212MPNF1110803101SpecificationsGuaranteeCarefree enjoyment - 2 years warranty!Lens TypePrime LensSuitable forNikon DSLR cameraMaximum ApertureF1.4Optical StabilizedNoType of useStreet and urban,LandscapeWeight0,565 kgFilter size77mmSuitable for Full-FrameYesPerformanceCompatibilityNikonCamera brands compatibilityNikonManual focus-Compatible productsNikonLens systemComponent forSLRLens structure (elements/groups)13/12Lens typeGroothoekMinimum aperture number1,4Closest focusing distance0,25 mLens mount interfaceNikon FMaximum aperture number22Number of diaphragm blades8Diagonal angle of view (max)84,1\u00b0Fixed focal length2,4 cmImage sensor formatAPS-C, Full frameNumber of aspheric elements2Internal focus (IF)YesDiagonal angle of view (min)61.8\u00b0Weight & dimensionsDiameter8.3 cmFilter size7,7 cmLength9,5 cmWeight565 gDesignColour of productZwartPackaging contentBag includedJaLens hoodJadecorateTable('product-attribute-specs-table');Event.observe(window, 'load', function() {var table = $('product-attribute-specs-table');var specs = table.select('.spec');function removeActive(){table.select('.title a.active, .title span.active[data-href]').each(function(title,i){title.removeClassName('active');});}function activateMenu(title, table){if(!title.hasClassName('active')) {if (title.hasAttribute('href')) {table.select('.' + title.readAttribute('href').substr(1)).invoke('show');}if (title.hasAttribute('data-href')) {table.select('.' + title.readAttribute('data-href').substr(1)).invoke('show');}}title.addClassName('active')}table.select('.title a, .title span[data-href]').each(function(title,i){title.observe('click',function(e){e.preventDefault();specs.invoke('hide');removeActive();activateMenu(title, table);});if (i==0) {activateMenu(title, table);}});}); COL price VAL 499 COL priceCurrency VAL EUR",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.002792,
+          "sim": 0.0178,
+          "llm_explanation": "The model likely failed to recognize that \"SAMYANG24mm/1.4 ED AS UMC Nikon\" in the LEFT title is a concatenated, abbreviated form of the RIGHT's \"Samyang 24mm F1.4 Nikon AE\" describing the same lens, and with most LEFT attributes (brand, description, price) being empty, the model lacked sufficient overlapping textual evidence to identify the match."
+        }
+      ]
+    }
+  },
+  "llm_aug_cw_wdc-products": {
+    "run": "llm_aug_cw",
+    "dataset": "wdc-products",
+    "n_total": 4500,
+    "n_errors": 485,
+    "error_rate": 0.1078,
+    "class_counts": {
+      "ambiguous_variant": 380,
+      "low_sim_match": 93,
+      "high_sim_non_match": 11,
+      "noisy_incomplete": 1
+    },
+    "class_pct": {
+      "ambiguous_variant": 78.4,
+      "low_sim_match": 19.2,
+      "high_sim_non_match": 2.3,
+      "noisy_incomplete": 0.2
+    },
+    "representative_examples": {
+      "ambiguous_variant": [
+        {
+          "left": "COL brand VAL Blaze COL title VAL Blaze Grill Cart for Blaze 3 Burner Pro SKU BLZ-3PRO-CART COL description VAL Blaze Cart for Blaze 3 Burner Pro grill SKU BLZ-3PRO-CARTBlaze 3 Burner Pro Cart Only SKU BLZ-3PRO-CART Features:Folding side shelves for easier storage / mobilityStainless steel construction is durable in outdoor conditionsTwo drawers add practical storage for your BBQ accessories2 folding side shelves provide a convenient work area while grillingStainless Steel exterior for easy cleaning4 heavy duty casters allow you to re-position the grill for maximum mobilityBlaze 3 Burner Pro Cart Only SKU BLZ-3PRO-CART Description:Blaze 3 Burner Pro Cart Only SKU BLZ-3PRO-CART. BLZ-3PRO-CART.This Blaze stainless steel grill cart is specifically designed to house the Blaze Professional 3 burner gas grill. The two stainless steel side shelves keep your BBQ tools at hand and provide a convenient work area while you cook. The Blaze grill cart also features one front door with a rounded handle to access the cabinet below the grill where you can store your propane tank. It also features two drawers with rounded handles to store your grill cover and BBQ accessories. The cart is warranted for lifetime to the original owner against defects in manufacturing and workmanship. This warranty extends to the original purchaser against manufacture defects for products purchased for ordinary single-family home use. COL price VAL 1099.99 COL priceCurrency VAL USD",
+          "right": "COL brand VAL  COL title VAL Blaze Professional 34-Inch Grill Cart COL description VAL Blaze 34-Inch Burner Professional Grill CartThis Blaze stainless steel grill cart is specifically designed to house the Blaze Professional 3 burner gas grill. The two stainless steel side shelves keep your BBQ tools at hand and provide a convenient work area while you cook.The Blaze grill cart also features one front door with a rounded handle to access the cabinet below the grill where you can store your propane tank. It also features two drawers with rounded handles to store your grill cover and BBQ accessories.The cart is warranted for a lifetime to the original owner against defects in manufacturing and workmanship. This warranty extends to the original purchaser against manufacture defects for products purchased for ordinary single-family home use.GRILL OVERVIEWStainless steel construction is durable in outdoor conditionsTwo drawers add practical storage for your BBQ accessories2 folding side shelves provide a convenient work area while grilling4 heavy duty casters allow you to reposition the grill as neededSpecifications:WEIGHT: 119CONFIGURATION: On CartEXTERIOR MATERIAL: Stainless SteelMADE IN USA: YesWORK AREA: YesNUMBER OF SHELVES: 2ON WHEELS: YESDIMENSIONS: 34 3/4\\\" H x 65 1/2\\\" W x 26 3/4\\\" DWarranty: LifetimeAdditional Dimensions:Cart without Shelves - 35 1/4\\\" H x 33 3/4\\\" W x 23 7/8\\\" DSingle Shelf Dimensions - 15 3/4\\\" W x 23 7/8\\\" DDrawer Internal Dimensions - 5 7/8\\\" H x 12 7/8\\\" W x 19\\\" DPhysical Door Opening - 19 \\\" H x 14 1/8\\\" WBlaze 34-Inch Burner Professional Grill Cart Installation Manual COL price VAL 1099.99 COL priceCurrency VAL USD",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.00132,
+          "sim": 0.5176,
+          "llm_explanation": "The model likely predicted non-match because the RIGHT entity's title says \"Professional 34-Inch Grill Cart\" while the LEFT says \"3 Burner Pro Cart,\" and the RIGHT entity is missing a brand value, obscuring the shared key identifying features (Blaze brand, 3-burner professional cart with stainless steel construction, two drawers, and folding/fixed side shelves) that confirm these are the same product."
+        },
+        {
+          "left": "COL brand VAL  COL title VAL Daniel Wellington Classic Sheffield 40mm quartz watch COL description VAL  COL price VAL 95 COL priceCurrency VAL GBP",
+          "right": "COL brand VAL  COL title VAL Daniel Wellington Sheffield Classic DW00100020 COL description VAL  COL price VAL 189.00 COL priceCurrency VAL EUR",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.003204,
+          "sim": 0.3333,
+          "llm_explanation": "The model likely predicted non-match because the significant price difference (95 GBP vs. 189.00 EUR) and differing title formats obscured the fact that both entries refer to the same Daniel Wellington Classic Sheffield 40mm watch (model DW00100020), with the price disparity potentially reflecting currency conversion or retailer variation rather than different products."
+        },
+        {
+          "left": "COL brand VAL  COL title VAL Audemars Piguet Royal Oak Offshore Chronograph 42mm COL description VAL Audemars Piguet Royal Oak Offshore Chronograph 42mm COL price VAL 34800 COL priceCurrency VAL USD",
+          "right": "COL brand VAL  COL title VAL AAA Replica Audemars Piguet Royal Oak Offshore Chronograph Watch 26470OR.OO.A125CR.01 COL description VAL AAA Replica Audemars Piguet Royal Oak Offshore Chronograph Watch 26470OR.OO.A125CR.01 for sale from China with good prices. COL price VAL  COL priceCurrency VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.003953,
+          "sim": 0.3,
+          "llm_explanation": "The model likely misclassified this as a non-match because the \"AAA Replica\" prefix and the presence of a specific model reference number (26470OR.OO.A125CR.01) in the right record, combined with a missing price, made the right record appear to be a different or counterfeit product rather than the same Audemars Piguet Royal Oak Offshore Chronograph 42mm entity."
+        }
+      ],
+      "low_sim_match": [
+        {
+          "left": "COL brand VAL WTB COL title VAL WTB WTB Byway Tire - 650b x 47, TCS Tubeless, Folding, Black COL description VAL The Byway Road Plus tire allows riders to find comfort on remote gravel roads without being slowed down on the pavement required to reach them. COL price VAL 64.99 COL priceCurrency VAL USD",
+          "right": "COL brand VAL  COL title VAL Maxxis Tire High Roller II EXO/TR Foldable 29x2.30 COL description VAL An open and aggressive tread design gives the High Roller II excellent soil penetration and mud-clearing ability. A square profile provides a solid, consistent feel across the knobs. Modified knobs on the shoulder and center improve braking performance and traction on hard surfaces. An excellent choice for technical, loose terrain. The High Roller II is available in trail, enduro, and downhill specs. COL price VAL  COL priceCurrency VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.000977,
+          "sim": 0.0361,
+          "llm_explanation": "The model likely predicted non-match because the two product listings have almost no overlapping tokens (Jaccard similarity of 0.036), with different brand names (WTB vs. Maxxis), different tire dimensions, and vastly different descriptions focusing on different use cases (gravel/road vs. aggressive trail terrain), yet the true label indicates they are the same product, which seems highly questionable given the content \u2014 the model's \"error\" may actually reflect genuinely contradictory ground truth labeling rather than a model failure, as these appear to be two entirely"
+        },
+        {
+          "left": "COL brand VAL  COL title VAL Ilford FP4+ 125 B&W 120 Film COL description VAL In the Box COL price VAL 5.99 COL priceCurrency VAL USD",
+          "right": "COL brand VAL Canon COL title VAL Canon EF-S 18-200mm f/3.5-5.6 IS Lens COL description VAL Canon EF-S 18-200mm f/3.5-5.6 IS Lens - this product is manufactured by Canon in Japan (and maybe in other countries) COL price VAL  COL priceCurrency VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.000993,
+          "sim": 0.037,
+          "llm_explanation": "The model incorrectly predicted non-match likely because the LEFT entity has an empty brand field and describes a completely different product (Ilford FP4+ 120 film) with very different price, title, and description attributes compared to the Canon lens on the RIGHT, suggesting the **true label itself may be incorrect** (these two products appear to be genuinely different items, not a match)."
+        },
+        {
+          "left": "COL brand VAL  COL title VAL Nikon AF-S 50mm f1.8 G COL description VAL A revised design of a classic favourite, is this Nikon AF-S 50mm f1.8G lens. Suitable for use with both FX and DX format Nikon DSLRs, this fast prime lens is suitable for a vast array of subject matters and brilliant for low-light shooting. The compact design of this lens, the versatile focal length and its outstanding optical performance all lead to it being a must have in your kit - ideal for your landscapes, portraits, happy snaps and travel shots.Bright f1.8 Aperture - Well suited to available light photographyFast & quiet autofocus - SWMAspherical Lens element - Sharp images free from aberrationsM/A focus mode - instant override from auto to manual focusNikon\u2019s super integrated coating - reduction in flareView The Full Tech Sheet HERE COL price VAL 349.95 COL priceCurrency VAL AUD",
+          "right": "COL brand VAL Canon COL title VAL Canon Canon EF 100mm f/2.8L Macro IS USM COL description VAL This item may qualify for an Instant Rebate. Any current manufacturer rebate will be refunded to your card after purchase. Please email shop@lookingglassphoto.com if you have any questions. COL price VAL 899.99 COL priceCurrency VAL USD",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.000997,
+          "sim": 0.0556,
+          "llm_explanation": "The model correctly identified that these are two different lenses (Nikon 50mm f/1.8 vs. Canon 100mm f/2.8 Macro) with different brands, focal lengths, and prices, making the true label of \"match\" almost certainly incorrect \u2014 this appears to be a labeling error in the dataset rather than a model prediction error."
+        }
+      ],
+      "high_sim_non_match": [
+        {
+          "left": "COL brand VAL  COL title VAL RAM\u00ae Double Socket Arm C Ball B Length COL description VAL C Size 1.5\" Rubber BallCapacity: up to 1.8 kgPowder Coated Marine Grade Aluminum COL price VAL 28 COL priceCurrency VAL EUR",
+          "right": "COL brand VAL  COL title VAL RAM\u00ae Double Socket Arm C Size COL description VAL C Size 1.5\" Rubber BallCapacity: up to 1.8 kgPowder Coated Marine Grade Aluminum COL price VAL 43 COL priceCurrency VAL EUR",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.995601,
+          "sim": 0.7826,
+          "llm_explanation": "The model likely failed to distinguish between two different product variants \u2014 \"Double Socket Arm C Ball B Length\" vs. \"Double Socket Arm C Size\" \u2014 because the highly similar descriptions, brand, and currency overshadowed this key title difference indicating distinct products (one specifying a ball length variant, the other a size variant) and the price discrepancy (28 vs. 43 EUR)."
+        },
+        {
+          "left": "COL brand VAL  COL title VAL Elixir 16002 Acoustic Strings Phosphor Bronze Nanoweb Coating, 6-String, Extra Light COL description VAL Elixir\u00ae Strings Acoustic Phosphor Bronze with NANOWEB\u00ae Coating deliver distinctive phosphor bronze warmth and sparkle together with extended tone life.#1 acoustic guitar string*Only coated string brand to protect the entire string with an ultra-thin coating, keeping gunk out of the gaps between the windingsExtended Tone Life \u2013 players report their tone lasts longer than any other string, uncoated or coatedConsistent performance and tone \u2013 ready to play whenever you areSmooth feel that is easy on your fingers and enhances playabilityReduces finger squeak \u2013 good for both performance and recordingAnti-Rust Plated Plain Steel Strings resist tone-deadening corrosion, ensuring a longer life for entire setWith less hassle and expense of frequent string changes, spend more time making music COL price VAL 14.99 COL priceCurrency VAL USD",
+          "right": "COL brand VAL  COL title VAL Elixir 16052 Acoustic Strings Phosphor Bronze Nanoweb Coating, 6-String, Light COL description VAL Elixir\u00ae Strings Acoustic Phosphor Bronze with NANOWEB\u00ae Coating deliver distinctive phosphor bronze warmth and sparkle together with extended tone life.#1 acoustic guitar string*Only coated string brand to protect the entire string with an ultra-thin coating, keeping gunk out of the gaps between the windingsExtended Tone Life \u2013 players report their tone lasts longer than any other string, uncoated or coatedConsistent performance and tone \u2013 ready to play whenever you areSmooth feel that is easy on your fingers and enhances playabilityReduces finger squeak \u2013 good for both performance and recordingAnti-Rust Plated Plain Steel Strings resist tone-deadening corrosion, ensuring a longer life for entire setWith less hassle and expense of frequent string changes, spend more time making music COL price VAL 14.99 COL priceCurrency VAL USD",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.995198,
+          "sim": 0.9697,
+          "llm_explanation": "The model failed to distinguish between two different product variants \u2014 \"Extra Light\" (16002) vs. \"Light\" (16052) \u2014 because the descriptions are nearly identical and these critical differentiating details (gauge designation and model number) are minor textual differences that were likely overwhelmed by the overwhelming token overlap (0.970 Jaccard similarity) across the rest of the attributes."
+        },
+        {
+          "left": "COL brand VAL Maxxis COL title VAL Maxxis High Roller II 27.5x2.3 DC/EXO/TR Tire COL description VAL An open and aggressive tread design gives the High Roller II excellent soil penetration and mud-clearing ability. A square profile provides a solid, consistent feel across the knobs. Modified knobs on the shoulder and center improve braking performance and traction on hard surfaces. An excellent choice for technical, loose terrain. The High Roller II is available in trail, enduro, and downhill specs. COL price VAL $52.00 COL priceCurrency VAL USD",
+          "right": "COL brand VAL Maxxis COL title VAL Maxxis High Roller II 27.5x2.5WT TERRA/EXO/TR Tire COL description VAL An open and aggressive tread design gives the High Roller II excellent soil penetration and mud-clearing ability. A square profile provides a solid, consistent feel across the knobs. Modified knobs on the shoulder and center improve braking performance and traction on hard surfaces. An excellent choice for technical, loose terrain. The High Roller II is available in trail, enduro, and downhill specs. COL price VAL $68.00 COL priceCurrency VAL USD",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.992554,
+          "sim": 0.8947,
+          "llm_explanation": "The model was likely misled by the near-identical descriptions, brand, and shared product name, while failing to give sufficient weight to the critical differences in tire size (27.5x2.3 vs. 27.5x2.5WT), casing specification (DC vs. TERRA), and price ($52.00 vs. $68.00), which together indicate these are distinct product variants."
+        }
+      ],
+      "noisy_incomplete": [
+        {
+          "left": "COL brand VAL  COL title VAL Seamaster Planet Ocean 600m Automatic Chronometer Chronograph Men's Watch COL description VAL  COL price VAL 7140 COL priceCurrency VAL GBP",
+          "right": "COL brand VAL  COL title VAL Omega Seamaster 215.30.46.51.03.001 COL description VAL  COL price VAL  COL priceCurrency VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.000989,
+          "sim": 0.0769,
+          "llm_explanation": "The model likely failed to recognize these as a match because the right record uses only the technical model number (215.30.46.51.03.001) without descriptive text, while the left record contains the full descriptive title (\"Seamaster Planet Ocean 600m Automatic Chronometer Chronograph\"), making the surface-level textual overlap very low despite both referring to the same Omega Seamaster watch."
+        }
+      ]
+    }
+  },
+  "web_aug_cw_wdc-products": {
+    "run": "web_aug_cw",
+    "dataset": "wdc-products",
+    "n_total": 4500,
+    "n_errors": 384,
+    "error_rate": 0.0853,
+    "class_counts": {
+      "ambiguous_variant": 256,
+      "low_sim_match": 117,
+      "high_sim_non_match": 9,
+      "noisy_incomplete": 2
+    },
+    "class_pct": {
+      "ambiguous_variant": 66.7,
+      "low_sim_match": 30.5,
+      "high_sim_non_match": 2.3,
+      "noisy_incomplete": 0.5
+    },
+    "representative_examples": {
+      "ambiguous_variant": [
+        {
+          "left": "COL brand VAL  COL title VAL Daniel Wellington Classic Sheffield 40mm quartz watch COL description VAL  COL price VAL 95 COL priceCurrency VAL GBP",
+          "right": "COL brand VAL  COL title VAL Daniel Wellington Sheffield Classic DW00100020 COL description VAL  COL price VAL 189.00 COL priceCurrency VAL EUR",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.000962,
+          "sim": 0.3333,
+          "llm_explanation": "The model likely predicted non-match because the significant price difference (95 GBP vs 189.00 EUR) and slight title variation (\"Classic Sheffield 40mm quartz watch\" vs \"Sheffield Classic DW00100020\") obscured the fact that both entries refer to the same Daniel Wellington watch model, with the model failing to recognize that currency conversion and different product description formats can account for these discrepancies."
+        },
+        {
+          "left": "COL brand VAL Park Tool COL title VAL Park Tool PH-1.2 P-Handle Hex Wrench Set COL description VAL Engineered for fit, function, and leverage, these L-shaped shop quality hex wrenches are a must have for every workshopDurable wall/pegboard mount tool holder allows easy access and organizationComfortable, ergonomically designed nylon handles fit perfectly in your handStraight hex shaft on the short side, ball end on the long sideIncludes 2, 2.5, 3, 4, 5, 6, 8, and 10mmHigh-torque, industrial steel wrenches COL price VAL $76.95 COL priceCurrency VAL USD",
+          "right": "COL brand VAL  COL title VAL Park Tool Handle Hex Wrench Set PH-12 COL description VAL Engineered for fit, function, and leverage, these L-shaped shop quality hex wrenches are a must have for every workshop.Features :High-torque, industrial steel wrenchesStraight hex shaft on the short side, ball end on the long sideIncludes 2, 2.5, 3, 4, 5, 6, 8, and 10mmComfortable, ergonomically designed nylon handles fit perfectly in your handDurable wall/pegboard mount tool holder allows easy access and organizationAvailable 3-Way storage (tools not included) COL price VAL 84.99 COL priceCurrency VAL EUR",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.001038,
+          "sim": 0.6974,
+          "llm_explanation": "The model likely predicted non-match due to the differing prices ($76.95 USD vs. 84.99 EUR) and minor title formatting differences (PH-1.2 vs. PH-12), causing it to overweight these surface-level discrepancies while ignoring the near-identical descriptions, brand, and product specifications that clearly identify these as the same product."
+        },
+        {
+          "left": "COL brand VAL Blaze COL title VAL Blaze Grill Cart for Blaze 3 Burner Pro SKU BLZ-3PRO-CART COL description VAL Blaze Cart for Blaze 3 Burner Pro grill SKU BLZ-3PRO-CARTBlaze 3 Burner Pro Cart Only SKU BLZ-3PRO-CART Features:Folding side shelves for easier storage / mobilityStainless steel construction is durable in outdoor conditionsTwo drawers add practical storage for your BBQ accessories2 folding side shelves provide a convenient work area while grillingStainless Steel exterior for easy cleaning4 heavy duty casters allow you to re-position the grill for maximum mobilityBlaze 3 Burner Pro Cart Only SKU BLZ-3PRO-CART Description:Blaze 3 Burner Pro Cart Only SKU BLZ-3PRO-CART. BLZ-3PRO-CART.This Blaze stainless steel grill cart is specifically designed to house the Blaze Professional 3 burner gas grill. The two stainless steel side shelves keep your BBQ tools at hand and provide a convenient work area while you cook. The Blaze grill cart also features one front door with a rounded handle to access the cabinet below the grill where you can store your propane tank. It also features two drawers with rounded handles to store your grill cover and BBQ accessories. The cart is warranted for lifetime to the original owner against defects in manufacturing and workmanship. This warranty extends to the original purchaser against manufacture defects for products purchased for ordinary single-family home use. COL price VAL 1099.99 COL priceCurrency VAL USD",
+          "right": "COL brand VAL  COL title VAL Blaze Professional 34-Inch Grill Cart COL description VAL Blaze 34-Inch Burner Professional Grill CartThis Blaze stainless steel grill cart is specifically designed to house the Blaze Professional 3 burner gas grill. The two stainless steel side shelves keep your BBQ tools at hand and provide a convenient work area while you cook.The Blaze grill cart also features one front door with a rounded handle to access the cabinet below the grill where you can store your propane tank. It also features two drawers with rounded handles to store your grill cover and BBQ accessories.The cart is warranted for a lifetime to the original owner against defects in manufacturing and workmanship. This warranty extends to the original purchaser against manufacture defects for products purchased for ordinary single-family home use.GRILL OVERVIEWStainless steel construction is durable in outdoor conditionsTwo drawers add practical storage for your BBQ accessories2 folding side shelves provide a convenient work area while grilling4 heavy duty casters allow you to reposition the grill as neededSpecifications:WEIGHT: 119CONFIGURATION: On CartEXTERIOR MATERIAL: Stainless SteelMADE IN USA: YesWORK AREA: YesNUMBER OF SHELVES: 2ON WHEELS: YESDIMENSIONS: 34 3/4\\\" H x 65 1/2\\\" W x 26 3/4\\\" DWarranty: LifetimeAdditional Dimensions:Cart without Shelves - 35 1/4\\\" H x 33 3/4\\\" W x 23 7/8\\\" DSingle Shelf Dimensions - 15 3/4\\\" W x 23 7/8\\\" DDrawer Internal Dimensions - 5 7/8\\\" H x 12 7/8\\\" W x 19\\\" DPhysical Door Opening - 19 \\\" H x 14 1/8\\\" WBlaze 34-Inch Burner Professional Grill Cart Installation Manual COL price VAL 1099.99 COL priceCurrency VAL USD",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.001101,
+          "sim": 0.5176,
+          "llm_explanation": "The model likely predicted non-match because the RIGHT record lacks a brand value and uses different title phrasing (\"Professional 34-Inch Grill Cart\" vs. \"Grill Cart for Blaze 3 Burner Pro\"), obscuring that both records describe the same Blaze stainless steel cart specifically designed for the Blaze 3-burner professional grill, as confirmed by shared distinguishing features (two drawers, folding/stainless steel side shelves, front door access)."
+        }
+      ],
+      "low_sim_match": [
+        {
+          "left": "COL brand VAL  COL title VAL Ilford FP4+ 125 B&W 120 Film COL description VAL In the Box COL price VAL 5.99 COL priceCurrency VAL USD",
+          "right": "COL brand VAL Canon COL title VAL Canon EF-S 18-200mm f/3.5-5.6 IS Lens COL description VAL Canon EF-S 18-200mm f/3.5-5.6 IS Lens - this product is manufactured by Canon in Japan (and maybe in other countries) COL price VAL  COL priceCurrency VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.000748,
+          "sim": 0.037,
+          "llm_explanation": "The true label \"match\" seems incorrect here, as these are clearly two completely different products (a black-and-white film roll vs. a camera lens from different brands), making this likely a **label error in the dataset** rather than a model prediction error."
+        },
+        {
+          "left": "COL brand VAL Logitech COL title VAL Logitech BRIO webcam 4096 x 2160 pixels USB 3.2 Gen 1 (3.1 Gen 1) Noir COL description VAL Logitech BRIO, 4096 x 2160 pixels, 90 ips, 1280x720@30fps,1280x720@60fps,1920x1080@30fps,1920x1080@60fps, 720p,1080p,2160p, 5x, 90\u00b0 COL price VAL 291.07 COL priceCurrency VAL EUR",
+          "right": "COL brand VAL Logitech COL title VAL Logitech Brio Ultra HD Pro 4K with HDR Webcam COL description VAL Logitech Brio Ultra HD Pro 4K Webcam with RightLight 3 with HDR, 5x Digital Zoom, Infrared Facial Recognition COL price VAL 263.99 COL priceCurrency VAL GBP",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.000755,
+          "sim": 0.0732,
+          "llm_explanation": "The model likely predicted non-match because the RIGHT entity's title uses marketing-focused language (\"Ultra HD Pro 4K with HDR\") while the LEFT entity's title contains technical specifications (resolution \"4096 x 2160 pixels,\" \"USB 3.2 Gen 1,\" \"Noir\"), resulting in very low token overlap (0.073) despite both clearly referring to the same Logitech BRIO webcam, and the model failed to recognize that the shared brand, product family name (\"BRIO\"/\"Brio\"), 4"
+        },
+        {
+          "left": "COL brand VAL EPSON COL title VAL EPSON Multipack fr EPSON Stylus Photo R200 / R300 Inhalt: je 1x light cyan, cyan, light magenta, magenta, gelb, schwarz (neu: C13T04874010 / alt: C13T048140A0) R220 / R320 / R340 / RX500 / RX600 / RX620 / RX640 COL description VAL  COL price VAL 99.41 COL priceCurrency VAL ",
+          "right": "COL brand VAL  COL title VAL Original Epson T0487 Ink cartridge Multipack COL description VAL Original Epson T0487 Ink cartridge Multipack COL price VAL 109.62 COL priceCurrency VAL GBP",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.000776,
+          "sim": 0.0588,
+          "llm_explanation": "The model likely failed to recognize that both records refer to the same Epson T0487 multipack ink cartridge because the left record encodes this as a verbose German description with part numbers (C13T04874010/C13T048140A0) and printer compatibility details, while the right record simply states \"T0487 Multipack,\" resulting in very low token overlap that obscured their shared product identity."
+        }
+      ],
+      "high_sim_non_match": [
+        {
+          "left": "COL brand VAL  COL title VAL Evans EC2S Clear 14\\\" Drumhead COL description VAL Evans clear EC2 series features two plies of 7mil film with optimized attack, tone, length of sustain and ease of tuning for each size head. The Sound Shaping Technology (SST) Edge Control ring mounted on the underside delivers an extremely well balanced and pre-EQ'd sound across the full kit by varying the size of the ring for each different head size. Evans Level 360 technology is incorporated to extend the level playing surface of the drumhead, 360 degrees around the drum. The vertically enhanced collar design guarantees even contact with the critical bearing edge of the drum shell, resulting in: ease of tuning, extended pitch range and optimum quality of sound. Evans Level 360 technology resolves the age-old dilemma of traditional synthetic heads consistently not fitting the drum shell without using considerable force.Features:Ideal for:Rock,Gospel, PopSize: 14\\\"Treatment:ClearPly: 2Technology: SST14\\\" drum head made using two plies of 7mil filmTwo plies offer consistency and durability for longer playing timeExclusive Sound Shaping Technology (SST) provides the ideal amount of dampening tailored for each individually sized drum headAlso available in a coated version with a unique translucent appearanceExclusive Level 360 Technology collar design ensures proper contact between drum head and drum shellAll Evans drumheads are designed, engineered, and manufactured in the USALEARN MORE:\u2192Drum SetSurvival Guide byBob Gatzen\u2192Selecting the Perfect TomHead COL price VAL 7.5E1 COL priceCurrency VAL MYR",
+          "right": "COL brand VAL  COL title VAL Evans EC2S Clear 13\\\" Drumhead COL description VAL Evans clear EC2 series features two plies of 7mil film with optimized attack, tone, length of sustain and ease of tuning for each size head. The Sound Shaping Technology (SST) Edge Control ring mounted on the underside delivers an extremely well balanced and pre-EQ'd sound across the full kit by varying the size of the ring for each different head size. Evans Level 360 technology is incorporated to extend the level playing surface of the drumhead, 360 degrees around the drum. The vertically enhanced collar design guarantees even contact with the critical bearing edge of the drum shell, resulting in: ease of tuning, extended pitch range and optimum quality of sound. Evans Level 360 technology resolves the age-old dilemma of traditional synthetic heads consistently not fitting the drum shell without using considerable force.Features:Ideal for:Rock,Gospel, PopSize: 13\\\"Treatment:ClearPly: 2Technology: SST13\\\" drum head made using two plies of 7mil filmTwo plies offer consistency and durability for longer playing timeExclusive Sound Shaping Technology (SST) provides the ideal amount of dampening tailored for each individually sized drum headAlso available in a coated version with a unique translucent appearanceExclusive Level 360 Technology collar design ensures proper contact between drum head and drum shellAll Evans drumheads are designed, engineered, and manufactured in the USALEARN MORE:\u2192Drum SetSurvival Guide byBob Gatzen\u2192Selecting the Perfect TomHead COL price VAL 7.2E1 COL priceCurrency VAL MYR",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.980469,
+          "sim": 0.9459,
+          "llm_explanation": "The model likely failed to detect the critical difference in drumhead size (14\\\" vs. 13\\\") buried within highly similar titles, overwhelmed by the near-identical brand, description, and other attributes that dominate the overall token similarity."
+        },
+        {
+          "left": "COL brand VAL  COL title VAL HIGH ROLLER II 27.5 X 2.30 EXO TR FOLD 60TPI COL description VAL The second generation of the legendary High RollerOpen tread designEasily clears debrisSingle-ply, DoubleDown, and DH casings available3C MaxxTerra, 3C MaxxGrip, and Super Tacky available on select modelsWide trail (WT) casing specs are optimized for 30-35mm inner width rimsAn open and aggressive tread design gives the High Roller II excellent soil penetration and mud-clearing ability. A square profile provides a solid, consistent feel across the knobs. Modified knobs on the shoulder and center improve braking performance and traction on hard surfaces. An excellent choice for technical, loose terrain. The High Roller II is available in trail, enduro, and downhill specs. COL price VAL 7.299E1 COL priceCurrency VAL AUD",
+          "right": "COL brand VAL Maxxis COL title VAL Maxxis High Roller II 27.5x2.5WT TERRA/EXO/TR Tire COL description VAL An open and aggressive tread design gives the High Roller II excellent soil penetration and mud-clearing ability. A square profile provides a solid, consistent feel across the knobs. Modified knobs on the shoulder and center improve braking performance and traction on hard surfaces. An excellent choice for technical, loose terrain. The High Roller II is available in trail, enduro, and downhill specs. COL price VAL $68.00 COL priceCurrency VAL USD",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.980319,
+          "sim": 0.5217,
+          "llm_explanation": "The model likely focused on the shared brand, product name, and description text while overlooking the critical size difference between the two products: the LEFT record specifies **27.5 x 2.30** whereas the RIGHT record specifies **27.5 x 2.5WT**, making them distinct tire variants."
+        },
+        {
+          "left": "COL brand VAL  COL title VAL Elixir 16002 Acoustic Strings Phosphor Bronze Nanoweb Coating, 6-String, Extra Light COL description VAL Elixir\u00ae Strings Acoustic Phosphor Bronze with NANOWEB\u00ae Coating deliver distinctive phosphor bronze warmth and sparkle together with extended tone life.#1 acoustic guitar string*Only coated string brand to protect the entire string with an ultra-thin coating, keeping gunk out of the gaps between the windingsExtended Tone Life \u2013 players report their tone lasts longer than any other string, uncoated or coatedConsistent performance and tone \u2013 ready to play whenever you areSmooth feel that is easy on your fingers and enhances playabilityReduces finger squeak \u2013 good for both performance and recordingAnti-Rust Plated Plain Steel Strings resist tone-deadening corrosion, ensuring a longer life for entire setWith less hassle and expense of frequent string changes, spend more time making music COL price VAL 14.99 COL priceCurrency VAL USD",
+          "right": "COL brand VAL  COL title VAL Elixir 16052 Acoustic Strings Phosphor Bronze Nanoweb Coating, 6-String, Light COL description VAL Elixir\u00ae Strings Acoustic Phosphor Bronze with NANOWEB\u00ae Coating deliver distinctive phosphor bronze warmth and sparkle together with extended tone life.#1 acoustic guitar string*Only coated string brand to protect the entire string with an ultra-thin coating, keeping gunk out of the gaps between the windingsExtended Tone Life \u2013 players report their tone lasts longer than any other string, uncoated or coatedConsistent performance and tone \u2013 ready to play whenever you areSmooth feel that is easy on your fingers and enhances playabilityReduces finger squeak \u2013 good for both performance and recordingAnti-Rust Plated Plain Steel Strings resist tone-deadening corrosion, ensuring a longer life for entire setWith less hassle and expense of frequent string changes, spend more time making music COL price VAL 14.99 COL priceCurrency VAL USD",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.977045,
+          "sim": 0.9697,
+          "llm_explanation": "The model failed to detect that the two products differ in string gauge (\"Extra Light\" vs. \"Light\") and product number (\"16002\" vs. \"16052\"), which are critical distinguishing attributes, because the overwhelming similarity of all other text (brand, description, coating type) dominated the matching signal."
+        }
+      ],
+      "noisy_incomplete": [
+        {
+          "left": "COL brand VAL  COL title VAL Seamaster Planet Ocean 600m Automatic Chronometer Chronograph Men's Watch COL description VAL  COL price VAL 7140 COL priceCurrency VAL GBP",
+          "right": "COL brand VAL  COL title VAL Omega Seamaster 215.30.46.51.03.001 COL description VAL  COL price VAL  COL priceCurrency VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.000878,
+          "sim": 0.0769,
+          "llm_explanation": "The model likely failed to recognize these as a match because the right record uses a cryptic model number (215.30.46.51.03.001) rather than the descriptive title \"Seamaster Planet Ocean 600m Automatic Chronometer Chronograph,\" making it difficult to link the two records without domain knowledge that this part number corresponds to that specific watch, and the absence of price, currency, and brand information on the right further reduces the surface-level similarity."
+        },
+        {
+          "left": "COL brand VAL Omega COL title VAL Planet Ocean 600M Omega Co-Axial Chronograph 45.5mm 232.30.46.51.01.002 COL description VAL Planet Ocean 600M Omega Co-Axial Chronograph 45.5mm It was with OMEGA's maritime legacy in mind that the brand launched its Planet Ocean line in 2005. The stylish OMEGA Seamaster Planet Ocean 600M pays homage to OMEGA's dive watch heritage.This model, with its scratch-resistant sapphire crystal, features a black dial with a small seconds dial, a date window and a central chronograph hand. Sixty-minute and 12-hour counters are found on the same dial at the 3 o'clock position, allowing for intuitive reading of the elapsed time. The orange unidirectional rotating divers' bezel is mounted on a 45.5 mm stainless steel case on a stainless steel bracelet.The OMEGA Seamaster Planet Ocean 600M is water resistant to 600 metres / 2000 feet / 60 bar, and has a helium-escape valve. This certified chronometer timepiece is powered by the OMEGA Co-Axial calibre 9300 which can be seen through the transparent caseback. COL price VAL 8000 COL priceCurrency VAL USD",
+          "right": "COL brand VAL  COL title VAL Omega Seamaster 215.32.46.51.01.001 COL description VAL  COL price VAL  COL priceCurrency VAL ",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.78316,
+          "sim": 0.0185,
+          "llm_explanation": "The model likely focused on the strong overlap of brand-related terms (\"Omega,\" \"Seamaster,\" \"Planet Ocean\") in the left record's verbose description while ignoring that the right record has a different model number (215.32.46.51.01.001 vs. 232.30.46.51.01.002), a different product line (Seamaster vs. Planet Ocean 600M Chronograph), and is almost entirely empty of descriptive attributes that would have revealed the mismatch."
+        }
+      ]
+    }
+  },
+  "baseline_dblp-scholar": {
+    "run": "baseline",
+    "dataset": "dblp-scholar",
+    "n_total": 5742,
+    "n_errors": 91,
+    "error_rate": 0.0158,
+    "class_counts": {
+      "ambiguous_variant": 75,
+      "high_sim_non_match": 7,
+      "noisy_incomplete": 6,
+      "low_sim_match": 3
+    },
+    "class_pct": {
+      "ambiguous_variant": 82.4,
+      "high_sim_non_match": 7.7,
+      "noisy_incomplete": 6.6,
+      "low_sim_match": 3.3
+    },
+    "representative_examples": {
+      "ambiguous_variant": [
+        {
+          "left": "COL title VAL on processing xml in ldap COL authors VAL p marr\u0453n , g lausen COL venue VAL vldb COL year VAL 2001",
+          "right": "COL title VAL processing xml in ldap and its application to caching COL authors VAL pj marron COL venue VAL phd thesis , universitat freiburg , october COL year VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 2.7e-05,
+          "sim": 0.2083,
+          "llm_explanation": "The model likely predicted non-match because the significant differences in the title (partial vs. extended), the venue mismatch (VLDB conference vs. PhD thesis), the missing year on the right, and the author name encoding issue (\"marr\u0453n\" vs. \"marron\") collectively obscured that these records refer to the same underlying work."
+        },
+        {
+          "left": "COL title VAL tree pattern query minimization COL authors VAL s amer-yahia , s cho , l lakshmanan , d srivastava COL venue VAL vldb j. COL year VAL 2002",
+          "right": "COL title VAL treepattern queriesminimization COL authors VAL s amer-yahia , s cho , l lakshmanan , d srivastava COL venue VAL  COL year VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 2.7e-05,
+          "sim": 0.4706,
+          "llm_explanation": "The model likely predicted non-match because the RIGHT record has empty venue and year fields, and the title appears as a single concatenated token (\"treepattern queriesminimization\") without spaces, making the two records look more dissimilar than they are despite sharing identical authors and clearly referring to the same publication."
+        },
+        {
+          "left": "COL title VAL watermarking relational databases COL authors VAL r agrawal , j kiernan COL venue VAL vldb COL year VAL 2002",
+          "right": "COL title VAL watermarking relational data : framework , algorithms and analysis COL authors VAL r agrawal , pj haas , j kiernan COL venue VAL the vldb journal the international journal on very large & hellip ; , COL year VAL 2003.0",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 2.9e-05,
+          "sim": 0.2857,
+          "llm_explanation": "The model likely predicted non-match because the two records differ in year (2002 vs. 2003), author list (missing \"pj haas\" on the left), and venue (conference proceedings \"vldb\" vs. journal \"The VLDB Journal\"), obscuring that these are a conference paper and its extended journal version of the same work by the same core authors on the same topic."
+        }
+      ],
+      "high_sim_non_match": [
+        {
+          "left": "COL title VAL towards a richer web object model COL authors VAL f manola COL venue VAL sigmod record COL year VAL 1998",
+          "right": "COL title VAL towards a web object model COL authors VAL f manola COL venue VAL  COL year VAL ",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.999631,
+          "sim": 0.6364,
+          "llm_explanation": "The model likely focused on the strong overlap in authors (\"f manola\"), shared keywords (\"towards,\" \"web,\" \"object,\" \"model\"), and matching venue/year patterns, while failing to give sufficient weight to the meaningful title difference \u2014 \"towards a **richer** web object model\" vs. \"towards a web object model\" \u2014 which indicates these are distinct but closely related publications."
+        },
+        {
+          "left": "COL title VAL context-based prefetch - an optimization for implementing objects on relations COL authors VAL p bernstein , s pal , d shutt COL venue VAL vldb j. COL year VAL 2000",
+          "right": "COL title VAL context-based prefetch for implementing objects on relations COL authors VAL pa bernstein , s pal , d shutt COL venue VAL vldb , COL year VAL 1999.0",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.999629,
+          "sim": 0.6364,
+          "llm_explanation": "The model likely predicted \"match\" because the titles, authors, and venue are nearly identical, causing it to overlook the critical difference in publication year (2000 vs. 1999) and the subtle title wording difference (\"an optimization for\" vs. missing that phrase), which together indicate these are distinct but closely related records (e.g., a journal version vs. a conference version)."
+        },
+        {
+          "left": "COL title VAL sqlj part 0 , now known as sql/olb ( object-language bindings ) COL authors VAL a eisenberg , j melton COL venue VAL sigmod record COL year VAL 1998",
+          "right": "COL title VAL 0 , now known as sql/olb ( object-language bindings ) COL authors VAL s part COL venue VAL  COL year VAL 1998.0",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.99941,
+          "sim": 0.5238,
+          "llm_explanation": "The model likely focused on the high overlap of title tokens and matching year, while ignoring the critical author mismatch \u2014 \"a eisenberg, j melton\" versus \"s part\" \u2014 which clearly identifies these as different records."
+        }
+      ],
+      "noisy_incomplete": [
+        {
+          "left": "COL title VAL guest editorial COL authors VAL  COL venue VAL  COL year VAL 2000",
+          "right": "COL title VAL guest editorial COL authors VAL p atzeni , ao mendelzon COL venue VAL the vldb journal the international journal on very large & hellip ; , COL year VAL 2000.0",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.99919,
+          "sim": 0.1053,
+          "llm_explanation": "The left record has empty author and venue fields, making it an incomplete/generic entry that shares only the title \"guest editorial\" and year 2000 with the right record, but the model incorrectly treated the matching title and year as sufficient evidence for a match, ignoring that \"guest editorial\" is a common, non-distinctive title that could refer to many different publications."
+        },
+        {
+          "left": "COL title VAL guest editorial COL authors VAL  COL venue VAL  COL year VAL 2003",
+          "right": "COL title VAL guest editorial COL authors VAL pa bernstein , y ioannidis , r ramakrishnan COL venue VAL the vldb journal the international journal on very large & hellip ; , COL year VAL 2003.0",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.998483,
+          "sim": 0.0952,
+          "llm_explanation": "The model incorrectly predicted a match likely because the LEFT record has empty author and venue fields, leaving the shared generic title \"guest editorial\" and year (2003) as the only meaningful signals, which the model over-weighted despite the RIGHT record's specific author and venue information that cannot be verified against the LEFT's missing data \u2014 and \"guest editorial\" is a common, non-distinctive title that could refer to many different publications."
+        },
+        {
+          "left": "COL title VAL guest editorial COL authors VAL  COL venue VAL  COL year VAL 2001",
+          "right": "COL title VAL guest editorial COL authors VAL f casati , mc shan , d georgakopoulos COL venue VAL the vldb journal the international journal on very large & hellip ; , COL year VAL 2001.0",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.997449,
+          "sim": 0.0952,
+          "llm_explanation": "The model incorrectly predicted a match because the left record has no author or venue information, making the title and year overlap appear sufficient for a match, while the right record's specific authorship (casati, shan, georgakopoulos) and venue details reveal it is a distinct publication that the left record's missing fields cannot confirm as the same entity."
+        }
+      ],
+      "low_sim_match": [
+        {
+          "left": "COL title VAL a language for manipulating arrays COL authors VAL a marathe , k salem COL venue VAL vldb COL year VAL 1997",
+          "right": "COL title VAL alanguageformanipulatingarrays COL authors VAL sk maratheap COL venue VAL proceedings of the 23rd international conference on very & hellip ; , COL year VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 3.9e-05,
+          "sim": 0.04,
+          "llm_explanation": "The model likely predicted non-match because the right-side record has concatenated/garbled text (e.g., \"alanguageformanipulatingarrays,\" \"sk maratheap\"), a missing year, and a truncated venue name, making the surface-level token overlap extremely low (Jaccard 0.040) despite both records referring to the same paper."
+        },
+        {
+          "left": "COL title VAL efficient concurrency control for broadcast environments COL authors VAL j shanmugasundaram , a nithrakashyap , r sivasankaran , k ramamritham COL venue VAL sigmod conference COL year VAL 1999",
+          "right": "COL title VAL efficiellt concurrency control for broadcast environmqmts univ COL authors VAL j shanmugasundaram\u00e2 ? \u00a6 COL venue VAL of massachusetts technical report COL year VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 6.9e-05,
+          "sim": 0.1786,
+          "llm_explanation": "The model likely predicted non-match because the RIGHT record contains severe OCR-induced corruptions (e.g., \"efficiellt,\" \"environmqmts,\" truncated author name with garbled characters, a completely different-looking venue \"of massachusetts technical report,\" and a missing year), making the two records appear superficially dissimilar despite referring to the same publication."
+        },
+        {
+          "left": "COL title VAL cost-based optimization for magic : algebra and implementation COL authors VAL p seshadri , j hellerstein , h pirahesh , t leung , r ramakrishnan , d srivastava , p stuckey , s sudarshan COL venue VAL sigmod conference COL year VAL 1996",
+          "right": "COL title VAL cost based optimization for magic COL authors VAL p seshadri\u00e2 ? \u00a6 COL venue VAL  COL year VAL 1996.0",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.018115,
+          "sim": 0.1212,
+          "llm_explanation": "The model likely predicted non-match because the RIGHT record has a truncated/corrupted author field (\"p seshadri\u00e2 ? \u00a6\"), a missing venue, and a slightly different title (\"cost based\" vs. \"cost-based optimization for magic: algebra and implementation\"), making the two records appear dissimilar despite referring to the same publication."
+        }
+      ]
+    }
+  },
+  "string_aug_dblp-scholar": {
+    "run": "string_aug",
+    "dataset": "dblp-scholar",
+    "n_total": 5742,
+    "n_errors": 117,
+    "error_rate": 0.0204,
+    "class_counts": {
+      "ambiguous_variant": 101,
+      "high_sim_non_match": 10,
+      "low_sim_match": 3,
+      "noisy_incomplete": 3
+    },
+    "class_pct": {
+      "ambiguous_variant": 86.3,
+      "high_sim_non_match": 8.5,
+      "low_sim_match": 2.6,
+      "noisy_incomplete": 2.6
+    },
+    "representative_examples": {
+      "ambiguous_variant": [
+        {
+          "left": "COL title VAL watermarking relational databases COL authors VAL r agrawal , j kiernan COL venue VAL vldb COL year VAL 2002",
+          "right": "COL title VAL watermarking relational data : framework , algorithms and analysis COL authors VAL r agrawal , pj haas , j kiernan COL venue VAL the vldb journal the international journal on very large & hellip ; , COL year VAL 2003.0",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 3.4e-05,
+          "sim": 0.2857,
+          "llm_explanation": "The model likely predicted non-match because the two records have different years (2002 vs. 2003), different author lists (missing \"pj haas\" on the left), and sufficiently different titles and venues, obscuring that the left record is a conference version (VLDB 2002) and the right is the extended journal version of the same work by the same core authors."
+        },
+        {
+          "left": "COL title VAL the wasa2 object-oriented workflow management system COL authors VAL g vossen , m weske COL venue VAL sigmod conference COL year VAL 1999",
+          "right": "COL title VAL the wasa approach to workflow management for scientij COL authors VAL g vossen , m weske COL venue VAL applications . in : a. dogac , l. kahnichenko , mt zsu , a. sheth COL year VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 3.4e-05,
+          "sim": 0.2667,
+          "llm_explanation": "The model likely predicted non-match because the titles appear significantly different (\"wasa2 object-oriented workflow management system\" vs. \"wasa approach to workflow management for scientij\"), the venue fields differ substantially, and the right record has a missing year value, obscuring the shared authorship and common WASA subject matter that indicate these are related publications by the same authors on the same system."
+        },
+        {
+          "left": "COL title VAL efficiently publishing relational data as xml documents COL authors VAL j shanmugasundaram , e shekita , r barr , m carey , b lindsay , h pirahesh , b reinwald COL venue VAL vldb j. COL year VAL 2001",
+          "right": "COL title VAL efficiently publishing xml views of relational databases COL authors VAL j shanmugasundaram , e shekita , r barr COL venue VAL proc . of vldb , COL year VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 3.5e-05,
+          "sim": 0.4138,
+          "llm_explanation": "The model likely predicted non-match because the titles differ significantly (\"efficiently publishing relational data as xml documents\" vs. \"efficiently publishing xml views of relational databases\"), the right record is missing the year, and the venue formats differ, making the records appear dissimilar despite sharing the same first three authors and describing the same underlying work."
+        }
+      ],
+      "high_sim_non_match": [
+        {
+          "left": "COL title VAL towards a richer web object model COL authors VAL f manola COL venue VAL sigmod record COL year VAL 1998",
+          "right": "COL title VAL towards a web object model COL authors VAL f manola COL venue VAL  COL year VAL ",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.999473,
+          "sim": 0.6364,
+          "llm_explanation": "The model likely focused on the highly similar author names and overlapping title keywords (\"towards,\" \"web,\" \"object,\" \"model\") while overlooking the meaningful title difference (\"richer\" in the left record changes the semantic scope of the work), and the missing venue and year values in the right record, which together indicate these are distinct publications."
+        },
+        {
+          "left": "COL title VAL sqlj part 0 , now known as sql/olb ( object-language bindings ) COL authors VAL a eisenberg , j melton COL venue VAL sigmod record COL year VAL 1998",
+          "right": "COL title VAL 0 , now known as sql/olb ( object-language bindings ) COL authors VAL s part COL venue VAL  COL year VAL 1998.0",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.999451,
+          "sim": 0.5238,
+          "llm_explanation": "The model likely focused on the high overlap of title tokens and matching year (1998), while overlooking the critical author mismatch \u2014 \"a eisenberg, j melton\" versus \"s part\" \u2014 which clearly indicates these are different records."
+        },
+        {
+          "left": "COL title VAL roadrunner : towards automatic data extraction from large web sites COL authors VAL v crescenzi , g mecca , p merialdo COL venue VAL vldb COL year VAL 2001",
+          "right": "COL title VAL semantic lossy compression of xml data . roadrunner : towards automatic data extraction from large web COL authors VAL v crescenzi , g mecca , p merialdo COL venue VAL technical report , universit\u00e3 di roma tre , COL year VAL ",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.999431,
+          "sim": 0.5161,
+          "llm_explanation": "The model was likely misled by the highly similar authors and overlapping title tokens, failing to recognize that the RIGHT record conflates two different publications (mixing \"semantic lossy compression of xml data\" with \"roadrunner...\") and has a different venue and missing year, indicating it is a corrupted or merged record rather than the same entity."
+        }
+      ],
+      "low_sim_match": [
+        {
+          "left": "COL title VAL the infosleuth project COL authors VAL r jr. , w bohrer , r brice , a cichocki , j fowler , a helal , v kashyap , t ksiezyk , g martin , m nodine , m rashid , m rusinkiewicz , r shea , c unnikrishnan , a unruh , d woelk COL venue VAL sigmod conference COL year VAL 1997",
+          "right": "COL title VAL the infosleuth project COL authors VAL m rusinkiewicz\u00e2 ? \u00a6 COL venue VAL  COL year VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 7.2e-05,
+          "sim": 0.1111,
+          "llm_explanation": "The model likely predicted non-match because the right record has a severely truncated author list (only one author with garbled encoding), a missing venue, and a missing year, making the two records appear superficially dissimilar despite sharing identical titles and the one listed author (\"m rusinkiewicz\") being present in the left record's extensive author list."
+        },
+        {
+          "left": "COL title VAL efficient concurrency control for broadcast environments COL authors VAL j shanmugasundaram , a nithrakashyap , r sivasankaran , k ramamritham COL venue VAL sigmod conference COL year VAL 1999",
+          "right": "COL title VAL efficiellt concurrency control for broadcast environmqmts univ COL authors VAL j shanmugasundaram\u00e2 ? \u00a6 COL venue VAL of massachusetts technical report COL year VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 7.7e-05,
+          "sim": 0.1786,
+          "llm_explanation": "The model likely predicted non-match because the RIGHT record contains significant OCR/encoding corruption (\"efficiellt,\" \"environmqmts,\" \"shanmugasundaram\u00e2?\u00a6\"), a truncated author list, a missing year, and a divergent venue (\"univ of massachusetts technical report\" vs. \"sigmod conference\"), making the two records appear superficially dissimilar despite referring to the same publication."
+        },
+        {
+          "left": "COL title VAL the infosleuth project COL authors VAL r jr. , w bohrer , r brice , a cichocki , j fowler , a helal , v kashyap , t ksiezyk , g martin , m nodine , m rashid , m rusinkiewicz , r shea , c unnikrishnan , a unruh , d woelk COL venue VAL sigmod conference COL year VAL 1997",
+          "right": "COL title VAL the infosleuth project . COL authors VAL acms anthology , p edition COL venue VAL  COL year VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.000164,
+          "sim": 0.1053,
+          "llm_explanation": "The model likely predicted non-match because the RIGHT record has drastically different and sparse author information (\"acms anthology, p edition\" instead of the full author list) and missing venue/year values, making the two records appear dissimilar despite sharing the same distinctive title \"the infosleuth project.\""
+        }
+      ],
+      "noisy_incomplete": [
+        {
+          "left": "COL title VAL editorial COL authors VAL  COL venue VAL  COL year VAL 2002",
+          "right": "COL title VAL editorial COL authors VAL p apers , s ceri , r snodgrass COL venue VAL the vldb journal the international journal on very large & hellip ; , COL year VAL 2002.0",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.000203,
+          "sim": 0.05,
+          "llm_explanation": "The LEFT record has empty authors and venue fields, so the model likely failed to recognize this as a match because it couldn't find sufficient overlapping content with the RIGHT record's populated author and venue fields, despite the shared title \"editorial\" and year 2002 being strong matching signals."
+        },
+        {
+          "left": "COL title VAL guest editorial COL authors VAL  COL venue VAL  COL year VAL 2003",
+          "right": "COL title VAL guest editorial COL authors VAL pa bernstein , y ioannidis , r ramakrishnan COL venue VAL the vldb journal the international journal on very large & hellip ; , COL year VAL 2003.0",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.991786,
+          "sim": 0.0952,
+          "llm_explanation": "The model incorrectly predicted a match because the LEFT record has empty author and venue fields, and the shared title \"guest editorial\" is a generic term that likely appears in multiple publications, so the model over-relied on the matching title and year while ignoring that the missing fields provide no contradicting evidence to rule out a false match."
+        },
+        {
+          "left": "COL title VAL guest editorial COL authors VAL  COL venue VAL  COL year VAL 2001",
+          "right": "COL title VAL guest editorial COL authors VAL f casati , mc shan , d georgakopoulos COL venue VAL the vldb journal the international journal on very large & hellip ; , COL year VAL 2001.0",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.990628,
+          "sim": 0.0952,
+          "llm_explanation": "The model incorrectly predicted a match because the LEFT record has almost no attribute values (empty authors and venue fields), making it superficially similar to many records sharing just the generic title \"guest editorial\" and year 2001, while the model failed to recognize that the missing information on the LEFT side makes it impossible to confirm identity with the specific RIGHT record authored by Casati, Shan, and Georgakopoulos."
+        }
+      ]
+    }
+  },
+  "llm_aug_dblp-scholar": {
+    "run": "llm_aug",
+    "dataset": "dblp-scholar",
+    "n_total": 5742,
+    "n_errors": 103,
+    "error_rate": 0.0179,
+    "class_counts": {
+      "high_sim_non_match": 11,
+      "ambiguous_variant": 86,
+      "noisy_incomplete": 4,
+      "low_sim_match": 2
+    },
+    "class_pct": {
+      "high_sim_non_match": 10.7,
+      "ambiguous_variant": 83.5,
+      "noisy_incomplete": 3.9,
+      "low_sim_match": 1.9
+    },
+    "representative_examples": {
+      "high_sim_non_match": [
+        {
+          "left": "COL title VAL towards a richer web object model COL authors VAL f manola COL venue VAL sigmod record COL year VAL 1998",
+          "right": "COL title VAL towards a web object model COL authors VAL f manola COL venue VAL  COL year VAL ",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.999731,
+          "sim": 0.6364,
+          "llm_explanation": "The model likely focused on the high overlap in authors (\"f manola\") and the similar title keywords, while failing to adequately weight the meaningful title difference (\"towards a **richer** web object model\" vs. \"towards a web object model\") and the missing venue/year values in the RIGHT record, which together indicate these are distinct publications."
+        },
+        {
+          "left": "COL title VAL the p operator : discovering and ranking associations on the semantic web COL authors VAL k anyanwu , a sheth COL venue VAL sigmod record COL year VAL 2002",
+          "right": "COL title VAL the \u00ef ? operator : computing and ranking semantic associations in the semantic web COL authors VAL k anyanwu , a sheth COL venue VAL sigmod record , december , COL year VAL ",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.999721,
+          "sim": 0.625,
+          "llm_explanation": "The model likely predicted \"match\" because the author names, venue, and many title tokens are highly similar, causing it to overlook the meaningful differences in the titles (\"the p operator : discovering\" vs. \"the \u00ef ? operator : computing and ranking\") and the missing year value on the right side, which together indicate these are two distinct but related papers."
+        },
+        {
+          "left": "COL title VAL context-based prefetch - an optimization for implementing objects on relations COL authors VAL p bernstein , s pal , d shutt COL venue VAL vldb j. COL year VAL 2000",
+          "right": "COL title VAL context-based prefetch for implementing objects on relations COL authors VAL pa bernstein , s pal , d shutt COL venue VAL vldb , COL year VAL 1999.0",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.999719,
+          "sim": 0.6364,
+          "llm_explanation": "The model was likely misled by the high similarity in title, authors, and venue, failing to detect the critical year discrepancy (2000 vs. 1999) and the subtle title difference (\"optimization for\" vs. missing \"optimization\"), which together indicate these are distinct versions/entries of the same work rather than the same entity."
+        }
+      ],
+      "ambiguous_variant": [
+        {
+          "left": "COL title VAL tree pattern query minimization COL authors VAL s amer-yahia , s cho , l lakshmanan , d srivastava COL venue VAL vldb j. COL year VAL 2002",
+          "right": "COL title VAL treepattern queriesminimization COL authors VAL s amer-yahia , s cho , l lakshmanan , d srivastava COL venue VAL  COL year VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 7.6e-05,
+          "sim": 0.4706,
+          "llm_explanation": "The model likely predicted non-match because the RIGHT record has empty venue and year fields, and the title appears as a single concatenated token (\"treepatternqueriesminimization\") rather than separate words, making the surface-level similarity appear lower than it actually is despite the authors being identical and the titles referring to the same paper."
+        },
+        {
+          "left": "COL title VAL the x-tree : an index structure for high-dimensional data COL authors VAL s berchtold , d keim , h kriegel COL venue VAL vldb COL year VAL 1996",
+          "right": "COL title VAL keim , andhans-peter kriegel . an index structure for high-dimensional data COL authors VAL da stefanberchtold COL venue VAL procs . of the 22nd vldb conference , COL year VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.00012,
+          "sim": 0.4231,
+          "llm_explanation": "The model likely failed to recognize this as a match because the right record's title field contains a garbled, incomplete representation (starting mid-sentence with \"keim, andhans-peter kriegel...\") and the authors field splits \"Stefan Berchtold\" unusually as \"da stefanberchtold,\" making the same publication appear superficially dissimilar across key attributes despite referring to the same X-tree paper."
+        },
+        {
+          "left": "COL title VAL the wasa2 object-oriented workflow management system COL authors VAL g vossen , m weske COL venue VAL sigmod conference COL year VAL 1999",
+          "right": "COL title VAL the wasa approach to workflow management for scientij COL authors VAL g vossen , m weske COL venue VAL applications . in : a. dogac , l. kahnichenko , mt zsu , a. sheth COL year VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.000121,
+          "sim": 0.2667,
+          "llm_explanation": "The model likely predicted non-match because the titles appear substantially different (\"wasa2 object-oriented workflow management system\" vs. \"wasa approach to workflow management for scientij\"), the venues differ significantly, and the right record has a missing year value, obscuring the strong shared authorship and the common \"WASA\" project identity that links both papers as related publications by the same authors."
+        }
+      ],
+      "noisy_incomplete": [
+        {
+          "left": "COL title VAL guest editorial COL authors VAL  COL venue VAL  COL year VAL 2000",
+          "right": "COL title VAL guest editorial COL authors VAL p atzeni , ao mendelzon COL venue VAL the vldb journal the international journal on very large & hellip ; , COL year VAL 2000.0",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.999301,
+          "sim": 0.1053,
+          "llm_explanation": "The left record has completely empty author and venue fields, which should signal insufficient information to confirm a match, but the model over-relied on the identical \"guest editorial\" title and year (2000) to predict a match, ignoring that the missing values on the left could correspond to a *different* \"guest editorial\" publication rather than the specific one by Atzeni and Mendelzon in VLDB Journal."
+        },
+        {
+          "left": "COL title VAL guest editorial COL authors VAL  COL venue VAL  COL year VAL 2001",
+          "right": "COL title VAL guest editorial COL authors VAL f casati , mc shan , d georgakopoulos COL venue VAL the vldb journal the international journal on very large & hellip ; , COL year VAL 2001.0",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.999038,
+          "sim": 0.0952,
+          "llm_explanation": "The model incorrectly predicted a match because the left record has no author or venue information, making the title and year overlap superficially convincing, while the specific authors and venue in the right record (\"f casati, mc shan, d georgakopoulos\" in the VLDB Journal) could correspond to a completely different \"guest editorial\" publication from 2001."
+        },
+        {
+          "left": "COL title VAL guest editorial COL authors VAL  COL venue VAL  COL year VAL 2003",
+          "right": "COL title VAL guest editorial COL authors VAL pa bernstein , y ioannidis , r ramakrishnan COL venue VAL the vldb journal the international journal on very large & hellip ; , COL year VAL 2003.0",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.997872,
+          "sim": 0.0952,
+          "llm_explanation": "The model incorrectly predicted a match likely because the LEFT record has empty author and venue fields, so the model over-relied on the matching title (\"guest editorial\") and year (2003), failing to recognize that \"guest editorial\" is a generic, non-unique title that appears multiple times in the dataset and cannot alone distinguish between different publications."
+        }
+      ],
+      "low_sim_match": [
+        {
+          "left": "COL title VAL efficient concurrency control for broadcast environments COL authors VAL j shanmugasundaram , a nithrakashyap , r sivasankaran , k ramamritham COL venue VAL sigmod conference COL year VAL 1999",
+          "right": "COL title VAL efficiellt concurrency control for broadcast environmqmts univ COL authors VAL j shanmugasundaram\u00e2 ? \u00a6 COL venue VAL of massachusetts technical report COL year VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.002149,
+          "sim": 0.1786,
+          "llm_explanation": "The model likely predicted non-match because the RIGHT record contains severe OCR-induced corruption (e.g., \"efficiellt,\" \"environmqmts,\" truncated authors with \"\u00e2?\u00a6,\" a different venue \"univ of massachusetts technical report,\" and a missing year), making the two records appear superficially dissimilar despite referring to the same publication."
+        },
+        {
+          "left": "COL title VAL a language for manipulating arrays COL authors VAL a marathe , k salem COL venue VAL vldb COL year VAL 1997",
+          "right": "COL title VAL alanguageformanipulatingarrays COL authors VAL sk maratheap COL venue VAL proceedings of the 23rd international conference on very & hellip ; , COL year VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.00381,
+          "sim": 0.04,
+          "llm_explanation": "The model likely predicted non-match because the right record has severely malformed/concatenated text (e.g., \"alanguageformanipulatingarrays,\" \"sk maratheap,\" missing year, and a truncated venue), making the records superficially dissimilar despite representing the same publication."
+        }
+      ]
+    }
+  },
+  "web_aug_dblp-scholar": {
+    "run": "web_aug",
+    "dataset": "dblp-scholar",
+    "n_total": 5742,
+    "n_errors": 107,
+    "error_rate": 0.0186,
+    "class_counts": {
+      "ambiguous_variant": 94,
+      "high_sim_non_match": 10,
+      "low_sim_match": 2,
+      "noisy_incomplete": 1
+    },
+    "class_pct": {
+      "ambiguous_variant": 87.9,
+      "high_sim_non_match": 9.3,
+      "low_sim_match": 1.9,
+      "noisy_incomplete": 0.9
+    },
+    "representative_examples": {
+      "ambiguous_variant": [
+        {
+          "left": "COL title VAL on processing xml in ldap COL authors VAL p marr\u0453n , g lausen COL venue VAL vldb COL year VAL 2001",
+          "right": "COL title VAL processing xml in ldap and its application to caching COL authors VAL pj marron COL venue VAL phd thesis , universitat freiburg , october COL year VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 5.3e-05,
+          "sim": 0.2083,
+          "llm_explanation": "The model likely predicted non-match because the significant differences in venue (\"vldb\" vs. \"phd thesis, universitat freiburg\"), the missing year on the right, the truncated title on the left (\"on processing xml in ldap\" vs. the full title), and the author name variation (\"p marr\u0453n, g lausen\" vs. \"pj marron\") collectively created enough surface-level dissimilarity to obscure that the left record describes a conference paper and the right a PhD thesis covering the same core work by the same primary author."
+        },
+        {
+          "left": "COL title VAL efficiently publishing relational data as xml documents COL authors VAL j shanmugasundaram , e shekita , r barr , m carey , b lindsay , h pirahesh , b reinwald COL venue VAL vldb j. COL year VAL 2001",
+          "right": "COL title VAL efficiently publishing xml views of relational databases COL authors VAL j shanmugasundaram , e shekita , r barr COL venue VAL proc . of vldb , COL year VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 5.3e-05,
+          "sim": 0.4138,
+          "llm_explanation": "The model likely predicted non-match because the titles differ significantly (\"efficiently publishing relational data as xml documents\" vs. \"efficiently publishing xml views of relational databases\"), the right record is missing the year, and the venue formats differ, causing the model to focus on these surface-level textual mismatches rather than recognizing that the overlapping authors, similar topic, and comparable venue indicate these are likely the same publication (a conference paper and its journal version)."
+        },
+        {
+          "left": "COL title VAL data grid management systems COL authors VAL a jagatheesan , a rajasekar COL venue VAL sigmod conference COL year VAL 2003",
+          "right": "COL title VAL grid data management systems & services COL authors VAL a jagatheesan , r moore COL venue VAL proceedings of the international conference on very large & hellip ; , COL year VAL 2003.0",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 5.3e-05,
+          "sim": 0.32,
+          "llm_explanation": "The model likely predicted non-match because the differing author names (\"a rajasekar\" vs. \"r moore\") and slightly different titles (\"data grid management systems\" vs. \"grid data management systems & services\") overshadowed the strong shared signals (same first author \"a jagatheesan,\" same year 2003, and closely related topic), causing the model to weight surface-level textual mismatches over the underlying entity identity."
+        }
+      ],
+      "high_sim_non_match": [
+        {
+          "left": "COL title VAL towards a richer web object model COL authors VAL f manola COL venue VAL sigmod record COL year VAL 1998",
+          "right": "COL title VAL towards a web object model COL authors VAL f manola COL venue VAL  COL year VAL ",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.99954,
+          "sim": 0.6364,
+          "llm_explanation": "The model likely focused on the highly similar author names and overlapping title words while failing to adequately weight the meaningful title difference (\"towards a **richer** web object model\" vs. \"towards a web object model\"), which indicates these are distinct but closely related papers."
+        },
+        {
+          "left": "COL title VAL context-based prefetch - an optimization for implementing objects on relations COL authors VAL p bernstein , s pal , d shutt COL venue VAL vldb j. COL year VAL 2000",
+          "right": "COL title VAL context-based prefetch for implementing objects on relations COL authors VAL pa bernstein , s pal , d shutt COL venue VAL vldb , COL year VAL 1999.0",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.999534,
+          "sim": 0.6364,
+          "llm_explanation": "The model likely focused on the highly similar titles, authors, and venue while overlooking the year discrepancy (2000 vs. 1999) and the subtle title difference (\"an optimization for\" vs. absence thereof), which together indicate these are distinct but related records (e.g., a journal version vs. a conference version of the same work)."
+        },
+        {
+          "left": "COL title VAL state of the art in workflow management research and products COL authors VAL  COL venue VAL  COL year VAL 1996",
+          "right": "COL title VAL state of the art of commercial technology and research in workflow management COL authors VAL a sheth COL venue VAL  COL year VAL ",
+          "true_label": 0,
+          "pred_label": 1,
+          "score": 0.999426,
+          "sim": 0.6,
+          "llm_explanation": "The model was likely misled by the high surface-level overlap in title keywords (\"state of the art,\" \"workflow management\") and ignored the meaningful differences in the full titles\u2014\"research and products\" vs. \"commercial technology and research\"\u2014along with the missing author on the left record, which together indicate these are two distinct but related publications."
+        }
+      ],
+      "low_sim_match": [
+        {
+          "left": "COL title VAL a language for manipulating arrays COL authors VAL a marathe , k salem COL venue VAL vldb COL year VAL 1997",
+          "right": "COL title VAL alanguageformanipulatingarrays COL authors VAL sk maratheap COL venue VAL proceedings of the 23rd international conference on very & hellip ; , COL year VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 6.1e-05,
+          "sim": 0.04,
+          "llm_explanation": "The model likely predicted non-match because the right record has severely malformed data (concatenated author names \"sk maratheap\", missing year, truncated venue, and the title run together as \"alanguageformanipulatingarrays\"), making it superficially dissimilar to the clean left record despite referring to the same entity."
+        },
+        {
+          "left": "COL title VAL efficient concurrency control for broadcast environments COL authors VAL j shanmugasundaram , a nithrakashyap , r sivasankaran , k ramamritham COL venue VAL sigmod conference COL year VAL 1999",
+          "right": "COL title VAL efficiellt concurrency control for broadcast environmqmts univ COL authors VAL j shanmugasundaram\u00e2 ? \u00a6 COL venue VAL of massachusetts technical report COL year VAL ",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 0.000279,
+          "sim": 0.1786,
+          "llm_explanation": "The model likely predicted non-match because the RIGHT record contains significant OCR/encoding errors (\"efficiellt,\" \"environmqmts,\" truncated author name with garbled characters \"\u00e2?\u00a6\"), a missing year, and a different venue (\"of massachusetts technical report\" vs. \"sigmod conference\"), making the two records appear dissimilar despite referring to the same underlying publication."
+        }
+      ],
+      "noisy_incomplete": [
+        {
+          "left": "COL title VAL editorial COL authors VAL  COL venue VAL  COL year VAL 2002",
+          "right": "COL title VAL editorial COL authors VAL p apers , s ceri , r snodgrass COL venue VAL the vldb journal the international journal on very large & hellip ; , COL year VAL 2002.0",
+          "true_label": 1,
+          "pred_label": 0,
+          "score": 7e-05,
+          "sim": 0.05,
+          "llm_explanation": "The LEFT record is missing author and venue information, so the model cannot find sufficient textual overlap to recognize the match, despite both records sharing the same title (\"editorial\") and year (2002)."
+        }
+      ]
+    }
+  }
+}

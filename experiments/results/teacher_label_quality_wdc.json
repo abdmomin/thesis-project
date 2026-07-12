@@ -1,0 +1,28 @@
+{
+  "dataset": "wdc-products",
+  "teacher_model": "claude-sonnet-4-6",
+  "n_labeled": 2100,
+  "unmapped": 0,
+  "confusion": {
+    "tp": 188,
+    "fp": 29,
+    "fn": 31,
+    "tn": 1852
+  },
+  "accuracy": 0.9714,
+  "precision": 0.8664,
+  "recall": 0.8584,
+  "f1": 0.8624,
+  "true_positive_rate_in_pool": 0.1043,
+  "label_noise_rate": 0.0286,
+  "by_source": {
+    "top": {
+      "n": 100,
+      "noise": 0.0
+    },
+    "al": {
+      "n": 2000,
+      "noise": 0.03
+    }
+  }
+}

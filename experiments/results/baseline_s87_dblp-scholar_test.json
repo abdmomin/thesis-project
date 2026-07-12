@@ -1,0 +1,20 @@
+{
+  "run": "baseline_s87",
+  "dataset": "dblp-scholar",
+  "split": "test",
+  "model": "/content/experiments/models/baseline_s87_dblp-scholar/best",
+  "metrics": {
+    "precision": 0.9562383612662942,
+    "recall": 0.9598130841121495,
+    "f1": 0.9580223880597015
+  },
+  "confusion_matrix": {
+    "tp": 1027,
+    "fp": 47,
+    "fn": 43,
+    "tn": 4625
+  },
+  "n_pairs": 5742,
+  "n_matches": 1070,
+  "n_non_matches": 4672
+}

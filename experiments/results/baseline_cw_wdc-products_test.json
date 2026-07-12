@@ -1,0 +1,20 @@
+{
+  "run": "baseline_cw",
+  "dataset": "wdc-products",
+  "split": "test",
+  "model": "/Users/abd/Developer/thesis-project/experiments/models/baseline_cw_wdc-products/best",
+  "metrics": {
+    "precision": 0.5586924219910847,
+    "recall": 0.752,
+    "f1": 0.6410912190963342
+  },
+  "confusion_matrix": {
+    "tp": 376,
+    "fp": 297,
+    "fn": 124,
+    "tn": 3703
+  },
+  "n_pairs": 4500,
+  "n_matches": 500,
+  "n_non_matches": 4000
+}

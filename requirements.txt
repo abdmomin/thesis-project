@@ -1,0 +1,28 @@
+# Core ML
+torch
+transformers>=4.35
+accelerate>=1.1.0
+datasets
+scikit-learn
+
+# Data
+pandas
+numpy
+tqdm
+
+# Embeddings (for blocking in Task 4)
+sentence-transformers
+
+# Notebooks & visualization
+ipykernel
+matplotlib
+seaborn
+
+# Utilities
+python-dotenv
+
+# Task 4: LLM-based labeling
+anthropic
+
+# Task 5: Web retrieval
+tavily-python

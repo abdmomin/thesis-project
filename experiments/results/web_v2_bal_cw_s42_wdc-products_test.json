@@ -1,0 +1,20 @@
+{
+  "run": "web_v2_bal_cw_s42",
+  "dataset": "wdc-products",
+  "split": "test",
+  "model": "/kaggle/working/experiments/models/web_v2_bal_cw_s42_wdc-products/best",
+  "metrics": {
+    "precision": 0.595879556259905,
+    "recall": 0.752,
+    "f1": 0.6648983200707339
+  },
+  "confusion_matrix": {
+    "tp": 376,
+    "fp": 255,
+    "fn": 124,
+    "tn": 3745
+  },
+  "n_pairs": 4500,
+  "n_matches": 500,
+  "n_non_matches": 4000
+}
