@@ -74,7 +74,7 @@
     "seedmean_preds": "experiments/results/string_aug_cw_seedmean_wdc-products_test_preds.jsonl"
   },
   {
-    "run": "llm_aug_cw",
+    "run": "union_all_cw",
     "dataset": "wdc-products",
     "seeds": [
       13,
@@ -82,143 +82,32 @@
       87
     ],
     "precision": {
-      "mean": 0.5874,
-      "std": 0.0309,
+      "mean": 0.6318,
+      "std": 0.048,
       "values": [
-        0.589,
-        0.5557,
-        0.6175
+        0.5971,
+        0.6117,
+        0.6866
       ]
     },
     "recall": {
-      "mean": 0.7593,
-      "std": 0.0501,
+      "mean": 0.7327,
+      "std": 0.0423,
       "values": [
-        0.708,
-        0.808,
-        0.762
+        0.738,
+        0.772,
+        0.688
       ]
     },
     "f1": {
-      "mean": 0.6613,
-      "std": 0.0197,
+      "mean": 0.6767,
+      "std": 0.0145,
       "values": [
-        0.6431,
-        0.6585,
-        0.6822
+        0.6601,
+        0.6826,
+        0.6873
       ]
     },
-    "seedmean_preds": "experiments/results/llm_aug_cw_seedmean_wdc-products_test_preds.jsonl"
-  },
-  {
-    "run": "web_aug_cw",
-    "dataset": "wdc-products",
-    "seeds": [
-      13,
-      42,
-      87
-    ],
-    "precision": {
-      "mean": 0.5891,
-      "std": 0.0434,
-      "values": [
-        0.5441,
-        0.6307,
-        0.5926
-      ]
-    },
-    "recall": {
-      "mean": 0.75,
-      "std": 0.0352,
-      "values": [
-        0.79,
-        0.724,
-        0.736
-      ]
-    },
-    "f1": {
-      "mean": 0.6583,
-      "std": 0.015,
-      "values": [
-        0.6444,
-        0.6741,
-        0.6566
-      ]
-    },
-    "seedmean_preds": "experiments/results/web_aug_cw_seedmean_wdc-products_test_preds.jsonl"
-  },
-  {
-    "run": "web_v2_bal_cw",
-    "dataset": "wdc-products",
-    "seeds": [
-      13,
-      42,
-      87
-    ],
-    "precision": {
-      "mean": 0.5707,
-      "std": 0.0218,
-      "values": [
-        0.5567,
-        0.5959,
-        0.5595
-      ]
-    },
-    "recall": {
-      "mean": 0.7373,
-      "std": 0.014,
-      "values": [
-        0.736,
-        0.752,
-        0.724
-      ]
-    },
-    "f1": {
-      "mean": 0.6433,
-      "std": 0.0187,
-      "values": [
-        0.6339,
-        0.6649,
-        0.6312
-      ]
-    },
-    "seedmean_preds": "experiments/results/web_v2_bal_cw_seedmean_wdc-products_test_preds.jsonl"
-  },
-  {
-    "run": "web_v2_hn_cw",
-    "dataset": "wdc-products",
-    "seeds": [
-      13,
-      42,
-      87
-    ],
-    "precision": {
-      "mean": 0.5509,
-      "std": 0.0866,
-      "values": [
-        0.5745,
-        0.4549,
-        0.6232
-      ]
-    },
-    "recall": {
-      "mean": 0.7573,
-      "std": 0.08,
-      "values": [
-        0.756,
-        0.838,
-        0.678
-      ]
-    },
-    "f1": {
-      "mean": 0.6307,
-      "std": 0.0355,
-      "values": [
-        0.6528,
-        0.5897,
-        0.6494
-      ]
-    },
-    "seedmean_preds": "experiments/results/web_v2_hn_cw_seedmean_wdc-products_test_preds.jsonl"
+    "seedmean_preds": "experiments/results/union_all_cw_seedmean_wdc-products_test_preds.jsonl"
   }
 ]

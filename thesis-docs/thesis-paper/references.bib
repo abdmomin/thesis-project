@@ -1,0 +1,436 @@
+% References for: Automatic Training Set Expansion for Entity Matching
+% Using LLM-Based Labeling and Web Retrieval
+% Abdullah Momin, University of Mannheim, 2026
+
+% ---------------------------------------------------------------
+% Classic entity matching / record linkage
+% ---------------------------------------------------------------
+
+@article{fellegi1969theory,
+  author  = {Fellegi, Ivan P. and Sunter, Alan B.},
+  title   = {A Theory for Record Linkage},
+  journal = {Journal of the American Statistical Association},
+  volume  = {64},
+  number  = {328},
+  pages   = {1183--1210},
+  year    = {1969}
+}
+
+@article{newcombe1959automatic,
+  author  = {Newcombe, Howard B. and Kennedy, James M. and Axford, S. J. and James, Allison P.},
+  title   = {Automatic Linkage of Vital Records},
+  journal = {Science},
+  volume  = {130},
+  number  = {3381},
+  pages   = {954--959},
+  year    = {1959}
+}
+
+@book{christen2012data,
+  author    = {Christen, Peter},
+  title     = {Data Matching: Concepts and Techniques for Record Linkage, Entity Resolution, and Duplicate Detection},
+  publisher = {Springer},
+  address   = {Berlin, Heidelberg},
+  year      = {2012}
+}
+
+@article{elmagarmid2007duplicate,
+  author  = {Elmagarmid, Ahmed K. and Ipeirotis, Panagiotis G. and Verykios, Vassilios S.},
+  title   = {Duplicate Record Detection: A Survey},
+  journal = {IEEE Transactions on Knowledge and Data Engineering},
+  volume  = {19},
+  number  = {1},
+  pages   = {1--16},
+  year    = {2007}
+}
+
+@article{kopcke2010evaluation,
+  author  = {K{\"o}pcke, Hanna and Thor, Andreas and Rahm, Erhard},
+  title   = {Evaluation of Entity Resolution Approaches on Real-World Match Problems},
+  journal = {Proceedings of the VLDB Endowment},
+  volume  = {3},
+  number  = {1},
+  pages   = {484--493},
+  year    = {2010}
+}
+
+@article{konda2016magellan,
+  author  = {Konda, Pradap and Das, Sanjib and Suganthan G.~C., Paul and Doan, AnHai and Ardalan, Adel and Ballard, Jeffrey R. and Li, Han and Panahi, Fatemah and Zhang, Haojun and Naughton, Jeff and Prasad, Shishir and Krishnan, Ganesh and Deep, Rohit and Raghavendra, Vijay},
+  title   = {Magellan: Toward Building Entity Matching Management Systems},
+  journal = {Proceedings of the VLDB Endowment},
+  volume  = {9},
+  number  = {12},
+  pages   = {1197--1208},
+  year    = {2016}
+}
+
+@article{papadakis2020blocking,
+  author  = {Papadakis, George and Skoutas, Dimitrios and Thanos, Emmanouil and Palpanas, Themis},
+  title   = {Blocking and Filtering Techniques for Entity Resolution: A Survey},
+  journal = {ACM Computing Surveys},
+  volume  = {53},
+  number  = {2},
+  pages   = {1--42},
+  year    = {2020}
+}
+
+% ---------------------------------------------------------------
+% Deep learning for entity matching
+% ---------------------------------------------------------------
+
+@inproceedings{mudgal2018deep,
+  author    = {Mudgal, Sidharth and Li, Han and Rekatsinas, Theodoros and Doan, AnHai and Park, Youngchoon and Krishnan, Ganesh and Deep, Rohit and Arcaute, Esteban and Raghavendra, Vijay},
+  title     = {Deep Learning for Entity Matching: A Design Space Exploration},
+  booktitle = {Proceedings of the 2018 International Conference on Management of Data (SIGMOD)},
+  pages     = {19--34},
+  year      = {2018}
+}
+
+@article{ebraheem2018distributed,
+  author  = {Ebraheem, Muhammad and Thirumuruganathan, Saravanan and Joty, Shafiq and Ouzzani, Mourad and Tang, Nan},
+  title   = {Distributed Representations of Tuples for Entity Resolution},
+  journal = {Proceedings of the VLDB Endowment},
+  volume  = {11},
+  number  = {11},
+  pages   = {1454--1467},
+  year    = {2018}
+}
+
+@article{li2020deep,
+  author  = {Li, Yuliang and Li, Jinfeng and Suhara, Yoshihiko and Doan, AnHai and Tan, Wang-Chiew},
+  title   = {Deep Entity Matching with Pre-Trained Language Models},
+  journal = {Proceedings of the VLDB Endowment},
+  volume  = {14},
+  number  = {1},
+  pages   = {50--60},
+  year    = {2020}
+}
+
+@inproceedings{brunner2020entity,
+  author    = {Brunner, Ursin and Stockinger, Kurt},
+  title     = {Entity Matching with Transformer Architectures --- A Step Forward in Data Integration},
+  booktitle = {Proceedings of the 23rd International Conference on Extending Database Technology (EDBT)},
+  pages     = {463--473},
+  year      = {2020}
+}
+
+@article{barlaug2021neural,
+  author  = {Barlaug, Nils and Gulla, Jon Atle},
+  title   = {Neural Networks for Entity Matching: A Survey},
+  journal = {ACM Transactions on Knowledge Discovery from Data},
+  volume  = {15},
+  number  = {3},
+  pages   = {1--37},
+  year    = {2021}
+}
+
+% ---------------------------------------------------------------
+% Benchmarks
+% ---------------------------------------------------------------
+
+@article{peeters2024wdc,
+  author  = {Peeters, Ralph and Der, Reng Chiz and Bizer, Christian},
+  title   = {{WDC} Products: A Multi-Dimensional Entity Matching Benchmark},
+  journal = {Proceedings of the 27th International Conference on Extending Database Technology (EDBT)},
+  pages   = {22--33},
+  year    = {2024}
+}
+
+@inproceedings{primpeli2019wdc,
+  author    = {Primpeli, Anna and Peeters, Ralph and Bizer, Christian},
+  title     = {The {WDC} Training Dataset and Gold Standard for Large-Scale Product Matching},
+  booktitle = {Companion Proceedings of the 2019 World Wide Web Conference},
+  pages     = {381--386},
+  year      = {2019}
+}
+
+% ---------------------------------------------------------------
+% Pre-trained language models
+% ---------------------------------------------------------------
+
+@inproceedings{devlin2019bert,
+  author    = {Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
+  title     = {{BERT}: Pre-Training of Deep Bidirectional Transformers for Language Understanding},
+  booktitle = {Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL-HLT)},
+  pages     = {4171--4186},
+  year      = {2019}
+}
+
+@article{liu2019roberta,
+  author  = {Liu, Yinhan and Ott, Myle and Goyal, Naman and Du, Jingfei and Joshi, Mandar and Chen, Danqi and Levy, Omer and Lewis, Mike and Zettlemoyer, Luke and Stoyanov, Veselin},
+  title   = {{RoBERTa}: A Robustly Optimized {BERT} Pretraining Approach},
+  journal = {arXiv preprint arXiv:1907.11692},
+  year    = {2019}
+}
+
+@inproceedings{vaswani2017attention,
+  author    = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N. and Kaiser, {\L}ukasz and Polosukhin, Illia},
+  title     = {Attention Is All You Need},
+  booktitle = {Advances in Neural Information Processing Systems 30 (NeurIPS)},
+  pages     = {5998--6008},
+  year      = {2017}
+}
+
+@inproceedings{reimers2019sentence,
+  author    = {Reimers, Nils and Gurevych, Iryna},
+  title     = {Sentence-{BERT}: Sentence Embeddings Using Siamese {BERT}-Networks},
+  booktitle = {Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing (EMNLP-IJCNLP)},
+  pages     = {3982--3992},
+  year      = {2019}
+}
+
+@inproceedings{wang2020minilm,
+  author    = {Wang, Wenhui and Wei, Furu and Dong, Li and Bao, Hangbo and Yang, Nan and Zhou, Ming},
+  title     = {{MiniLM}: Deep Self-Attention Distillation for Task-Agnostic Compression of Pre-Trained Transformers},
+  booktitle = {Advances in Neural Information Processing Systems 33 (NeurIPS)},
+  pages     = {5776--5788},
+  year      = {2020}
+}
+
+@inproceedings{wolf2020transformers,
+  author    = {Wolf, Thomas and Debut, Lysandre and Sanh, Victor and Chaumond, Julien and Delangue, Clement and Moi, Anthony and Cistac, Pierric and Rault, Tim and Louf, Remi and Funtowicz, Morgan and Davison, Joe and Shleifer, Sam and von Platen, Patrick and Ma, Clara and Jernite, Yacine and Plu, Julien and Xu, Canwen and Le Scao, Teven and Gugger, Sylvain and Drame, Mariama and Lhoest, Quentin and Rush, Alexander},
+  title     = {Transformers: State-of-the-Art Natural Language Processing},
+  booktitle = {Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations},
+  pages     = {38--45},
+  year      = {2020}
+}
+
+@inproceedings{loshchilov2019decoupled,
+  author    = {Loshchilov, Ilya and Hutter, Frank},
+  title     = {Decoupled Weight Decay Regularization},
+  booktitle = {Proceedings of the 7th International Conference on Learning Representations (ICLR)},
+  year      = {2019}
+}
+
+% ---------------------------------------------------------------
+% Knowledge distillation
+% ---------------------------------------------------------------
+
+@article{hinton2015distilling,
+  author  = {Hinton, Geoffrey and Vinyals, Oriol and Dean, Jeff},
+  title   = {Distilling the Knowledge in a Neural Network},
+  journal = {arXiv preprint arXiv:1503.02531},
+  year    = {2015}
+}
+
+@article{sanh2019distilbert,
+  author  = {Sanh, Victor and Debut, Lysandre and Chaumond, Julien and Wolf, Thomas},
+  title   = {{DistilBERT}, a Distilled Version of {BERT}: Smaller, Faster, Cheaper and Lighter},
+  journal = {arXiv preprint arXiv:1910.01108},
+  year    = {2019}
+}
+
+@article{gou2021knowledge,
+  author  = {Gou, Jianping and Yu, Baosheng and Maybank, Stephen J. and Tao, Dacheng},
+  title   = {Knowledge Distillation: A Survey},
+  journal = {International Journal of Computer Vision},
+  volume  = {129},
+  number  = {6},
+  pages   = {1789--1819},
+  year    = {2021}
+}
+
+@article{zeakis2026distiller,
+  author  = {Zeakis, Alexandros and Skoutas, Dimitrios and Koubarakis, Manolis},
+  title   = {{DistillER}: Knowledge Distillation for Low-Resource Entity Resolution},
+  journal = {arXiv preprint arXiv:2602.05452},
+  year    = {2026}
+}
+
+@article{steiner2026labeling,
+  author  = {Steiner, Aaron and Bizer, Christian},
+  title   = {Labeling Training Data for Entity Matching Using Large Language Models},
+  journal = {arXiv preprint arXiv:2606.28823},
+  year    = {2026}
+}
+
+% ---------------------------------------------------------------
+% LLMs for entity matching / data integration
+% ---------------------------------------------------------------
+
+@article{narayan2022can,
+  author  = {Narayan, Avanika and Chami, Ines and Orr, Laurel and R{\'e}, Christopher},
+  title   = {Can Foundation Models Wrangle Your Data?},
+  journal = {Proceedings of the VLDB Endowment},
+  volume  = {16},
+  number  = {4},
+  pages   = {738--746},
+  year    = {2022}
+}
+
+@inproceedings{peeters2023using,
+  author    = {Peeters, Ralph and Bizer, Christian},
+  title     = {Using {ChatGPT} for Entity Matching},
+  booktitle = {New Trends in Database and Information Systems (ADBIS 2023 Short Papers)},
+  pages     = {221--230},
+  year      = {2023}
+}
+
+@article{peeters2025entity,
+  author  = {Peeters, Ralph and Steiner, Aaron and Bizer, Christian},
+  title   = {Entity Matching Using Large Language Models},
+  journal = {Proceedings of the 28th International Conference on Extending Database Technology (EDBT)},
+  pages   = {529--541},
+  year    = {2025}
+}
+
+% ---------------------------------------------------------------
+% Active learning
+% ---------------------------------------------------------------
+
+@techreport{settles2009active,
+  author      = {Settles, Burr},
+  title       = {Active Learning Literature Survey},
+  institution = {University of Wisconsin--Madison, Department of Computer Sciences},
+  number      = {1648},
+  year        = {2009}
+}
+
+@article{meduri2020comprehensive,
+  author  = {Meduri, Venkata Vamsikrishna and Popa, Lucian and Sen, Prithviraj and Sarwat, Mohamed},
+  title   = {A Comprehensive Benchmark Framework for Active Learning Methods in Entity Matching},
+  journal = {Proceedings of the 2020 International Conference on Management of Data (SIGMOD)},
+  pages   = {1133--1147},
+  year    = {2020}
+}
+
+@inproceedings{kasai2019low,
+  author    = {Kasai, Jungo and Qian, Kun and Gurajada, Sairam and Li, Yunyao and Popa, Lucian},
+  title     = {Low-Resource Deep Entity Resolution with Transfer and Active Learning},
+  booktitle = {Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics (ACL)},
+  pages     = {5851--5861},
+  year      = {2019}
+}
+
+@inproceedings{primpeli2021graph,
+  author    = {Primpeli, Anna and Bizer, Christian},
+  title     = {Graph-Boosted Active Learning for Multi-Source Entity Resolution},
+  booktitle = {Proceedings of the 20th International Semantic Web Conference (ISWC)},
+  pages     = {182--199},
+  year      = {2021}
+}
+
+% ---------------------------------------------------------------
+% Data augmentation
+% ---------------------------------------------------------------
+
+@inproceedings{wei2019eda,
+  author    = {Wei, Jason and Zou, Kai},
+  title     = {{EDA}: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks},
+  booktitle = {Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing (EMNLP-IJCNLP)},
+  pages     = {6382--6388},
+  year      = {2019}
+}
+
+@article{miao2021rotom,
+  author  = {Miao, Zhengjie and Li, Yuliang and Wang, Xiaolan},
+  title   = {Rotom: A Meta-Learned Data Augmentation Framework for Entity Matching, Data Cleaning, Text Classification, and Beyond},
+  journal = {Proceedings of the 2021 International Conference on Management of Data (SIGMOD)},
+  pages   = {1303--1316},
+  year    = {2021}
+}
+
+@article{shorten2021text,
+  author  = {Shorten, Connor and Khoshgoftaar, Taghi M. and Furht, Borko},
+  title   = {Text Data Augmentation for Deep Learning},
+  journal = {Journal of Big Data},
+  volume  = {8},
+  number  = {1},
+  pages   = {101},
+  year    = {2021}
+}
+
+% ---------------------------------------------------------------
+% Retrieval augmentation
+% ---------------------------------------------------------------
+
+@inproceedings{lewis2020retrieval,
+  author    = {Lewis, Patrick and Perez, Ethan and Piktus, Aleksandra and Petroni, Fabio and Karpukhin, Vladimir and Goyal, Naman and K{\"u}ttler, Heinrich and Lewis, Mike and Yih, Wen-tau and Rockt{\"a}schel, Tim and Riedel, Sebastian and Kiela, Douwe},
+  title     = {Retrieval-Augmented Generation for Knowledge-Intensive {NLP} Tasks},
+  booktitle = {Advances in Neural Information Processing Systems 33 (NeurIPS)},
+  pages     = {9459--9474},
+  year      = {2020}
+}
+
+% ---------------------------------------------------------------
+% Ensemble classifiers
+% ---------------------------------------------------------------
+
+@article{breiman2001random,
+  author  = {Breiman, Leo},
+  title   = {Random Forests},
+  journal = {Machine Learning},
+  volume  = {45},
+  number  = {1},
+  pages   = {5--32},
+  year    = {2001}
+}
+
+@inproceedings{chen2016xgboost,
+  author    = {Chen, Tianqi and Guestrin, Carlos},
+  title     = {{XGBoost}: A Scalable Tree Boosting System},
+  booktitle = {Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  pages     = {785--794},
+  year      = {2016}
+}
+
+@article{friedman2001greedy,
+  author  = {Friedman, Jerome H.},
+  title   = {Greedy Function Approximation: A Gradient Boosting Machine},
+  journal = {The Annals of Statistics},
+  volume  = {29},
+  number  = {5},
+  pages   = {1189--1232},
+  year    = {2001}
+}
+
+% ---------------------------------------------------------------
+% Statistics
+% ---------------------------------------------------------------
+
+@article{mcnemar1947note,
+  author  = {McNemar, Quinn},
+  title   = {Note on the Sampling Error of the Difference Between Correlated Proportions or Percentages},
+  journal = {Psychometrika},
+  volume  = {12},
+  number  = {2},
+  pages   = {153--157},
+  year    = {1947}
+}
+
+@article{dietterich1998approximate,
+  author  = {Dietterich, Thomas G.},
+  title   = {Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms},
+  journal = {Neural Computation},
+  volume  = {10},
+  number  = {7},
+  pages   = {1895--1923},
+  year    = {1998}
+}
+
+@book{efron1994introduction,
+  author    = {Efron, Bradley and Tibshirani, Robert J.},
+  title     = {An Introduction to the Bootstrap},
+  publisher = {Chapman \& Hall/CRC},
+  address   = {Boca Raton},
+  year      = {1994}
+}
+
+@book{cohen1988statistical,
+  author    = {Cohen, Jacob},
+  title     = {Statistical Power Analysis for the Behavioral Sciences},
+  edition   = {2nd},
+  publisher = {Lawrence Erlbaum Associates},
+  address   = {Hillsdale, NJ},
+  year      = {1988}
+}
+
+@article{dunn1961multiple,
+  author  = {Dunn, Olive Jean},
+  title   = {Multiple Comparisons Among Means},
+  journal = {Journal of the American Statistical Association},
+  volume  = {56},
+  number  = {293},
+  pages   = {52--64},
+  year    = {1961}
+}

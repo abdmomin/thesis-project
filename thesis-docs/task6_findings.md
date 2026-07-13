@@ -539,10 +539,28 @@ injecting even high-quality hard negatives does not fix it, it worsens it. Combi
 `llm_aug` (clean hard negatives) merely *tying* baseline, hard-negative injection does not help
 WDC in either form.
 
-### Task 7 interim conclusion
-Neither targeted intervention improved results: DBLP hard negatives are structurally scarce
-(null), WDC web hard negatives are distribution-mismatched (worse). This reinforces the central
-finding — on these benchmarks, with leakage removed and multi-seed evaluation, augmentation does
-not robustly help. Remaining experiments: **union/combined training sets** (does complementarity
-help?) and **low-resource ablation** (does augmentation help when the base is small — Aaron's
+### T7c — Union / combined augmentation (B4 + B8) — best mean, but no complementarity gain
+`build_union_augmentation.py` composes each strategy's *added* slice onto the shared base. Trained
+`union_all` (string+llm+web), 3 seeds:
+
+| Run | F1 (mean ± std) | ΔF1 vs base | beats base | McNemar (seedmean) | vs `string_aug` |
+|---|---|---|---|---|---|
+| WDC `union_all_cw` | **0.677 ± 0.015** | +0.017 | 2/3 | p=0.0122 (better, nominal) | p=0.214 (tie) |
+| DBLP `union_all` | 0.951 ± 0.003 | −0.005 | 0/3 | p=0.302 (n.s.) | — |
+
+**WDC `union_all_cw` is the best-looking result in the project** — highest mean of any WDC run,
+tightest variance, precision up (0.632 vs 0.618), and the *first* strategy to reach nominal
+significance over baseline (p=0.0122). **But it adds nothing over `string_aug` alone** (0.677 vs
+0.675, statistically tied), still loses on the high-variance seed 13 (2/3), and does not clear
+strict Bonferroni. So combining strategies does **not** yield complementary value — `string_aug`
+is doing the work; `llm`/`web` are neutral-to-noise (on WDC they don't hurt; on DBLP they drag the
+union to −0.005). The pairwise combos were therefore **not run** (union_all didn't beat string).
+
+### Task 7 conclusion
+No intervention robustly beat the baseline: DBLP hard negatives are structurally scarce (null),
+WDC generated hard negatives are distribution-mismatched (worse), and the union has the best mean
+but is indistinguishable from simple string augmentation and not seed-robust. With leakage removed
+and multi-seed evaluation, **augmentation does not robustly help on these (disjoint-WDC /
+near-ceiling-DBLP) benchmarks** — the honest central finding. One remaining probe: **low-resource
+ablation** (does augmentation help when the base is small — Aaron's
 Figure-4 / DistillER-D8 regime, the most likely place for a positive result).

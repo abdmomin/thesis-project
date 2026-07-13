@@ -37,7 +37,7 @@
     "seedmean_preds": "experiments/results/baseline_seedmean_dblp-scholar_test_preds.jsonl"
   },
   {
-    "run": "string_aug",
+    "run": "union_all",
     "dataset": "dblp-scholar",
     "seeds": [
       13,
@@ -45,106 +45,32 @@
       87
     ],
     "precision": {
-      "mean": 0.9266,
-      "std": 0.0067,
+      "mean": 0.9333,
+      "std": 0.0112,
       "values": [
-        0.9332,
-        0.927,
-        0.9197
+        0.9457,
+        0.9305,
+        0.9238
       ]
     },
     "recall": {
-      "mean": 0.971,
-      "std": 0.0049,
+      "mean": 0.9704,
+      "std": 0.0085,
       "values": [
-        0.9654,
-        0.9738,
+        0.9607,
+        0.9766,
         0.9738
       ]
     },
     "f1": {
-      "mean": 0.9483,
-      "std": 0.002,
+      "mean": 0.9514,
+      "std": 0.0029,
       "values": [
-        0.949,
-        0.9499,
-        0.946
+        0.9532,
+        0.953,
+        0.9481
       ]
     },
-    "seedmean_preds": "experiments/results/string_aug_seedmean_dblp-scholar_test_preds.jsonl"
-  },
-  {
-    "run": "llm_aug",
-    "dataset": "dblp-scholar",
-    "seeds": [
-      13,
-      42,
-      87
-    ],
-    "precision": {
-      "mean": 0.9525,
-      "std": 0.006,
-      "values": [
-        0.9536,
-        0.946,
-        0.9578
-      ]
-    },
-    "recall": {
-      "mean": 0.9607,
-      "std": 0.0056,
-      "values": [
-        0.9607,
-        0.9664,
-        0.9551
-      ]
-    },
-    "f1": {
-      "mean": 0.9566,
-      "std": 0.0006,
-      "values": [
-        0.9572,
-        0.9561,
-        0.9565
-      ]
-    },
-    "seedmean_preds": "experiments/results/llm_aug_seedmean_dblp-scholar_test_preds.jsonl"
-  },
-  {
-    "run": "web_aug",
-    "dataset": "dblp-scholar",
-    "seeds": [
-      13,
-      42,
-      87
-    ],
-    "precision": {
-      "mean": 0.9475,
-      "std": 0.0061,
-      "values": [
-        0.9453,
-        0.9429,
-        0.9544
-      ]
-    },
-    "recall": {
-      "mean": 0.966,
-      "std": 0.0073,
-      "values": [
-        0.9682,
-        0.972,
-        0.9579
-      ]
-    },
-    "f1": {
-      "mean": 0.9567,
-      "std": 0.0005,
-      "values": [
-        0.9566,
-        0.9572,
-        0.9562
-      ]
-    },
-    "seedmean_preds": "experiments/results/web_aug_seedmean_dblp-scholar_test_preds.jsonl"
+    "seedmean_preds": "experiments/results/union_all_seedmean_dblp-scholar_test_preds.jsonl"
   }
 ]
