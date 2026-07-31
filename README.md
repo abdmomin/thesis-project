@@ -4,7 +4,7 @@ Master's thesis project, Data and Web Science Group, University of Mannheim.
 
 - **Author:** Abdullah Momin
 - **Supervisor:** Prof. Dr. Christian Bizer
-- **Submitted:** July 2026
+- **Submitted:** 31st July 2026
 - **Thesis PDF:** [`thesis-docs/thesis-paper/thesis.pdf`](thesis-docs/thesis-paper/thesis.pdf)
 
 ## What this project is about
