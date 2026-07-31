@@ -1,6 +1,6 @@
 # Automatic Training Set Expansion for Entity Matching Using LLM-Based Labeling and Web Retrieval
 
-Master's thesis project, Data and Web Science Group, University of Mannheim.
+
 
 - **Author:** Abdullah Momin
 - **Supervisor:** Prof. Dr. Christian Bizer
