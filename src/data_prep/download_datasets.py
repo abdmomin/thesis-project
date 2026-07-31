@@ -34,14 +34,13 @@ WDC_80PAIR_URL = (
 )
 
 # DBLP-Scholar from Magellan / DeepMatcher repository (Structured version)
-DBLP_SCHOLAR_URL = (
-    "http://pages.cs.wisc.edu/~anhai/data1/deepmatcher_data/Structured/DBLP-GoogleScholar/dblp_scholar_exp_data.zip"
-)
+DBLP_SCHOLAR_URL = "http://pages.cs.wisc.edu/~anhai/data1/deepmatcher_data/Structured/DBLP-GoogleScholar/dblp_scholar_exp_data.zip"
 
 
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
 
 def download_bytes(url: str, desc: str = "") -> bytes:
     print(f"  Downloading {desc or url} ...")
@@ -83,7 +82,7 @@ def extract_gz_bytes(data: bytes, out_path: Path):
 WDC_FILES = {
     "wdcproducts80cc20rnd000un_train_small.json.gz": "train_raw.json.gz",
     "wdcproducts80cc20rnd000un_valid_small.json.gz": "valid_raw.json.gz",
-    "wdcproducts80cc20rnd000un_gs.json.gz":           "test_raw.json.gz",   # gold standard
+    "wdcproducts80cc20rnd000un_gs.json.gz": "test_raw.json.gz",  # gold standard
 }
 
 
@@ -118,6 +117,7 @@ def download_wdc_products():
 # DBLP-Scholar
 # ---------------------------------------------------------------------------
 
+
 def download_dblp_scholar():
     dest = RAW / "dblp-scholar"
     dest.mkdir(parents=True, exist_ok=True)
@@ -151,6 +151,7 @@ def download_dblp_scholar():
 # ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
+
 
 def main():
     parser = argparse.ArgumentParser(description="Download entity matching datasets")

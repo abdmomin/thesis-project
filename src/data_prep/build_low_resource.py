@@ -1,9 +1,9 @@
 """
 Build low-resource ablation training sets (Task 7 / B6).
 
-Supervisor request: reduce the base training set (to 50% and 25%) and combine the smaller
+Reduce the base training set (to 50% and 25%) and combine the smaller
 base with the LLM-augmented pairs, to test whether the full base "already had sufficient
-coverage" — i.e. whether LLM augmentation helps *more* when the base is small (Aaron's
+coverage" — i.e. whether LLM augmentation helps more when the base is small (Aaron's
 Figure-4 / DistillER-D8 low-resource regime, where machine-labeled data matters most).
 
 For each fraction f in {0.5, 0.25} it writes, per dataset:
@@ -38,7 +38,9 @@ def _read(path: Path) -> list[str]:
 
 
 def _pos_rate(lines: list[str]) -> float:
-    return 100 * sum(1 for l in lines if l.endswith("\t1")) / len(lines) if lines else 0.0
+    return (
+        100 * sum(1 for l in lines if l.endswith("\t1")) / len(lines) if lines else 0.0
+    )
 
 
 def _stratified_subset(lines: list[str], frac: float, rng: random.Random) -> list[str]:
@@ -52,8 +54,12 @@ def build(dataset: str):
     d = PROCESSED / dataset
     base = _read(d / "train.txt")
     base_set = set(base)
-    llm_slice = [l for l in _read(d / "train_aug_llm.txt") if l not in base_set]  # seed+AL added pairs
-    print(f"  base={len(base)} ({_pos_rate(base):.1f}% pos)   llm added slice={len(llm_slice)} ({_pos_rate(llm_slice):.1f}% pos)")
+    llm_slice = [
+        l for l in _read(d / "train_aug_llm.txt") if l not in base_set
+    ]  # seed+AL added pairs
+    print(
+        f"  base={len(base)} ({_pos_rate(base):.1f}% pos)   llm added slice={len(llm_slice)} ({_pos_rate(llm_slice):.1f}% pos)"
+    )
 
     for f in FRACTIONS:
         rng = random.Random(SUBSET_SEED)
@@ -68,15 +74,21 @@ def build(dataset: str):
         p_llm = d / f"train_{tag}_llm.txt"
         with open(p_llm, "w", encoding="utf-8") as fh:
             fh.write("\n".join(combined) + "\n")
-        print(f"    {tag:6s}: base {len(sub):>5} ({_pos_rate(sub):.1f}% pos) → {p_sub.name}"
-              f"   |   +llm {len(combined):>5} ({_pos_rate(combined):.1f}% pos) → {p_llm.name}")
+        print(
+            f"    {tag:6s}: base {len(sub):>5} ({_pos_rate(sub):.1f}% pos) → {p_sub.name}"
+            f"   |   +llm {len(combined):>5} ({_pos_rate(combined):.1f}% pos) → {p_llm.name}"
+        )
 
 
 def main():
     ap = argparse.ArgumentParser(description="Build low-resource ablation sets (B6)")
-    ap.add_argument("--dataset", choices=["wdc-products", "dblp-scholar", "all"], default="all")
+    ap.add_argument(
+        "--dataset", choices=["wdc-products", "dblp-scholar", "all"], default="all"
+    )
     args = ap.parse_args()
-    datasets = ["wdc-products", "dblp-scholar"] if args.dataset == "all" else [args.dataset]
+    datasets = (
+        ["wdc-products", "dblp-scholar"] if args.dataset == "all" else [args.dataset]
+    )
     for ds in datasets:
         print(f"\n=== {ds} ===")
         build(ds)

@@ -1,13 +1,12 @@
 """
 Single source of truth for entity-to-split membership.
 
-The supervisor's training-quality criteria (CLAUDE.md) require entity-disjoint
-splits: no entity that appears in valid/test may be used to build augmented
-training pairs. The LLM (Task 4) and web (Task 5) pipelines originally blocked
-over the *full* entity universe and only excluded exact known *pairs*, so they
-leaked valid/test entities into training (see thesis-docs/methodology_review.md,
-Issue 1). This module exposes the entity-ID sets needed to enforce and verify
-disjointness.
+Training-quality require entity-disjoint splits:
+no entity that appears in valid/test may be used to build augmented
+training pairs. The LLM and web pipelines originally blocked
+over the full entity universe and only excluded exact known pairs, so they
+leaked valid/test entities into training. This module exposes the entity-ID
+sets needed to enforce and verify disjointness.
 
 Two id-space conventions matter:
   - WDC Products has a SINGLE shared id space: the same entity id can appear on
@@ -27,11 +26,10 @@ from pathlib import Path
 
 import pandas as pd
 
+
 def _find_raw() -> Path:
     """
-    Locate the data/raw directory, working both in the repo layout
-    (src/data_prep/entity_splits.py) and when this file is uploaded flat to a
-    Colab /content session. An env var DATA_RAW overrides everything.
+    Locate the data/raw directory. An env var DATA_RAW overrides everything.
     """
     import os
 
@@ -40,8 +38,8 @@ def _find_raw() -> Path:
     here = Path(__file__).resolve()
     candidates = [
         here.parent.parent.parent / "data" / "raw",  # repo: src/data_prep/..
-        Path.cwd() / "data" / "raw",                  # Colab flat: cwd == /content
-        here.parent / "data" / "raw",                 # file sits next to data/
+        Path.cwd() / "data" / "raw",  # Colab flat: cwd == /content
+        here.parent / "data" / "raw",  # file sits next to data/
     ]
     for c in candidates:
         if c.exists():
@@ -150,7 +148,7 @@ def train_keep_sets(dataset: str) -> tuple[set[int], set[int]]:
     This is the policy filter for augmentation: keep only pairs where both sides are
     train entities. For WDC (entity-disjoint benchmark) this is equivalent to
     excluding valid/test, so augmentation is fully test-disjoint. For DBLP (whose
-    standard split is NOT entity-disjoint, Issue 5) train entities also appear in
+    standard split is NOT entity-disjoint) train entities also appear in
     valid/test, so this makes augmentation "as (non-)disjoint as the baseline" — it
     introduces no entity the baseline train set didn't already use. Verify with
     `heldout_entity_ids` (must touch 0 held-out entities).
@@ -167,7 +165,7 @@ def heldout_entity_ids(dataset: str) -> tuple[set[int], set[int]]:
     """
     Return (held_id1, held_id2): entities that appear in valid/test but NOT in train.
 
-    These are the only *genuinely* held-out entities — touching one in an augmented
+    These are the only genuinely held-out entities — touching one in an augmented
     pair is real leakage regardless of dataset. (For WDC this equals all valid/test
     entities since the split is disjoint; for DBLP it is the small minority of
     valid/test entities absent from train.) The canonical pass/fail check.
@@ -245,8 +243,7 @@ def split_pairs(dataset: str) -> dict[str, set[tuple[int, int]]]:
                 df = pd.read_csv(path)
                 df.columns = [c.lower() for c in df.columns]
                 pairs = set(
-                    (int(a), int(b))
-                    for a, b in zip(df["ltable_id"], df["rtable_id"])
+                    (int(a), int(b)) for a, b in zip(df["ltable_id"], df["rtable_id"])
                 )
             out[split] = pairs
     else:

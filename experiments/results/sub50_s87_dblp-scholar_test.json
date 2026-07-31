@@ -1,0 +1,20 @@
+{
+  "run": "sub50_s87",
+  "dataset": "dblp-scholar",
+  "split": "test",
+  "model": "/kaggle/working/experiments/models/sub50_s87_dblp-scholar/best",
+  "metrics": {
+    "precision": 0.9424657534246575,
+    "recall": 0.9644859813084112,
+    "f1": 0.9533487297921478
+  },
+  "confusion_matrix": {
+    "tp": 1032,
+    "fp": 63,
+    "fn": 38,
+    "tn": 4609
+  },
+  "n_pairs": 5742,
+  "n_matches": 1070,
+  "n_non_matches": 4672
+}

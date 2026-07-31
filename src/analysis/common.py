@@ -1,8 +1,5 @@
 """
-Reusable analysis utilities for Task 6 (and future runs).
-
-Functions here are the canonical implementations shared across all augmentation
-strategies and datasets. Extracted from notebooks 02/03/07 (canonical: notebook 07).
+Reusable analysis utilities.
 """
 
 import re
@@ -42,7 +39,9 @@ ATTR_PATTERNS: dict[str, re.Pattern] = {
     "memory/storage": re.compile(r"\d+\s*(gb|tb|mb)", re.I),
     "size": re.compile(r'\d+\s*(inch|in\b|"|cm|mm|\bl\b|xl\b|xs\b|sm\b)', re.I),
     "bundle": re.compile(r"\b(bundle|kit|set|pack)\b", re.I),
-    "edition": re.compile(r"\b(edition|version|\bse\b|\ble\b|\bpro\b|\bplus\b)\b", re.I),
+    "edition": re.compile(
+        r"\b(edition|version|\bse\b|\ble\b|\bpro\b|\bplus\b)\b", re.I
+    ),
     "model number": re.compile(r"\b[A-Z]{1,4}\d{3,}\b"),
 }
 
@@ -67,9 +66,9 @@ def load_pairs(path: Path | str) -> list[tuple[str, str, int]]:
 # Corner-case classification
 # ---------------------------------------------------------------------------
 
-# Thresholds kept identical to notebooks 02/03/07 for cross-strategy comparability.
-HARD_POS_SIM_THRESHOLD = 0.3   # label=1 AND sim < this → hard positive
-HARD_NEG_SIM_THRESHOLD = 0.4   # label=0 AND sim > this → hard negative
+# Thresholds kept identical for cross-strategy comparability.
+HARD_POS_SIM_THRESHOLD = 0.3  # label=1 AND sim < this → hard positive
+HARD_NEG_SIM_THRESHOLD = 0.4  # label=0 AND sim > this → hard negative
 
 
 def corner_case_stats(pairs: list[tuple[str, str, int]]) -> dict:
@@ -117,7 +116,7 @@ def classify_error(
     """
     Assign a qualitative error class to a misclassified pair.
 
-    Classes (matching CLAUDE.md error taxonomy):
+    Classes are:
       high_sim_non_match  — model predicted match, true non-match, high similarity
       low_sim_match       — model predicted non-match, true match, low similarity
       noisy_incomplete    — one side has very few tokens (incomplete/noisy description)

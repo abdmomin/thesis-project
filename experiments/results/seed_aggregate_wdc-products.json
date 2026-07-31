@@ -74,6 +74,80 @@
     "seedmean_preds": "experiments/results/string_aug_cw_seedmean_wdc-products_test_preds.jsonl"
   },
   {
+    "run": "llm_aug_cw",
+    "dataset": "wdc-products",
+    "seeds": [
+      13,
+      42,
+      87
+    ],
+    "precision": {
+      "mean": 0.5874,
+      "std": 0.0309,
+      "values": [
+        0.589,
+        0.5557,
+        0.6175
+      ]
+    },
+    "recall": {
+      "mean": 0.7593,
+      "std": 0.0501,
+      "values": [
+        0.708,
+        0.808,
+        0.762
+      ]
+    },
+    "f1": {
+      "mean": 0.6613,
+      "std": 0.0197,
+      "values": [
+        0.6431,
+        0.6585,
+        0.6822
+      ]
+    },
+    "seedmean_preds": "experiments/results/llm_aug_cw_seedmean_wdc-products_test_preds.jsonl"
+  },
+  {
+    "run": "web_aug_cw",
+    "dataset": "wdc-products",
+    "seeds": [
+      13,
+      42,
+      87
+    ],
+    "precision": {
+      "mean": 0.5891,
+      "std": 0.0434,
+      "values": [
+        0.5441,
+        0.6307,
+        0.5926
+      ]
+    },
+    "recall": {
+      "mean": 0.75,
+      "std": 0.0352,
+      "values": [
+        0.79,
+        0.724,
+        0.736
+      ]
+    },
+    "f1": {
+      "mean": 0.6583,
+      "std": 0.015,
+      "values": [
+        0.6444,
+        0.6741,
+        0.6566
+      ]
+    },
+    "seedmean_preds": "experiments/results/web_aug_cw_seedmean_wdc-products_test_preds.jsonl"
+  },
+  {
     "run": "union_all_cw",
     "dataset": "wdc-products",
     "seeds": [
@@ -109,5 +183,264 @@
       ]
     },
     "seedmean_preds": "experiments/results/union_all_cw_seedmean_wdc-products_test_preds.jsonl"
+  },
+  {
+    "run": "web_v2_bal_cw",
+    "dataset": "wdc-products",
+    "seeds": [
+      13,
+      42,
+      87
+    ],
+    "precision": {
+      "mean": 0.5707,
+      "std": 0.0218,
+      "values": [
+        0.5567,
+        0.5959,
+        0.5595
+      ]
+    },
+    "recall": {
+      "mean": 0.7373,
+      "std": 0.014,
+      "values": [
+        0.736,
+        0.752,
+        0.724
+      ]
+    },
+    "f1": {
+      "mean": 0.6433,
+      "std": 0.0187,
+      "values": [
+        0.6339,
+        0.6649,
+        0.6312
+      ]
+    },
+    "seedmean_preds": "experiments/results/web_v2_bal_cw_seedmean_wdc-products_test_preds.jsonl"
+  },
+  {
+    "run": "web_v2_hn_cw",
+    "dataset": "wdc-products",
+    "seeds": [
+      13,
+      42,
+      87
+    ],
+    "precision": {
+      "mean": 0.5509,
+      "std": 0.0866,
+      "values": [
+        0.5745,
+        0.4549,
+        0.6232
+      ]
+    },
+    "recall": {
+      "mean": 0.7573,
+      "std": 0.08,
+      "values": [
+        0.756,
+        0.838,
+        0.678
+      ]
+    },
+    "f1": {
+      "mean": 0.6307,
+      "std": 0.0355,
+      "values": [
+        0.6528,
+        0.5897,
+        0.6494
+      ]
+    },
+    "seedmean_preds": "experiments/results/web_v2_hn_cw_seedmean_wdc-products_test_preds.jsonl"
+  },
+  {
+    "run": "sub50_cw",
+    "dataset": "wdc-products",
+    "seeds": [
+      13,
+      42,
+      87
+    ],
+    "precision": {
+      "mean": 0.5154,
+      "std": 0.0397,
+      "values": [
+        0.5369,
+        0.5397,
+        0.4696
+      ]
+    },
+    "recall": {
+      "mean": 0.7393,
+      "std": 0.0181,
+      "values": [
+        0.742,
+        0.72,
+        0.756
+      ]
+    },
+    "f1": {
+      "mean": 0.6064,
+      "std": 0.0237,
+      "values": [
+        0.623,
+        0.617,
+        0.5793
+      ]
+    },
+    "seedmean_preds": "experiments/results/sub50_cw_seedmean_wdc-products_test_preds.jsonl"
+  },
+  {
+    "run": "sub50_llm_cw",
+    "dataset": "wdc-products",
+    "seeds": [
+      13,
+      42,
+      87
+    ],
+    "precision": {
+      "mean": 0.5514,
+      "std": 0.0316,
+      "values": [
+        0.5763,
+        0.5622,
+        0.5158
+      ]
+    },
+    "recall": {
+      "mean": 0.7247,
+      "std": 0.022,
+      "values": [
+        0.71,
+        0.714,
+        0.75
+      ]
+    },
+    "f1": {
+      "mean": 0.6255,
+      "std": 0.0129,
+      "values": [
+        0.6362,
+        0.6291,
+        0.6112
+      ]
+    },
+    "seedmean_preds": "experiments/results/sub50_llm_cw_seedmean_wdc-products_test_preds.jsonl"
+  },
+  {
+    "run": "sub50_string",
+    "dataset": "wdc-products",
+    "seeds": [
+      13,
+      42,
+      87
+    ],
+    "precision": {
+      "mean": 0.5253,
+      "std": 0.053,
+      "values": [
+        0.5284,
+        0.4707,
+        0.5766
+      ]
+    },
+    "recall": {
+      "mean": 0.7253,
+      "std": 0.0546,
+      "values": [
+        0.688,
+        0.788,
+        0.7
+      ]
+    },
+    "f1": {
+      "mean": 0.6065,
+      "std": 0.0228,
+      "values": [
+        0.5977,
+        0.5894,
+        0.6323
+      ]
+    },
+    "seedmean_preds": "experiments/results/sub50_string_seedmean_wdc-products_test_preds.jsonl"
+  },
+  {
+    "run": "sub25_cw",
+    "dataset": "wdc-products",
+    "seeds": [
+      13,
+      42,
+      87
+    ],
+    "precision": {
+      "mean": 0.0,
+      "std": 0.0,
+      "values": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "recall": {
+      "mean": 0.0,
+      "std": 0.0,
+      "values": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "f1": {
+      "mean": 0.0,
+      "std": 0.0,
+      "values": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "seedmean_preds": "experiments/results/sub25_cw_seedmean_wdc-products_test_preds.jsonl"
+  },
+  {
+    "run": "sub25_llm_cw",
+    "dataset": "wdc-products",
+    "seeds": [
+      13,
+      42,
+      87
+    ],
+    "precision": {
+      "mean": 0.5029,
+      "std": 0.1073,
+      "values": [
+        0.5984,
+        0.3869,
+        0.5233
+      ]
+    },
+    "recall": {
+      "mean": 0.7193,
+      "std": 0.105,
+      "values": [
+        0.614,
+        0.824,
+        0.72
+      ]
+    },
+    "f1": {
+      "mean": 0.5796,
+      "std": 0.0459,
+      "values": [
+        0.6061,
+        0.5265,
+        0.6061
+      ]
+    },
+    "seedmean_preds": "experiments/results/sub25_llm_cw_seedmean_wdc-products_test_preds.jsonl"
   }
 ]

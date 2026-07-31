@@ -34,7 +34,9 @@ def main():
     parser = argparse.ArgumentParser(
         description="Generate string-augmented training data (Task 3)"
     )
-    parser.add_argument("--dataset", required=True, choices=["wdc-products", "dblp-scholar"])
+    parser.add_argument(
+        "--dataset", required=True, choices=["wdc-products", "dblp-scholar"]
+    )
     parser.add_argument(
         "--multiplier",
         type=int,

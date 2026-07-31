@@ -1,0 +1,20 @@
+{
+  "run": "sub25_s42",
+  "dataset": "dblp-scholar",
+  "split": "test",
+  "model": "/kaggle/working/experiments/models/sub25_s42_dblp-scholar/best",
+  "metrics": {
+    "precision": 0.9387186629526463,
+    "recall": 0.9448598130841122,
+    "f1": 0.9417792268281323
+  },
+  "confusion_matrix": {
+    "tp": 1011,
+    "fp": 66,
+    "fn": 59,
+    "tn": 4606
+  },
+  "n_pairs": 5742,
+  "n_matches": 1070,
+  "n_non_matches": 4672
+}

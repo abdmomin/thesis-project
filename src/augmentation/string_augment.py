@@ -20,10 +20,10 @@ Usage (as a library):
 import random
 from pathlib import Path
 
-
 # ---------------------------------------------------------------------------
 # Token labelling
 # ---------------------------------------------------------------------------
+
 
 def _label_tokens(tokens: list[str]) -> list[str]:
     """Assign labels: 'HD' for COL/VAL headers, 'O' for value tokens."""
@@ -36,7 +36,9 @@ def _label_tokens(tokens: list[str]) -> list[str]:
     return labels
 
 
-def _sample_span(tokens: list[str], labels: list[str], span_len: int) -> tuple[int, int]:
+def _sample_span(
+    tokens: list[str], labels: list[str], span_len: int
+) -> tuple[int, int]:
     """Return (start, end) of a contiguous span of 'O' tokens, or (-1,-1)."""
     candidates = [
         (i, i + span_len - 1)
@@ -53,12 +55,13 @@ def _sample_span(tokens: list[str], labels: list[str], span_len: int) -> tuple[i
 # Individual ops (operate on token+label lists)
 # ---------------------------------------------------------------------------
 
+
 def _op_del(tokens: list[str], labels: list[str]) -> tuple[list[str], list[str]]:
     span_len = random.randint(1, 2)
     p1, p2 = _sample_span(tokens, labels, span_len)
     if p1 < 0:
         return tokens, labels
-    return tokens[:p1] + tokens[p2 + 1:], labels[:p1] + labels[p2 + 1:]
+    return tokens[:p1] + tokens[p2 + 1 :], labels[:p1] + labels[p2 + 1 :]
 
 
 def _op_swap(tokens: list[str], labels: list[str]) -> tuple[list[str], list[str]]:
@@ -66,9 +69,9 @@ def _op_swap(tokens: list[str], labels: list[str]) -> tuple[list[str], list[str]
     p1, p2 = _sample_span(tokens, labels, span_len)
     if p1 < 0:
         return tokens, labels
-    sub = tokens[p1:p2 + 1]
+    sub = tokens[p1 : p2 + 1]
     random.shuffle(sub)
-    return tokens[:p1] + sub + tokens[p2 + 1:], labels[:]
+    return tokens[:p1] + sub + tokens[p2 + 1 :], labels[:]
 
 
 def _op_drop_col(tokens: list[str], labels: list[str]) -> tuple[list[str], list[str]]:
@@ -91,7 +94,7 @@ def _op_drop_col(tokens: list[str], labels: list[str]) -> tuple[list[str], list[
 
     idx = random.choice(candidates)
     s, e = col_starts[idx], col_ends[idx]
-    return tokens[:s] + tokens[e + 1:], labels[:s] + labels[e + 1:]
+    return tokens[:s] + tokens[e + 1 :], labels[:s] + labels[e + 1 :]
 
 
 # ---------------------------------------------------------------------------

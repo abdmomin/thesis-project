@@ -13,7 +13,7 @@ Architecture mirrors Ditto:
 
 Usage:
     python src/baseline/train_baseline.py --dataset wdc-products
-    python src/baseline/train_baseline.py --dataset dblp-scholar --epochs 15
+    python src/baseline/train_baseline.py --dataset dblp-scholar --epochs 10
     python src/baseline/train_baseline.py --dataset wdc-products --class_weight balanced --run_name baseline_cw
 """
 
@@ -164,7 +164,9 @@ def train(
     print(f"  Model        : {MODEL_NAME}")
     print(f"  Train file   : {train_file}")
     print(f"  Epochs       : {epochs}")
-    print(f"  Batch size   : {batch_size}  (grad_accum={grad_accum}, effective={batch_size*grad_accum})")
+    print(
+        f"  Batch size   : {batch_size}  (grad_accum={grad_accum}, effective={batch_size*grad_accum})"
+    )
     print(f"  LR           : {lr}")
     print(f"  Class weight : {class_weight}")
     print(f"  Output dir   : {model_out}")
@@ -190,7 +192,7 @@ def train(
         warmup_steps=100,
         weight_decay=0.01,
         eval_strategy="epoch" if eval_ds else "no",
-        save_strategy="epoch" if eval_ds else "epoch",
+        save_strategy="epoch" if eval_ds else "no",
         load_best_model_at_end=True if eval_ds else False,
         metric_for_best_model="f1",
         greater_is_better=True,

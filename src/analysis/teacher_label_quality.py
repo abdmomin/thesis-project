@@ -1,11 +1,10 @@
 """
-Quantify LLM-teacher label quality against ground truth (Task 6 requirement / review #5).
+Quantify LLM-teacher label quality against ground truth.
 
 The thesis is framed as teacher/student distillation (Claude = teacher labeler, roberta-base =
-student). DistillER's whole analysis hinges on teacher label noise, and the supervisor explicitly
-required a label-error check. For WDC Products we have `cluster_id` ground truth for *every*
-entity, so we can compute the Claude teacher's exact accuracy / precision / recall / F1 and its
-label-noise rate on all seed + active-learning labels — zero API calls.
+student). DistillER's whole analysis hinges on teacher label noise. For WDC Products we have
+`cluster_id` ground truth for every entity, so we can compute the Claude teacher's exact
+accuracy / precision / recall / F1 and its label-noise rate on all seed + active-learning labels.
 
 (DBLP-Scholar has no per-entity cluster ground truth, so teacher quality there can only be
 spot-checked qualitatively; the WDC table is the quantitative one.)
@@ -62,12 +61,23 @@ def evaluate_teacher() -> dict:
             continue
         true = 1 if cl[a] == cl[b] else 0
         pred = int(r["label"])
-        cell = ("tp" if (pred, true) == (1, 1) else "fp" if (pred, true) == (1, 0)
-                else "fn" if (pred, true) == (0, 1) else "tn")
-        if cell == "tp": tp += 1
-        elif cell == "fp": fp += 1
-        elif cell == "fn": fn_ += 1
-        else: tn += 1
+        cell = (
+            "tp"
+            if (pred, true) == (1, 1)
+            else (
+                "fp"
+                if (pred, true) == (1, 0)
+                else "fn" if (pred, true) == (0, 1) else "tn"
+            )
+        )
+        if cell == "tp":
+            tp += 1
+        elif cell == "fp":
+            fp += 1
+        elif cell == "fn":
+            fn_ += 1
+        else:
+            tn += 1
         s = r.get("source", "?").split("_iter")[0]  # group al_iterN together
         by_source.setdefault(s, {"n": 0, "err": 0})
         by_source[s]["n"] += 1
@@ -89,15 +99,24 @@ def evaluate_teacher() -> dict:
         "f1": round(f1, 4),
         "true_positive_rate_in_pool": round((tp + fn_) / n, 4),
         "label_noise_rate": round((fp + fn_) / n, 4),
-        "by_source": {s: {"n": v["n"], "noise": round(v["err"] / v["n"], 4)} for s, v in by_source.items()},
+        "by_source": {
+            s: {"n": v["n"], "noise": round(v["err"] / v["n"], 4)}
+            for s, v in by_source.items()
+        },
     }
 
     print(f"WDC Claude teacher vs cluster_id ground truth (n={n} labeled pairs):")
     print(f"  Confusion: TP={tp} FP={fp} FN={fn_} TN={tn}")
-    print(f"  Teacher accuracy = {report['accuracy']}  precision = {report['precision']}  "
-          f"recall = {report['recall']}  F1 = {report['f1']}")
-    print(f"  True positives in labeled pool: {tp + fn_} ({100*report['true_positive_rate_in_pool']:.1f}%)")
-    print(f"  Overall label-noise rate: {100*report['label_noise_rate']:.1f}%  (FP={fp} false matches, FN={fn_} missed matches)")
+    print(
+        f"  Teacher accuracy = {report['accuracy']}  precision = {report['precision']}  "
+        f"recall = {report['recall']}  F1 = {report['f1']}"
+    )
+    print(
+        f"  True positives in labeled pool: {tp + fn_} ({100*report['true_positive_rate_in_pool']:.1f}%)"
+    )
+    print(
+        f"  Overall label-noise rate: {100*report['label_noise_rate']:.1f}%  (FP={fp} false matches, FN={fn_} missed matches)"
+    )
     print("  Noise by stage:")
     for s, v in report["by_source"].items():
         print(f"    {s:10s}: n={v['n']:>4}  noise={100*v['noise']:.1f}%")

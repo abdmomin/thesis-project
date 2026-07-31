@@ -1,7 +1,7 @@
 """
 Build union / combined augmentation training sets (Task 7 / B4 + B8).
 
-Supervisor request: the augmentation strategies barely overlap (Layer 2c, Jaccard ≈ 0), so
+The augmentation strategies barely overlap (Layer 2c, Jaccard ≈ 0), so
 train the student on the UNION of their added pairs (and combinations) to test whether
 complementary augmentation + more data improves downstream F1.
 
@@ -61,7 +61,9 @@ def build(dataset: str):
             print(f"  [skip] {fn} missing")
             continue
         added[name] = [l for l in _read(path) if l not in base_set]
-        print(f"  {name:6s} added slice: {len(added[name]):>6} pairs ({_pos_rate(added[name]):.1f}% pos)")
+        print(
+            f"  {name:6s} added slice: {len(added[name]):>6} pairs ({_pos_rate(added[name]):.1f}% pos)"
+        )
 
     print(f"\n  {dataset}: base={len(base)} ({_pos_rate(base):.1f}% pos)")
     for combo, parts in COMBOS.items():
@@ -78,14 +80,22 @@ def build(dataset: str):
         out_path = d / f"train_aug_union_{combo}.txt"
         with open(out_path, "w", encoding="utf-8") as f:
             f.write("\n".join(out_lines) + "\n")
-        print(f"    union_{combo:11s}: {len(out_lines):>6} pairs ({_pos_rate(out_lines):.1f}% pos)  → {out_path.name}")
+        print(
+            f"    union_{combo:11s}: {len(out_lines):>6} pairs ({_pos_rate(out_lines):.1f}% pos)  → {out_path.name}"
+        )
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Build union augmentation training sets (B4/B8)")
-    ap.add_argument("--dataset", choices=["wdc-products", "dblp-scholar", "all"], default="all")
+    ap = argparse.ArgumentParser(
+        description="Build union augmentation training sets (B4/B8)"
+    )
+    ap.add_argument(
+        "--dataset", choices=["wdc-products", "dblp-scholar", "all"], default="all"
+    )
     args = ap.parse_args()
-    datasets = ["wdc-products", "dblp-scholar"] if args.dataset == "all" else [args.dataset]
+    datasets = (
+        ["wdc-products", "dblp-scholar"] if args.dataset == "all" else [args.dataset]
+    )
     for ds in datasets:
         print(f"\n=== {ds} ===")
         build(ds)

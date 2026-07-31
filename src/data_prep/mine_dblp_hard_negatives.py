@@ -1,9 +1,9 @@
 """
 Mine "same-title, different-publication" hard negatives for DBLP-Scholar (Task 7 / B3).
 
-Supervisor request (2026-07): explicitly add hard negatives such as papers with the same
+This script explicitly adds hard negatives such as papers with the same
 title first published at a workshop/conference and later in a journal — authors and title
-are nearly identical, only venue and year differ. Add them and check whether they turn the
+are nearly identical, only venue and year differ. Adds them and checks whether they turn the
 (near-ceiling) DBLP results positive.
 
 Two safe sources (both yield GUARANTEED non-matches, no LLM verification needed):
@@ -51,21 +51,27 @@ MIN_TITLE_TOKENS = 5
 
 
 def _toks(t: str) -> set[str]:
-    return set(w for w in re.sub(r"[^a-z0-9 ]", " ", str(t).lower()).split() if len(w) > 2)
+    return set(
+        w for w in re.sub(r"[^a-z0-9 ]", " ", str(t).lower()).split() if len(w) > 2
+    )
 
 
 def _load():
-    A = pd.read_csv(RAW / "tableA.csv"); A.columns = [c.lower() for c in A.columns]
-    B = pd.read_csv(RAW / "tableB.csv"); B.columns = [c.lower() for c in B.columns]
+    A = pd.read_csv(RAW / "tableA.csv")
+    A.columns = [c.lower() for c in A.columns]
+    B = pd.read_csv(RAW / "tableB.csv")
+    B.columns = [c.lower() for c in B.columns]
     known = set()
     train_pos = defaultdict(set)  # dblp_id -> {scholar match ids in train}
     train_dblp, train_schol = set(), set()
     for sp in ("train", "valid", "test"):
-        d = pd.read_csv(RAW / f"{sp}.csv"); d.columns = [c.lower() for c in d.columns]
+        d = pd.read_csv(RAW / f"{sp}.csv")
+        d.columns = [c.lower() for c in d.columns]
         for a, b, l in zip(d.ltable_id, d.rtable_id, d.label):
             known.add((int(a), int(b)))
             if sp == "train":
-                train_dblp.add(int(a)); train_schol.add(int(b))
+                train_dblp.add(int(a))
+                train_schol.add(int(b))
                 if int(l) == 1:
                     train_pos[int(a)].add(int(b))
     return A, B, known, train_pos, train_dblp, train_schol
@@ -77,7 +83,8 @@ def _text(row, cols) -> str:
 
 def mine(overlap_threshold: float = OVERLAP_THRESHOLD) -> list[dict]:
     A, B, known, train_pos, train_dblp, train_schol = _load()
-    A["tt"] = A.title.map(_toks); B["tt"] = B.title.map(_toks)
+    A["tt"] = A.title.map(_toks)
+    B["tt"] = B.title.map(_toks)
     Arows = {int(r.id): r for _, r in A.iterrows()}
     Brows = {int(r.id): r for _, r in B.iterrows()}
     hard = {}  # (dblp_id, scholar_id) -> source
@@ -135,18 +142,27 @@ def mine(overlap_threshold: float = OVERLAP_THRESHOLD) -> list[dict]:
     cols = [c for c in DBLP_COLS if c in A.columns]
     out = []
     for (aid, bid), src in hard.items():
-        out.append({
-            "id1": aid, "id2": bid, "source": src, "label": 0,
-            "left_text": _text(Arows[aid], cols),
-            "right_text": _text(Brows[bid], cols),
-        })
+        out.append(
+            {
+                "id1": aid,
+                "id2": bid,
+                "source": src,
+                "label": 0,
+                "left_text": _text(Arows[aid], cols),
+                "right_text": _text(Brows[bid], cols),
+            }
+        )
     return out
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Mine DBLP-Scholar same-title hard negatives (B3)")
+    ap = argparse.ArgumentParser(
+        description="Mine DBLP-Scholar same-title hard negatives (B3)"
+    )
     ap.add_argument("--overlap-threshold", type=float, default=OVERLAP_THRESHOLD)
-    ap.add_argument("--oversample", type=int, default=1, help="Replicate each hard negative N times")
+    ap.add_argument(
+        "--oversample", type=int, default=1, help="Replicate each hard negative N times"
+    )
     args = ap.parse_args()
 
     hard = mine(args.overlap_threshold)
@@ -165,7 +181,9 @@ def main():
     print(f"Saved provenance → {hn_path}")
 
     # Build augmented training file
-    train_lines = [l for l in open(PROCESSED / "train.txt", encoding="utf-8") if l.strip()]
+    train_lines = [
+        l for l in open(PROCESSED / "train.txt", encoding="utf-8") if l.strip()
+    ]
     out_path = PROCESSED / "train_aug_dblp_hardneg.txt"
     with open(out_path, "w", encoding="utf-8") as f:
         for l in train_lines:
@@ -174,7 +192,9 @@ def main():
             for h in hard:
                 f.write(f"{h['left_text']}\t{h['right_text']}\t0\n")
     total = len(train_lines) + len(hard) * args.oversample
-    print(f"Saved {out_path.name}: {len(train_lines)} base + {len(hard)*args.oversample} hard negs (x{args.oversample}) = {total} pairs")
+    print(
+        f"Saved {out_path.name}: {len(train_lines)} base + {len(hard)*args.oversample} hard negs (x{args.oversample}) = {total} pairs"
+    )
 
     print("\nExamples:")
     for h in hard[:4]:

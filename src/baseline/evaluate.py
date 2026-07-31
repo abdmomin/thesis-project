@@ -21,7 +21,12 @@ from pathlib import Path
 import numpy as np
 import torch
 from datasets import Dataset
-from transformers import AutoModelForSequenceClassification, AutoTokenizer, Trainer, TrainingArguments
+from transformers import (
+    AutoModelForSequenceClassification,
+    AutoTokenizer,
+    Trainer,
+    TrainingArguments,
+)
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT))
@@ -84,8 +89,7 @@ def evaluate(
         )
     if not data_file.exists():
         sys.exit(
-            f"[error] {data_file} not found. "
-            "Run src/data_prep/preprocess.py first."
+            f"[error] {data_file} not found. " "Run src/data_prep/preprocess.py first."
         )
 
     print(f"\n=== Evaluating {run_name} on {dataset} [{split}] ===")
@@ -149,14 +153,21 @@ def evaluate(
     if save_preds:
         preds_file = RESULTS / f"{run_name}_{dataset}_{split}{thr_tag}_preds.jsonl"
         with open(preds_file, "w") as f:
-            for left, right, true_label, pred_label, score in zip(lefts, rights, labels, preds, scores):
-                f.write(json.dumps({
-                    "left": left,
-                    "right": right,
-                    "true_label": true_label,
-                    "pred_label": pred_label,
-                    "score": round(score, 6),
-                }) + "\n")
+            for left, right, true_label, pred_label, score in zip(
+                lefts, rights, labels, preds, scores
+            ):
+                f.write(
+                    json.dumps(
+                        {
+                            "left": left,
+                            "right": right,
+                            "true_label": true_label,
+                            "pred_label": pred_label,
+                            "score": round(score, 6),
+                        }
+                    )
+                    + "\n"
+                )
         print(f"  Predictions saved to {preds_file}")
 
     return metrics
@@ -164,7 +175,9 @@ def evaluate(
 
 def main():
     parser = argparse.ArgumentParser(description="Evaluate entity matching model")
-    parser.add_argument("--dataset", required=True, choices=["wdc-products", "dblp-scholar"])
+    parser.add_argument(
+        "--dataset", required=True, choices=["wdc-products", "dblp-scholar"]
+    )
     parser.add_argument("--split", default="test", choices=["train", "valid", "test"])
     parser.add_argument(
         "--run",

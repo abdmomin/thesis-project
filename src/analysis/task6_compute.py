@@ -6,7 +6,6 @@ Computes all three layers of evaluation for all 8 run/dataset combos and writes:
   - experiments/results/task6_error_analysis.json           (Layer 3)
 
 Usage:
-    source .venv/bin/activate
     python src/analysis/task6_compute.py
 """
 
@@ -43,7 +42,12 @@ PROCESSED = ROOT / "data" / "processed"
 RUNS_WDC = ["baseline_cw", "string_aug_cw", "llm_aug_cw", "web_aug_cw"]
 RUNS_DBLP = ["baseline", "string_aug", "llm_aug", "web_aug"]
 
-TRAIN_FILES = ["train.txt", "train_aug_string.txt", "train_aug_llm.txt", "train_aug_web.txt"]
+TRAIN_FILES = [
+    "train.txt",
+    "train_aug_string.txt",
+    "train_aug_llm.txt",
+    "train_aug_web.txt",
+]
 STRATEGY_LABELS = ["baseline", "string_aug", "llm_aug", "web_aug"]
 
 LLM_MODEL = "claude-sonnet-4-6"
@@ -98,9 +102,7 @@ def compute_layer2() -> dict:
             attr_cov = {}
             if dataset == "wdc-products":
                 for attr, pat in ATTR_PATTERNS.items():
-                    hits = sum(
-                        1 for l, r, _ in pairs if pat.search(l) or pat.search(r)
-                    )
+                    hits = sum(1 for l, r, _ in pairs if pat.search(l) or pat.search(r))
                     attr_cov[attr] = {"hits": hits, "pct": round(100 * hits / n, 1)}
 
             layer2[dataset][label] = {
@@ -157,9 +159,7 @@ def compute_layer2() -> dict:
 # ---------------------------------------------------------------------------
 
 
-def _pick_representatives(
-    errors: list[dict], n: int, seed: int
-) -> list[dict]:
+def _pick_representatives(errors: list[dict], n: int, seed: int) -> list[dict]:
     """Pick up to n representative examples by highest confidence mismatch."""
     # Sort by distance of score from 0.5 (most confident wrong predictions first)
     sorted_errs = sorted(errors, key=lambda x: abs(x["score"] - 0.5), reverse=True)
@@ -198,9 +198,7 @@ def compute_layer3() -> dict:
     client = anthropic.Anthropic()
     layer3 = {}
 
-    run_dataset_pairs = [
-        ("wdc-products", run) for run in RUNS_WDC
-    ] + [
+    run_dataset_pairs = [("wdc-products", run) for run in RUNS_WDC] + [
         ("dblp-scholar", run) for run in RUNS_DBLP
     ]
 
@@ -223,10 +221,11 @@ def compute_layer3() -> dict:
                 continue
             sim = pair_sim(rec["left"], rec["right"])
             err_class = classify_error(
-                rec["left"], rec["right"],
-                rec["true_label"], rec["pred_label"], sim
+                rec["left"], rec["right"], rec["true_label"], rec["pred_label"], sim
             )
-            error_records.append({**rec, "sim": round(sim, 4), "error_class": err_class})
+            error_records.append(
+                {**rec, "sim": round(sim, 4), "error_class": err_class}
+            )
 
         # Count per class
         class_counts: dict[str, int] = {}
@@ -246,17 +245,21 @@ def compute_layer3() -> dict:
             reps = _pick_representatives(errs, MAX_EXAMPLES_PER_CLASS, RNG_SEED)
             examples_with_explanation = []
             for rep in reps:
-                print(f"    LLM explain: {cls} example (score={rep['score']:.3f}, sim={rep['sim']:.3f}) ...")
+                print(
+                    f"    LLM explain: {cls} example (score={rep['score']:.3f}, sim={rep['sim']:.3f}) ..."
+                )
                 explanation = _llm_explain(client, rep)
-                examples_with_explanation.append({
-                    "left": rep["left"],
-                    "right": rep["right"],
-                    "true_label": rep["true_label"],
-                    "pred_label": rep["pred_label"],
-                    "score": rep["score"],
-                    "sim": rep["sim"],
-                    "llm_explanation": explanation,
-                })
+                examples_with_explanation.append(
+                    {
+                        "left": rep["left"],
+                        "right": rep["right"],
+                        "true_label": rep["true_label"],
+                        "pred_label": rep["pred_label"],
+                        "score": rep["score"],
+                        "sim": rep["sim"],
+                        "llm_explanation": explanation,
+                    }
+                )
                 time.sleep(0.3)
             class_examples[cls] = examples_with_explanation
 

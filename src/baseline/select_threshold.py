@@ -1,5 +1,5 @@
 """
-Decision-threshold calibration for the WDC train/test prior mismatch (Issue 4).
+Decision-threshold calibration for the WDC train/test prior mismatch.
 
 WDC Products' train/valid splits are ~20% positive but the test split is ~11%.
 The model, early stopping, and the default 0.5 / argmax decision rule are all
@@ -10,7 +10,7 @@ except the last (oracle) reference:
   1. default        — argmax / 0.5 (current reporting).
   2. valid_max_f1   — threshold maximizing F1 on the validation set. Because
                       validation mirrors the train prior, this is not expected
-                      to fully recover test F1 (the review's point).
+                      to fully recover test F1.
   3. prior_matched  — threshold on validation set so the predicted positive rate
                       equals the known test prior π_test. Uses only the test
                       *prior* (a documented benchmark property), not test labels.
@@ -45,7 +45,9 @@ def _load_scores(run: str, dataset: str, split: str) -> tuple[np.ndarray, np.nda
     """Return (true_labels, match_scores); generate the preds file if missing."""
     path = RESULTS / f"{run}_{dataset}_{split}_preds.jsonl"
     if not path.exists():
-        print(f"  [info] {path.name} missing — running evaluate(split={split}) to generate it")
+        print(
+            f"  [info] {path.name} missing — running evaluate(split={split}) to generate it"
+        )
         evaluate(dataset=dataset, split=split, run_name=run, save_preds=True)
     true, score = [], []
     with open(path, encoding="utf-8") as f:
@@ -86,7 +88,9 @@ def select(dataset: str, run: str) -> dict:
     pi_valid = float(np.mean(valid_true))
 
     thr_valid = _best_f1_threshold(valid_true, valid_score)
-    thr_prior = float(np.quantile(valid_score, 1 - pi_test))  # predict π_test fraction positive
+    thr_prior = float(
+        np.quantile(valid_score, 1 - pi_test)
+    )  # predict π_test fraction positive
     thr_oracle = _best_f1_threshold(test_true, test_score)
 
     report = {
@@ -96,9 +100,21 @@ def select(dataset: str, run: str) -> dict:
         "prior_test": round(pi_test, 4),
         "operating_points": {
             "default": _metrics_at(test_true, test_score, 0.5),
-            "valid_max_f1": {"chosen_on": "valid", "thr": round(thr_valid, 4), **_metrics_at(test_true, test_score, thr_valid)},
-            "prior_matched": {"chosen_on": "valid@π_test", "thr": round(thr_prior, 4), **_metrics_at(test_true, test_score, thr_prior)},
-            "test_max_f1_oracle": {"chosen_on": "test (oracle)", "thr": round(thr_oracle, 4), **_metrics_at(test_true, test_score, thr_oracle)},
+            "valid_max_f1": {
+                "chosen_on": "valid",
+                "thr": round(thr_valid, 4),
+                **_metrics_at(test_true, test_score, thr_valid),
+            },
+            "prior_matched": {
+                "chosen_on": "valid@π_test",
+                "thr": round(thr_prior, 4),
+                **_metrics_at(test_true, test_score, thr_prior),
+            },
+            "test_max_f1_oracle": {
+                "chosen_on": "test (oracle)",
+                "thr": round(thr_oracle, 4),
+                **_metrics_at(test_true, test_score, thr_oracle),
+            },
         },
     }
 
@@ -111,7 +127,9 @@ def select(dataset: str, run: str) -> dict:
         thr = op["threshold"]
         delta = op["f1"] - default_f1
         tag = f"  (Δ {delta:+.4f})" if name != "default" else ""
-        print(f"  {name:<22} {thr:>6.3f} {op['precision']:>8.4f} {op['recall']:>8.4f} {op['f1']:>8.4f}{tag}")
+        print(
+            f"  {name:<22} {thr:>6.3f} {op['precision']:>8.4f} {op['recall']:>8.4f} {op['f1']:>8.4f}{tag}"
+        )
 
     out_path = RESULTS / f"threshold_calibration_{run}_{dataset}.json"
     with open(out_path, "w") as f:
@@ -122,7 +140,9 @@ def select(dataset: str, run: str) -> dict:
 
 def main():
     ap = argparse.ArgumentParser(description="Calibrate decision threshold (Issue 4)")
-    ap.add_argument("--dataset", required=True, choices=["wdc-products", "dblp-scholar"])
+    ap.add_argument(
+        "--dataset", required=True, choices=["wdc-products", "dblp-scholar"]
+    )
     ap.add_argument("--run", required=True, help="Run name (e.g. baseline_cw)")
     args = ap.parse_args()
     select(args.dataset, args.run)

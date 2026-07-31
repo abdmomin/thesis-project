@@ -1,8 +1,7 @@
 """
 Aggregate multi-seed runs into mean ± std and a seed-ensemble prediction file.
 
-Companion to run_multiseed.py (methodology_review.md Issue 3). For each base run
-it:
+Companion to run_multiseed.py. For each base run, it:
   1. reports mean ± std of precision / recall / F1 across seeds (the headline
      deliverable: effects must exceed run-to-run noise to be credible);
   2. writes a seed-ensemble prediction file by averaging the per-pair match
@@ -22,7 +21,6 @@ Usage:
 import argparse
 import json
 import statistics
-import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
@@ -81,30 +79,45 @@ def aggregate_run(run: str, dataset: str, seeds: list[int]) -> dict:
                 for i in range(n):
                     mean_score = sum(p[i]["score"] for p in pred_sets) / len(pred_sets)
                     rec = pred_sets[0][i]
-                    f.write(json.dumps({
-                        "left": rec["left"],
-                        "right": rec["right"],
-                        "true_label": rec["true_label"],
-                        "pred_label": int(mean_score >= 0.5),
-                        "score": round(mean_score, 6),
-                    }) + "\n")
+                    f.write(
+                        json.dumps(
+                            {
+                                "left": rec["left"],
+                                "right": rec["right"],
+                                "true_label": rec["true_label"],
+                                "pred_label": int(mean_score >= 0.5),
+                                "score": round(mean_score, 6),
+                            }
+                        )
+                        + "\n"
+                    )
             summary["seedmean_preds"] = str(ens_path.relative_to(ROOT))
             print(f"  wrote seed-ensemble preds → {ens_path.name}")
         else:
-            print(f"  [warn] seed pred files for {run} differ in length — skipping ensemble")
+            print(
+                f"  [warn] seed pred files for {run} differ in length — skipping ensemble"
+            )
 
     return summary
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Aggregate multi-seed runs (mean ± std + ensemble preds)")
-    ap.add_argument("--dataset", required=True, choices=["wdc-products", "dblp-scholar"])
-    ap.add_argument("--runs", nargs="+", required=True, help="Base run names (no seed suffix)")
+    ap = argparse.ArgumentParser(
+        description="Aggregate multi-seed runs (mean ± std + ensemble preds)"
+    )
+    ap.add_argument(
+        "--dataset", required=True, choices=["wdc-products", "dblp-scholar"]
+    )
+    ap.add_argument(
+        "--runs", nargs="+", required=True, help="Base run names (no seed suffix)"
+    )
     ap.add_argument("--seeds", type=int, nargs="+", default=[13, 42, 87])
     args = ap.parse_args()
 
     summaries = []
-    print(f"\n{'='*70}\n  Seed aggregation — {args.dataset}  (seeds {args.seeds})\n{'='*70}")
+    print(
+        f"\n{'='*70}\n  Seed aggregation — {args.dataset}  (seeds {args.seeds})\n{'='*70}"
+    )
     for run in args.runs:
         print(f"\n{run}:")
         summaries.append(aggregate_run(run, args.dataset, args.seeds))
@@ -116,7 +129,9 @@ def main():
             print(f"{s['run']:<18}  (no results found)")
             continue
         p, r, f = s["precision"], s["recall"], s["f1"]
-        print(f"{s['run']:<18} {p['mean']:>7.4f} ± {p['std']:<6.4f} {r['mean']:>7.4f} ± {r['std']:<6.4f} {f['mean']:>7.4f} ± {f['std']:<6.4f}")
+        print(
+            f"{s['run']:<18} {p['mean']:>7.4f} ± {p['std']:<6.4f} {r['mean']:>7.4f} ± {r['std']:<6.4f} {f['mean']:>7.4f} ± {f['std']:<6.4f}"
+        )
 
     out_path = RESULTS / f"seed_aggregate_{args.dataset}.json"
     with open(out_path, "w") as f:

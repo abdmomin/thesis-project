@@ -10,7 +10,8 @@ pandas
 numpy
 tqdm
 
-# Embeddings (for blocking in Task 4)
+# Blocking / Embeddings (for Task 4)
+uma-pydi
 sentence-transformers
 
 # Notebooks & visualization

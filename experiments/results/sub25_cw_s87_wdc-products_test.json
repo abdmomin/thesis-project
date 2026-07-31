@@ -1,0 +1,20 @@
+{
+  "run": "sub25_cw_s87",
+  "dataset": "wdc-products",
+  "split": "test",
+  "model": "/content/experiments/models/sub25_cw_s87_wdc-products/best",
+  "metrics": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0
+  },
+  "confusion_matrix": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 500,
+    "tn": 4000
+  },
+  "n_pairs": 4500,
+  "n_matches": 500,
+  "n_non_matches": 4000
+}

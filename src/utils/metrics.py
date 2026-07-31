@@ -24,7 +24,9 @@ def compute_metrics(labels: list[int], predictions: list[int]) -> dict:
 
 def full_report(labels: list[int], predictions: list[int]) -> str:
     """Full sklearn classification report as a string."""
-    return classification_report(labels, predictions, target_names=["non-match", "match"])
+    return classification_report(
+        labels, predictions, target_names=["non-match", "match"]
+    )
 
 
 def confusion(labels: list[int], predictions: list[int]) -> dict:

@@ -30,6 +30,7 @@ PROCESSED = ROOT / "data" / "processed"
 # Core serialization
 # ---------------------------------------------------------------------------
 
+
 def serialize_record(row: dict, columns: list[str]) -> str:
     """Serialize a record dict into Ditto's COL/VAL string format."""
     parts = []
@@ -92,7 +93,7 @@ def preprocess_wdc_products():
     split_files = {
         "train": raw_dir / "train_raw.json.gz",
         "valid": raw_dir / "valid_raw.json.gz",
-        "test":  raw_dir / "test_raw.json.gz",
+        "test": raw_dir / "test_raw.json.gz",
     }
 
     for split, gz_path in split_files.items():
@@ -123,7 +124,9 @@ def preprocess_dblp_scholar():
     table_a_path = _find_file(raw_dir, "tableA.csv")
     table_b_path = _find_file(raw_dir, "tableB.csv")
     if table_a_path is None or table_b_path is None:
-        print("  [error] tableA.csv or tableB.csv not found. Run download_datasets.py first.")
+        print(
+            "  [error] tableA.csv or tableB.csv not found. Run download_datasets.py first."
+        )
         return
 
     table_a = pd.read_csv(table_a_path)
@@ -171,6 +174,7 @@ def preprocess_dblp_scholar():
 # Helpers
 # ---------------------------------------------------------------------------
 
+
 def _find_file(directory: Path, name: str) -> Path | None:
     for p in directory.rglob(name):
         return p
@@ -182,15 +186,20 @@ def _print_stats(pairs: list[tuple], split: str):
     matches = sum(1 for _, _, lbl in pairs if lbl == 1)
     non_matches = total - matches
     pct = 100 * matches / total if total else 0
-    print(f"    {split}: {total:,} pairs  ({matches:,} matches / {non_matches:,} non-matches, {pct:.1f}% positive)")
+    print(
+        f"    {split}: {total:,} pairs  ({matches:,} matches / {non_matches:,} non-matches, {pct:.1f}% positive)"
+    )
 
 
 # ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
 
+
 def main():
-    parser = argparse.ArgumentParser(description="Preprocess entity matching datasets to Ditto format")
+    parser = argparse.ArgumentParser(
+        description="Preprocess entity matching datasets to Ditto format"
+    )
     parser.add_argument(
         "--dataset",
         choices=["wdc-products", "dblp-scholar", "all"],

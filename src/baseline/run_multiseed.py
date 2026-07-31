@@ -1,19 +1,7 @@
 """
 Train + evaluate one configuration across multiple random seeds.
 
-Addresses methodology_review.md Issue 3: every model was trained once at
-seed=42, so reported deltas of ±0.005–0.012 F1 could not be distinguished from
-run-to-run noise. This runner repeats a configuration over several seeds so the
-downstream metrics can be reported as mean ± std (see aggregate_seeds.py).
-
-It is a thin orchestrator over the existing train()/evaluate() entrypoints — no
-training logic is duplicated. Each seed is saved under run name
-"<run>_s<seed>", so evaluate.py / aggregate_seeds.py resolve them normally.
-
-This is the *heavy* step (≈3× training per config). Run it on the regenerated,
-entity-disjoint augmented data from notebooks 04/07 (Issue 1 fix).
-
-Examples (run after the leakage fix; 8 configs total):
+Examples (run 8 configs total):
     # WDC Products (class-weighted)
     python src/baseline/run_multiseed.py --dataset wdc-products --run baseline_cw   --class_weight balanced
     python src/baseline/run_multiseed.py --dataset wdc-products --run string_aug_cw --class_weight balanced --train_file data/processed/wdc-products/train_aug_string.txt
@@ -49,7 +37,7 @@ def run_multiseed(
     epochs: int = 10,
     batch_size: int = 8,
     grad_accum: int = 4,
-    lr: float = 2e-5,   # final protocol (avoids the imbalanced-set collapse seen at 5e-5)
+    lr: float = 2e-5,  # final protocol (avoids the imbalanced-set collapse seen at 5e-5)
 ):
     tf = Path(train_file) if train_file else None
     for seed in seeds:
@@ -68,13 +56,19 @@ def run_multiseed(
         )
         evaluate(dataset=dataset, split="test", run_name=run_name, save_preds=True)
 
-    print(f"\nDone. Aggregate with:\n  python src/analysis/aggregate_seeds.py --dataset {dataset} --run {run} --seeds {' '.join(map(str, seeds))}")
+    print(f"\nDone. Run names: {[f'{run}_s{seed}' for seed in seeds]} on {dataset}")
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Train+evaluate a config across multiple seeds")
-    ap.add_argument("--dataset", required=True, choices=["wdc-products", "dblp-scholar"])
-    ap.add_argument("--run", required=True, help="Base run name (seed suffix added automatically)")
+    ap = argparse.ArgumentParser(
+        description="Train+evaluate a config across multiple seeds"
+    )
+    ap.add_argument(
+        "--dataset", required=True, choices=["wdc-products", "dblp-scholar"]
+    )
+    ap.add_argument(
+        "--run", required=True, help="Base run name (seed suffix added automatically)"
+    )
     ap.add_argument("--seeds", type=int, nargs="+", default=DEFAULT_SEEDS)
     ap.add_argument("--class_weight", choices=["none", "balanced"], default="none")
     ap.add_argument("--train_file", default=None)
